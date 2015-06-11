@@ -1,0 +1,16 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -3 HEAD
+[core]
+	editor = vim
+[color]
+	ui = true
+[merge]
+	tool = vimdiff
+[user]
+	name = lightxue
+	email = bkmgtp@gmail.com

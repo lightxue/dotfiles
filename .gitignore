@@ -1,0 +1,7 @@
+*.zip
+*.pyc
+vim/vim/bundle/
+*.tar.bz2
+*.tar.gz
+*.tgz
+.netrwhist

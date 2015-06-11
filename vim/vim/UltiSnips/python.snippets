@@ -1,0 +1,22 @@
+snippet # "header for python script" !b
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# File   : `!p snip.rv = fn`
+# Author : lightxue
+# Date   : `!v strftime('%Y-%m-%d')`
+# Desc   :
+
+$0
+endsnippet
+
+snippet ifm "ifmain" b
+if __name__ == '__main__':
+    ${1:main()}$0
+endsnippet
+
+snippet t "test python snippet" !b
+`!p snip.rv = 'tt'
+snip >> 4`
+endsnippet
+
+# vim: shiftwidth=4 expandtab tabstop=4
