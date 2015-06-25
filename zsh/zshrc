@@ -94,6 +94,10 @@ alias mc="make clean"
 alias mck="mc && mk"
 alias mi="make install"
 
+# 设置默认编辑器
+export VISUAL=vim
+export EDITOR=vim
+
 export LC_ALL=zh_CN.UTF-8
 
 export APP_PATH="/home/lightxue/app"
