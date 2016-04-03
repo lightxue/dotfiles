@@ -25,3 +25,5 @@ let g:indentLine_loaded = 1
 let g:yankring_history_file = '.yankring_history'
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+let g:slime_target = "tmux"
