@@ -90,6 +90,7 @@ Bundle 'benmills/vimux'
 "Bundle 'vimwiki'
 Bundle 'airblade/vim-rooter'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'wlangstroth/vim-racket'
 
 
 filetype plugin indent on     " 恢复filetype设置

@@ -27,3 +27,11 @@ let g:yankring_history_file = '.yankring_history'
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 let g:rooter_disable_map = 1
+
+call SingleCompile#SetCompilerTemplate('scheme', 'racket', 'racket', 'racket', '', '')
+call SingleCompile#SetOutfile('scheme', 'racket', '')
+call SingleCompile#ChooseCompiler('scheme', 'racket')
+
+call SingleCompile#SetCompilerTemplate('racket', 'racket', 'racket', 'racket', '', '')
+call SingleCompile#SetOutfile('racket', 'racket', '')
+call SingleCompile#ChooseCompiler('racket', 'racket')
