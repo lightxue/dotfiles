@@ -26,6 +26,8 @@ let g:yankring_history_file = '.yankring_history'
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
+let g:slime_target = "tmux"
+
 let g:rooter_disable_map = 1
 
 call SingleCompile#SetCompilerTemplate('scheme', 'racket', 'racket', 'racket', '', '')
