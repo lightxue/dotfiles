@@ -62,7 +62,7 @@ nmap <C-S-Tab> gT
 " 空格翻页比较符合习惯
 map <Space> <C-D>
 
-" 在可视模式下按<Leader>再按*或＃可以对选中的部分进行搜索
+" 在可视模式下按*或#可以对选中的部分进行搜索
 vnoremap <Silent> * :call VisualSearch('f')<CR>
 vnoremap <Silent> # :call VisualSearch('b')<CR>
 

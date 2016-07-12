@@ -16,3 +16,7 @@
 	email = bkmgtp@gmail.com
 [push]
 	default = matching
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = No

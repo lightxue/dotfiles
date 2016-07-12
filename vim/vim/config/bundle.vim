@@ -88,7 +88,7 @@ Bundle 'sheerun/vim-polyglot'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'benmills/vimux'
 "Bundle 'vimwiki'
-Bundle 'airblade/vim-rooter'
+"Bundle 'airblade/vim-rooter'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'wlangstroth/vim-racket'
 
