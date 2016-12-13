@@ -30,13 +30,13 @@ let g:slime_target = "tmux"
 
 let g:rooter_disable_map = 1
 
-call SingleCompile#SetCompilerTemplate('scheme', 'racket', 'racket', 'racket', '', '')
-call SingleCompile#SetOutfile('scheme', 'racket', '')
-call SingleCompile#ChooseCompiler('scheme', 'racket')
+"call SingleCompile#SetCompilerTemplate('scheme', 'racket', 'racket', 'racket', '', '')
+"call SingleCompile#SetOutfile('scheme', 'racket', '')
+"call SingleCompile#ChooseCompiler('scheme', 'racket')
 
-call SingleCompile#SetCompilerTemplate('racket', 'racket', 'racket', 'racket', '', '')
-call SingleCompile#SetOutfile('racket', 'racket', '')
-call SingleCompile#ChooseCompiler('racket', 'racket')
+"call SingleCompile#SetCompilerTemplate('racket', 'racket', 'racket', 'racket', '', '')
+"call SingleCompile#SetOutfile('racket', 'racket', '')
+"call SingleCompile#ChooseCompiler('racket', 'racket')
 
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '\.o$']
 
