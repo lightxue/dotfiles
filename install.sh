@@ -14,14 +14,15 @@ git clone https://github.com/wting/autojump.git
 cd autojump
 ./install.py
 
-ln -s zsh/zhsrc ~/.zshrc
+mv ~/.zshrc ~/.zshrc.bak
+ln -s $PWD/zsh/zhsrc ~/.zshrc
 
 # install tmux
 apt-get install tmux
 ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # install vim
-ln -s vim/vim ~/.vim
-ln -s vim/vimrc ~/.vimrc
+ln -s $PWD/vim/vim ~/.vim
+ln -s $PWD/vim/vimrc ~/.vimrc
 # submodule for vundle
 # vim +PluginInstall +qall
