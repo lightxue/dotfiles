@@ -49,7 +49,7 @@ plugins=(git autojump)
 
 # User configuration
 
-export PATH="/usr/lib64/qt-3.3/bin:/usr/java/latest//bin:/usr/local/bin:/bin:/usr/bin:~/bin:/usr/local/sbin:/usr/sbin:/sbin"
+#export PATH="/usr/lib64/qt-3.3/bin:/usr/java/latest//bin:/usr/local/bin:/bin:/usr/bin:~/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
