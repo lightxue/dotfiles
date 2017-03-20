@@ -16,6 +16,9 @@ cd autojump
 ./install.py
 cd ..
 
+# install thefuck
+sudo pip3 install thefuck
+
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $PWD/zsh/zshrc ~/.zshrc
 
@@ -24,7 +27,7 @@ sudo apt-get install tmux
 ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # install vim
-ln -s $PWD/vim/vim ~/.vim
+ln -s $PWD/vim/vim/ ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
 # submodule for vundle
 mkdir vim/vim/bundle

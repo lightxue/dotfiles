@@ -45,7 +45,7 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump)
+plugins=(git autojump thefuck)
 
 # User configuration
 
@@ -98,10 +98,10 @@ alias mi="make install"
 export VISUAL=vim
 export EDITOR=vim
 
-export LC_ALL=zh_CN.UTF-8
+# export LC_ALL=zh_CN.UTF-8
 
 export APP_PATH="$HOME/app"
-export PATH="$APP_PATH/bin:$PATH"
+export PATH="$APP_PATH/bin:$PATH:/usr/sbin"
 export LD_LIBRARY_PATH="$APP_PATH/lib:$LD_LIBRARY_PATH"
 
 # Prompt format
