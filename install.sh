@@ -10,20 +10,22 @@ sudo apt-get install -y curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # install autojump
-mkdir tmp
-git clone https://github.com/wting/autojump.git
-cd autojump
-./install.py
-cd ..
+sudo apt-get install -y autojump
+#mkdir tmp
+#git clone https://github.com/wting/autojump.git
+#cd autojump
+#./install.py
+#cd ..
 
 # install thefuck
+sudo apt-get install -y python3 python3-pip
 sudo pip3 install thefuck
 
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $PWD/zsh/zshrc ~/.zshrc
 
 # install tmux
-sudo apt-get install tmux
+sudo apt-get install -y tmux
 ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # install vim
@@ -36,3 +38,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git vim/vim/bundle/Vundle.vim
 
 # install git
 ln -s $PWD/git/gitconfig ~/.gitconfig
+
+# useful tools
+sudo apt-get install -y htop glances ack-grep httpie
