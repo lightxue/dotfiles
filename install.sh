@@ -39,5 +39,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git vim/vim/bundle/Vundle.vim
 # install git
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
-# useful tools
-sudo apt-get install -y htop glances ack-grep httpie
+# handy tools
+sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger
