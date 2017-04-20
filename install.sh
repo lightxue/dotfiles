@@ -17,6 +17,8 @@ sudo apt-get install -y autojump
 #./install.py
 #cd ..
 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # install thefuck
 sudo apt-get install -y python3 python3-pip
 sudo pip3 install thefuck
@@ -40,5 +42,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git vim/vim/bundle/Vundle.vim
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
 # handy tools
-sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger
+sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree
 sudo pip3 install ipython jupyter
