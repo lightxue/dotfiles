@@ -17,14 +17,13 @@ sudo apt-get install -y autojump
 #./install.py
 #cd ..
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
 # install thefuck
 sudo apt-get install -y python3 python3-pip
 sudo pip3 install thefuck
 
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $PWD/zsh/zshrc ~/.zshrc
+ln -s $PWD/zsh/zsh ~/.zsh
 
 # install tmux
 sudo apt-get install -y tmux

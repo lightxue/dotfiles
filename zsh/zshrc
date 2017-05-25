@@ -39,14 +39,14 @@ ZSH_THEME="juanghurtado"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-autosuggestions 
-plugins=(git autojump thefuck zsh-syntax-highlighting httpie history pip supervisor extract)
+plugins=(git autojump thefuck zsh-syntax-highlighting httpie history pip supervisor extract brew)
 
 # User configuration
 
@@ -94,8 +94,15 @@ i() curl ip.cn/$1
 alias vi='vim'
 alias more='less'
 alias tmux='tmux -2'
+alias wl='wc -l'
+alias tf='tail -f'
+alias cnter='sort | uniq -c | sort -nr'
 
-alias mk="make -j$(grep --count processor /proc/cpuinfo)"
+if [ $(uname -s) = 'Linux' ]; then
+    alias mk="make -j$(grep --count processor /proc/cpuinfo)"
+else
+    alias mk="make"
+fi
 alias mc="make clean"
 alias mck="mc && mk"
 alias mi="make install"
@@ -106,10 +113,9 @@ export EDITOR=vim
 
 # export LC_ALL=zh_CN.UTF-8
 
-#export APP_PATH="$HOME/app"
-#export PATH="$APP_PATH/bin:$PATH:/usr/sbin"
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64"
-source ~/.zsh-custom
+export PATH="$PATH:/usr/sbin"
+ZSH_LIGHT_CUSTOM=~/.zsh-custom
+test -e $ZSH_LIGHT_CUSTOM && source $ZSH_LIGHT_CUSTOM
 
 # Prompt format
 #PROMPT='
