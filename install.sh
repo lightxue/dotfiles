@@ -32,10 +32,7 @@ ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 # install vim
 ln -s $PWD/vim/vim/ ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
-# submodule for vundle
-mkdir vim/vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git vim/vim/bundle/Vundle.vim
-# vim +PluginInstall +qall
+# 改用zsh的vundle插件升级
 
 # install git
 ln -s $PWD/git/gitconfig ~/.gitconfig
