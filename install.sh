@@ -38,5 +38,5 @@ ln -s $PWD/vim/vimrc ~/.vimrc
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
 # handy tools
-sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree
+sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2
 sudo pip3 install ipython jupyter
