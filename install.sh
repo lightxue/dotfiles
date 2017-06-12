@@ -9,6 +9,10 @@ sudo apt-get install -y zsh
 sudo apt-get install -y curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# 更新子模块
+git submodule init
+git submodule update
+
 # install autojump
 sudo apt-get install -y autojump
 #mkdir tmp
