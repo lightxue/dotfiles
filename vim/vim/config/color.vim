@@ -2,17 +2,11 @@ syntax enable " 语法高亮
 set guifont=Monaco:h13       " 字体 && 字号
 
 set background=dark
+colorscheme molokai
 if has("gui_running")
     set guioptions= " 菜单栏、工具栏等都不要了
     "au GUIEnter * simalt ~x  " 窗口启动时自动最大化
     let psc_style='cool'
-    colorscheme molokai
-    "colorscheme blackboard       " 着色模式
-else
-    let g:solarized_termcolors=256
-    colorscheme molokai
-    "colorscheme solarized
-    set background=dark
 endif
 
 " 设置当前行当前列高亮
@@ -22,8 +16,12 @@ if has("gui_running")
     hi cursorline guibg=#191E2F
     hi CursorColumn guibg=#191E2F
 else
-    set nocursorline
-    set nocursorcolumn
+    "set nocursorline
+    "set nocursorcolumn
+    set cursorline
+    set cursorcolumn
+    hi cursorline guibg=#191E2F
+    hi CursorColumn guibg=#191E2F
     "hi cursorline ctermbg=LightMagenta
     "hi CursorColumn ctermbg=LightMagenta
 endif
