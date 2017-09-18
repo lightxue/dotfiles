@@ -116,7 +116,7 @@ export EDITOR=vim
 
 # export LC_ALL=zh_CN.UTF-8
 
-export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/usr/sbin:/usr/local/sbin"
 ZSH_LIGHT_CUSTOM=~/.zsh-custom
 test -e $ZSH_LIGHT_CUSTOM && source $ZSH_LIGHT_CUSTOM
 
