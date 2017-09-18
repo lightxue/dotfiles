@@ -159,6 +159,8 @@ map <Leader>bd :bd!<CR>
 " 关闭
 nmap <Leader>qa :qa<CR>
 nmap <Leader>qq :q<CR>
+nmap <Leader>qf :q!<CR>
+nmap <Leader>qaf :qa!<CR>
 
 nmap <Leader>pd :CtrlPDir 
 nmap <Leader>pc :CtrlPClearCache<CR>
@@ -203,6 +205,8 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>cg :Scratch<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+nnoremap <leader>yr :YRShow<CR>
 
 " python_fn Shortcuts:
 "   ]t      -- Jump to beginning of block
