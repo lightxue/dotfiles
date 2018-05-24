@@ -27,6 +27,7 @@ endif
 "Plugin 'bufexplorer.zip'
 "Plugin 'minibufexpl.vim'
 "Plugin 'Shougo/unite.vim'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'scratch.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'terryma/vim-multiple-cursors'

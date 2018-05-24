@@ -55,3 +55,7 @@ let g:rainbow_conf = {
 \       'html': 0,
 \   }
 \}
+
+noremap <F3> :Autoformat<CR>
+let g:formatdef_sql = '"sqlformat --reindent --indent_width 4 --use_space_around_operators --keywords upper --identifiers lower -"'
+let g:formatters_sql = ['sql']
