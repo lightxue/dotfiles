@@ -34,7 +34,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'YankRing.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'Auto-Pairs'
-"Plugin "jpalardy/vim-slime"
+Plugin 'jpalardy/vim-slime'
 Plugin 'mbbill/fencview'
 Plugin 'Gundo'
 Plugin 'JSON.vim'
