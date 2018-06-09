@@ -47,7 +47,7 @@ ZSH_CUSTOM=~/.zsh
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-autosuggestions 
 plugins=(git autojump thefuck zsh-syntax-highlighting httpie history pip
-         supervisor extract colorize cp tmux virtualenv vundle)
+         supervisor extract colorize cp tmux virtualenv vundle safe-paste)
 
 # User configuration
 
