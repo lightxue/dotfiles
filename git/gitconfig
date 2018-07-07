@@ -5,6 +5,7 @@
 	st = status
 	unstage = reset HEAD --
 	last = log -3 HEAD
+	d = difftool
 [core]
 	editor = vim
 [color]
@@ -19,4 +20,6 @@
 [diff]
 	tool = vimdiff
 [difftool]
-	prompt = No
+	prompt = false
+[mergetool]
+	prompt = false
