@@ -139,6 +139,6 @@ test -e $ZSH_LIGHT_CUSTOM && source $ZSH_LIGHT_CUSTOM
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ "$TERM" == "xterm" ]; then
+if [ "$TERM" = "xterm" ]; then
 export TERM=xterm-256color
 fi
