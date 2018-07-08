@@ -120,6 +120,9 @@ alias mc="make clean"
 alias mck="mc && mk"
 alias mi="make install"
 alias agi="sudo apt-get install -y"
+alias v='f -t -e vim -b viminfo'
+alias j='fasd_cd -d'     # cd, same functionality as j in autojump
+alias jj='fasd_cd -d -i' # cd with interactive selection
 
 # 设置默认编辑器
 export VISUAL=vim
