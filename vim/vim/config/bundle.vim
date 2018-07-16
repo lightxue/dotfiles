@@ -9,8 +9,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 "补全
 if has('win32')
-    Plugin 'Shougo/neocomplcache'
-    "Plugin 'Shougo/neosnippet'
+    Plugin 'ajh17/VimCompletesMe'
+elseif $LX_ENV == 'tc-dev'
+    Plugin 'ajh17/VimCompletesMe'
 else
     Plugin 'Valloric/YouCompleteMe'
 endif
