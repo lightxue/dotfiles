@@ -2,8 +2,8 @@ syntax enable " 语法高亮
 set guifont=Monaco:h13       " 字体 && 字号
 
 set background=dark
-colorscheme apprentice
-"colorscheme molokai
+"colorscheme apprentice
+colorscheme molokai
 if has("gui_running")
     set guioptions= " 菜单栏、工具栏等都不要了
     "au GUIEnter * simalt ~x  " 窗口启动时自动最大化
