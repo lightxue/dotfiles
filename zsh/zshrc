@@ -11,7 +11,7 @@ ZSH_THEME="juanghurtado"
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -36,7 +36,7 @@ ZSH_THEME="juanghurtado"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh
@@ -45,7 +45,6 @@ ZSH_CUSTOM=~/.zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# zsh-autosuggestions 
 plugins=(git
          svn
          fasd
@@ -56,7 +55,6 @@ plugins=(git
          pip
          supervisor
          extract
-         colorize
          cp
          tmux
          virtualenv
@@ -109,8 +107,6 @@ alias more='less'
 alias wl='wc -l'
 alias tf='tail -f'
 alias cnter='sort | uniq -c | sort -nr'
-# colorize cat
-alias ccat='colorize'
 
 if [ $(uname -s) = 'Linux' ]; then
     alias mk="make -j$(grep --count processor /proc/cpuinfo)"
@@ -124,6 +120,7 @@ alias agi="sudo apt-get install -y"
 alias v='f -t -e vim -b viminfo'
 alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
+alias pping='prettyping'
 
 if type bat > /dev/null; then
     alias cat='bat'
@@ -138,12 +135,6 @@ export EDITOR=vim
 export PATH="$PATH:/usr/sbin:/usr/local/sbin"
 ZSH_LIGHT_CUSTOM=~/.zsh-custom
 test -e $ZSH_LIGHT_CUSTOM && source $ZSH_LIGHT_CUSTOM
-
-# Prompt format
-#PROMPT='
-#%{$GREEN_BOLD%}%n@%m%{$WHITE%}:%{$YELLOW%}%~%u$(parse_git_dirty)$(git_prompt_ahead)%{$RESET_COLOR%}
-#%{$BLUE%}>%{$RESET_COLOR%} '
-#RPROMPT='%{$GREEN_BOLD%}$(current_branch)$(git_prompt_short_sha)$(git_prompt_status)%{$RESET_COLOR%}'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

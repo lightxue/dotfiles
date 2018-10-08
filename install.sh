@@ -13,14 +13,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 git submodule init
 git submodule update
 
-# install autojump
-sudo apt-get install -y autojump
-#mkdir tmp
-#git clone https://github.com/wting/autojump.git
-#cd autojump
-#./install.py
-#cd ..
-
 # install thefuck
 sudo apt-get install -y python3 python3-pip
 sudo pip3 install thefuck
@@ -42,7 +34,7 @@ ln -s $PWD/vim/vimrc ~/.vimrc
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
 # handy tools
-sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2
+sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag
 sudo pip3 install ipython jupyter tldr
 
 # install bat
