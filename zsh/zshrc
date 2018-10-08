@@ -101,6 +101,13 @@ source $ZSH/oh-my-zsh.sh
 i() curl ip.cn/$1
 
 # 别名
+
+funcion save_alias() {
+if type $2 > /dev/null; then
+    alias $1="$2"
+fi
+}
+
 alias vi='vim'
 alias more='less'
 #alias tmux='tmux -2'
@@ -121,10 +128,11 @@ alias v='f -t -e vim -b viminfo'
 alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
 alias pping='prettyping'
+alias l='k --almost-all'
+alias ll='k'
 
-if type bat > /dev/null; then
-    alias cat='bat'
-fi
+save_alias cat bat
+save_alias pping prettyping
 
 # 设置默认编辑器
 export VISUAL=vim
