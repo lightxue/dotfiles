@@ -124,6 +124,10 @@ alias v='f -t -e vim -b viminfo'
 alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
 
+if type bat > /dev/null; then
+    alias cat='bat'
+fi
+
 # 设置默认编辑器
 export VISUAL=vim
 export EDITOR=vim
