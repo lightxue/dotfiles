@@ -61,7 +61,8 @@ plugins=(git
          tmux
          virtualenv
          vundle
-         zsh-autosuggestions)
+         zsh-autosuggestions
+         k)
 
 # User configuration
 
