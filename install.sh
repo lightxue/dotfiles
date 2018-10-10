@@ -37,4 +37,6 @@ ln -s $PWD/git/gitconfig ~/.gitconfig
 sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag
 sudo pip3 install ipython jupyter tldr
 
+npm install -g diff-so-fancy
+
 # install bat
