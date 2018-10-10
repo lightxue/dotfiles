@@ -103,9 +103,15 @@ i() curl ip.cn/$1
 # 别名
 
 funcion save_alias() {
-if type $2 > /dev/null; then
-    alias $1="$2"
-fi
+    local cmd=$1
+    local dep_cmd=$2
+    local alias_cmd=$2
+    if [ -n "$3" ]; then
+        alias_cmd="$3"
+    fi
+    if type $dep_cmd > /dev/null; then
+        alias $cmd="$alias_cmd"
+    fi
 }
 
 alias vi='vim'
@@ -131,7 +137,7 @@ alias pping='prettyping'
 alias l='k --almost-all'
 alias ll='k'
 
-save_alias cat bat
+save_alias cat bat 'bat --style plain --paging never'
 save_alias pping prettyping
 
 # 设置默认编辑器
