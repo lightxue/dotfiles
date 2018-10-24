@@ -39,4 +39,4 @@ sudo pip3 install ipython jupyter tldr
 
 npm install -g diff-so-fancy
 
-# install bat
+ln -s $PWD/bin ~/.dotfiles.bin
