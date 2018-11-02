@@ -57,7 +57,8 @@ let g:rainbow_conf = {
 \}
 
 noremap <F3> :Autoformat<CR>
-let g:formatdef_sql = '"sqlformat --reindent --indent_width 4 --use_space_around_operators --keywords upper --identifiers lower -"'
+"let g:formatdef_sql = '"sqlformat --reindent --indent_width 4 --use_space_around_operators --keywords upper --identifiers lower -"'
+let g:formatdef_sql = '"sqlfmt --use-spaces --tab-width 4"'
 let g:formatters_sql = ['sql']
 
 " vim-slime使用tmux

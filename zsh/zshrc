@@ -136,6 +136,7 @@ alias jj='fasd_cd -d -i' # cd with interactive selection
 alias pping='prettyping'
 alias l='k --almost-all'
 alias ll='k'
+alias gbk='iconv -f gbk -t utf8'
 
 save_alias cat bat 'bat --style plain --paging never'
 save_alias pping prettyping
