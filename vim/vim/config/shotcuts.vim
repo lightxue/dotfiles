@@ -3,7 +3,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 inoremap jk <Esc>
-xnoremap jk <Esc>
+"xnoremap jk <Esc>
 cnoremap jk <C-c>
 "inoremap <C-]> <Nop>
 "inoremap <Esc> <Nop>

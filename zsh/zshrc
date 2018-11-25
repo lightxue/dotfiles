@@ -130,16 +130,13 @@ alias mc="make clean"
 alias mck="mc && mk"
 alias mi="make install"
 alias agi="sudo apt-get install -y"
-alias v='f -t -e vim -b viminfo'
-alias j='fasd_cd -d'     # cd, same functionality as j in autojump
-#alias jj='fasd_cd -d -i' # cd with interactive selection
-alias pping='prettyping'
-alias l='k --almost-all'
-alias ll='k'
 alias gbk='iconv -f gbk -t utf8'
 
 save_alias cat bat 'bat --style plain --paging never'
 save_alias pping prettyping
+save_alias l k 'k --almost-all'
+save_alias ll k
+save_alias j fasd_cd 'fasd_cd -d' # cd, same functionality as j in autojump
 
 # 设置默认编辑器
 export VISUAL=vim
@@ -147,6 +144,7 @@ export EDITOR=vim
 
 # export LC_ALL=zh_CN.UTF-8
 
+# 设置PATH
 export PATH="$PATH:/usr/sbin:/usr/local/sbin"
 bin="$HOME/.dotfiles.bin"
 case `uname -s` in
@@ -154,19 +152,21 @@ case `uname -s` in
     Darwin*) export PATH="$PATH:$bin/mac"  ;;
 esac
 
-ZSH_LIGHT_CUSTOM=~/.zsh-custom
-test -e $ZSH_LIGHT_CUSTOM && source $ZSH_LIGHT_CUSTOM
+function src_file() {
+    [ -f $1 ] && source $1
+}
+
+src_file ~/.zsh-custom
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-interactive_cd="$HOME/.zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh"
-[ -f $interactive_cd ] && source $interactive_cd
+src_file ~/.fzf.zsh
+src_file ~/.zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
-jj() {
-  local dir
-  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+function jj() {
+    local dir
+    dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
 if [ "$TERM" = "xterm" ]; then
-export TERM=xterm-256color
+    export TERM=xterm-256color
 fi
