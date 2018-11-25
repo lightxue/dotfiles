@@ -132,7 +132,7 @@ alias mi="make install"
 alias agi="sudo apt-get install -y"
 alias v='f -t -e vim -b viminfo'
 alias j='fasd_cd -d'     # cd, same functionality as j in autojump
-alias jj='fasd_cd -d -i' # cd with interactive selection
+#alias jj='fasd_cd -d -i' # cd with interactive selection
 alias pping='prettyping'
 alias l='k --almost-all'
 alias ll='k'
@@ -157,7 +157,15 @@ esac
 ZSH_LIGHT_CUSTOM=~/.zsh-custom
 test -e $ZSH_LIGHT_CUSTOM && source $ZSH_LIGHT_CUSTOM
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+interactive_cd="$HOME/.zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh"
+[ -f $interactive_cd ] && source $interactive_cd
+# fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
+jj() {
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
 
 if [ "$TERM" = "xterm" ]; then
 export TERM=xterm-256color

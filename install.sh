@@ -33,6 +33,10 @@ ln -s $PWD/vim/vimrc ~/.vimrc
 # install git
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # handy tools
 sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag
 sudo pip3 install ipython jupyter tldr

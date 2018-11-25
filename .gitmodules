@@ -7,3 +7,6 @@
 [submodule "zsh/zsh/plugins/k"]
 	path = zsh/zsh/plugins/k
 	url = https://github.com/supercrabtree/k.git
+[submodule "zsh/zsh/plugins/zsh-interactive-cd"]
+	path = zsh/zsh/plugins/zsh-interactive-cd
+	url = https://github.com/changyuheng/zsh-interactive-cd.git
