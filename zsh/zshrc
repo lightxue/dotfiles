@@ -160,7 +160,7 @@ src_file ~/.zsh-custom
 
 # fzf
 src_file ~/.fzf.zsh
-src_file ~/.zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+#src_file ~/.zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
 function jj() {
     local dir
