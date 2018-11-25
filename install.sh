@@ -41,6 +41,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag
 sudo pip3 install ipython jupyter tldr
 
-npm install -g diff-so-fancy
+#sudo npm install -g diff-so-fancy
 
 ln -s $PWD/bin ~/.dotfiles.bin
