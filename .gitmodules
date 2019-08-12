@@ -10,3 +10,6 @@
 [submodule "zsh/zsh/plugins/zsh-interactive-cd"]
 	path = zsh/zsh/plugins/zsh-interactive-cd
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
+[submodule "vim/vim/bundle/vim-plug"]
+	path = vim/vim/bundle/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
