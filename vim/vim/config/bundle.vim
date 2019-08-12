@@ -33,7 +33,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/Auto-Pairs'
-Plug 'jpalardy/vim-slime'
+Plug 'jpalardy/vim-slime', { 'for': 'lisp' }
 Plug 'mbbill/fencview'
 Plug 'vim-scripts/Gundo'
 Plug 'vim-scripts/JSON.vim'
@@ -45,21 +45,20 @@ Plug 'vim-scripts/Rename'
 "Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/SingleCompile'
 "Plug 'SirVer/ultisnips'
-Plug 'vim-scripts/Tagbar'
-Plug 'vim-scripts/The-NERD-Commenter'
-Plug 'vim-scripts/The-NERD-tree'
+Plug 'vim-scripts/Tagbar', { 'for': ['c', 'cpp', 'python'] }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "Plug 'vim-scripts/VimRepress'
 "Plug 'vim-scripts/VisIncr'
-Plug 'Yggdroot/indentLine'
-Plug 'vim-scripts/ZenCoding.vim'
-Plug 'vim-scripts/a.vim'
+Plug 'Yggdroot/indentLine', { 'for': 'python' }
+Plug 'vim-scripts/ZenCoding.vim', { 'for': 'html' }
+Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'vim-scripts/auto_mkdir'
-Plug 'vim-scripts/blackboard.vim'
-Plug 'vim-scripts/calendar.vim--Matsumoto'
+"Plug 'vim-scripts/blackboard.vim'
+"Plug 'vim-scripts/calendar.vim--Matsumoto'
 Plug 'vim-scripts/ctrlp.vim'
 Plug 'godlygeek/tabular'
-Plug 'hdima/python-syntax'
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 "Plug 'vim-scripts/indentpython'
 Plug 'junegunn/vim-easy-align'
 Plug 'lightxue/SwissCalc'
@@ -69,17 +68,17 @@ Plug 'vim-syntastic/syntastic'
 "Plug 'mmai/wikilink'
 Plug 'vim-scripts/molokai'
 "Plug 'vim-scripts/mru.vim'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'pthrasher/conqueterm-vim'
-Plug 'vim-scripts/pydoc.vim'
+Plug 'vim-scripts/pydoc.vim', { 'for': 'python' }
 "Plug 'vim-scripts/rainbow_parentheses.vim'
 "Plug 'oblitum/rainbow'
 Plug 'luochen1990/rainbow'
-Plug 'sjas/csExplorer'
+Plug 'sjas/csExplorer', { 'for': 'css' }
 "Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'uarun/vim-protobuf'
+Plug 'uarun/vim-protobuf', { 'for': 'protobuf' }
 "Plug 'vim-scripts/vcscommand.vim'
 Plug 'sheerun/vim-polyglot'
 "Plug 'marijnh/tern_for_vim'
