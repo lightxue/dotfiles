@@ -58,7 +58,6 @@ plugins=(git
          cp
          tmux
          virtualenv
-         vundle
          zsh-autosuggestions
          k)
 
