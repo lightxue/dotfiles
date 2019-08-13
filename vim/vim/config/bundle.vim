@@ -3,13 +3,7 @@ source ~/.vim/bundle/vim-plug/plug.vim
 call plug#begin('~/.vim/bundle')
 
 "补全
-if has('vim-scripts/win32')
-    Plug 'ajh17/VimCompletesMe'
-elseif $LX_ENV == 'vim-scripts/tc-dev'
-    Plug 'ajh17/VimCompletesMe'
-else
-    Plug 'Valloric/YouCompleteMe'
-endif
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 "Plug 'vim-scripts/Align'
 "Plug 'vim-scripts/AuthorInfo'
@@ -47,6 +41,7 @@ Plug 'vim-scripts/SingleCompile'
 "Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/Tagbar', { 'for': ['c', 'cpp', 'python'] }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
 "Plug 'vim-scripts/VimRepress'
 "Plug 'vim-scripts/VisIncr'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
