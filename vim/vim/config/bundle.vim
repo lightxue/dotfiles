@@ -82,5 +82,6 @@ Plug 'benmills/vimux'
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 "Plug 'wlangstroth/vim-racket'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']  }
 
 call plug#end()
