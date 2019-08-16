@@ -63,3 +63,7 @@ let g:formatters_sql = ['sql']
 
 " vim-slime使用tmux
 let g:slime_target = 'tmux'
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
