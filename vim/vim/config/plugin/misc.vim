@@ -33,29 +33,6 @@ let g:rooter_disable_map = 1
 call SingleCompile#SetCompilerTemplate('python', 'python3', 'CPython 3', 'python3', '', '')
 call SingleCompile#SetPriority('python', 'python3', 40)
 
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '\.o$']
-
-let g:rainbow_conf = {
-\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\       '*': {},
-\       'tex': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\       },
-\       'lisp': {
-\           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-\       },
-\       'vim': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\       },
-\       'css': 0,
-\       'html': 0,
-\   }
-\}
-
 noremap <F3> :Autoformat<CR>
 "let g:formatdef_sql = '"sqlformat --reindent --indent_width 4 --use_space_around_operators --keywords upper --identifiers lower -"'
 let g:formatdef_sql = '"sqlfmt --use-spaces --tab-width 4"'
@@ -64,8 +41,6 @@ let g:formatters_sql = ['sql']
 " vim-slime使用tmux
 let g:slime_target = 'tmux'
 
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_math = 1
-let g:vim_markdown_frontmatter = 1
-
 nnoremap <silent> <leader> :WhichKey ','<CR>
+
+let g:indentLine_enabled = 1

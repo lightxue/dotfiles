@@ -36,3 +36,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[http "https://git.code.oa.com"]
+      proxy = http://127.0.0.1:12639
+[http "http://git.code.oa.com"]
+      proxy = http://127.0.0.1:12639
