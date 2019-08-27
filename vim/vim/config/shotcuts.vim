@@ -14,8 +14,7 @@ map <Leader>e :e $MYVIMRC<CR>
 " 另一种在命令模式下展开变量的方法
 " map <Leader>e :e <C-R>=expand(g:_vimrc)<CR><CR>
 " 更新配置
-map <Leader>u :source $MYVIMRC<CR>
-"map <Leader>u :exec "source ".expand(g:_vimrc)<CR>
+map <Leader>uu :source $MYVIMRC<CR>
 autocmd! bufwritepost .vimrc source $MYVIMRC "修改配置文件后更新
 
 " 上下移动行
@@ -30,7 +29,7 @@ nnoremap <Leader>l <C-L>
 " 修改文件换行方式
 nmap <Leader>fd :set ff=dos<CR>
 nmap <Leader>fu :set ff=unix<CR>
-nmap <Leader>fm :set ff=mac<CR>
+" nmap <Leader>fm :set ff=mac<CR>
 
 " 行回绕时移动比较符合直觉
 nmap j gj
@@ -56,7 +55,7 @@ nmap <Leader>s :w!<CR>
 " 标签页
 map <Leader>tn :tabnew %<CR>
 map <Leader>tc :tabclose<CR>
-map <Leader>te :tabedit<CR>
+map <Leader>te :tabedit<CR>:Startify<CR>
 map <Leader>tm :tabmove<Space>
 nmap <C-Tab> gt
 nmap <C-S-Tab> gT
@@ -96,8 +95,8 @@ map <Leader>tl :Tlist<CR>
 map <Leader>tb :TagbarToggle<CR>
 " 选择tag
 map <Leader>ts :tselect<CR>
-" 打开Gundo [非插入模式]
-map <Leader>gu :GundoToggle<CR>
+" 打开undotree [非插入模式]
+map <Leader>ut :UndotreeToggle<CR>
 
 " 可视模式下加各种括号和引号
 vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>

@@ -10,11 +10,6 @@
           "args": ["start"],
           "filetypes": ["sh"],
           "ignoredRootPaths": ["~"]
-        },
-        "efm": {
-            "command": "efm-langserver",
-            "args": ["-c", "~/.vim/config/plugin/coc/efm-langserver/config.yaml"],
-            "filetypes": ["eruby", "markdown"]
         }
     }
 }
