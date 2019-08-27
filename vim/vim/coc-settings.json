@@ -11,6 +11,17 @@
           "filetypes": ["sh"],
           "ignoredRootPaths": ["~"]
         }
+    },
+    "snippets": {
+        "ultisnips": {
+            "directories": [
+                "snippets/custom",
+                "snippets/UltiSnips"
+            ]
+        },
+        "snippets": {
+            "author": "lightxue"
+        }
     }
 }
 

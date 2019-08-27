@@ -42,7 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'uarun/vim-protobuf', { 'for': 'protobuf' }
 Plug 'sheerun/vim-polyglot' "多文件格式支持
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']  }
- Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 call plug#end()
 
