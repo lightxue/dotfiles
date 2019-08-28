@@ -32,7 +32,7 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'lightxue/SwissCalc'
 Plug 'andymass/vim-matchup'
-Plug 'vim-scripts/molokai'
+Plug 'flazz/vim-colorschemes'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
 Plug 'luochen1990/rainbow'
@@ -74,3 +74,5 @@ call plug#end()
 " go get github.com/mattn/efm-langserver
 " coc-emoji emoji for markdown
 " coc-source review
+" coc-word
+" CocInstall coc-translator
