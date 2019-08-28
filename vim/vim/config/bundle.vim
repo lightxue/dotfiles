@@ -22,7 +22,7 @@ Plug 'vim-scripts/Mark'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/SingleCompile'
 Plug 'vim-scripts/Tagbar', { 'on': 'TagbarToggle' }
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine', { 'for': ['python', 'yaml', 'json'] }
 Plug 'vim-scripts/ZenCoding.vim', { 'for': 'html' }
