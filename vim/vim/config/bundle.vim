@@ -43,6 +43,7 @@ Plug 'uarun/vim-protobuf', { 'for': 'protobuf' }
 Plug 'sheerun/vim-polyglot' "多文件格式支持
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']  }
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -52,9 +53,10 @@ call plug#end()
 " nerd tree  o
 " formatter
 " nnn.vim
-" matchup
+" matchup custom like @startuml
 " coc-pairs
 " mg979/vim-visual-multi
+" vim repl
 
 " coc-json for json.
 " coc-tsserver for javascript and typescript.
@@ -70,3 +72,5 @@ call plug#end()
 " coc-vimlsp for viml.
 " npm i -g bash-language-server
 " go get github.com/mattn/efm-langserver
+" coc-emoji emoji for markdown
+" coc-source review

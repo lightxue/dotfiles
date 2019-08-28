@@ -1,6 +1,7 @@
 *.zip
 *.pyc
 vim/vim/bundle/
+vim/vim/sessions/
 *.tar.bz2
 *.tar.gz
 *.tgz
