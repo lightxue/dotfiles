@@ -4,7 +4,6 @@ call plug#begin('~/.vim/bundle')
 
 "补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
 Plug 'Chiel92/vim-autoformat' " TODO
 Plug 'vim-scripts/scratch.vim'
@@ -25,7 +24,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine', { 'for': ['python', 'yaml', 'json', 'javascript'] }
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'vim-scripts/auto_mkdir'
-Plug 'godlygeek/tabular' " TODO
 Plug 'junegunn/vim-easy-align'
 Plug 'lightxue/SwissCalc'
 Plug 'andymass/vim-matchup'
@@ -35,7 +33,7 @@ Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot' "多文件格式支持
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']  }
+Plug 'liuchengxu/vim-which-key'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'jiangmiao/auto-pairs'
 
