@@ -30,9 +30,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-" inoremap <silent><expr> <c-space> coc#refresh()
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -62,11 +59,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>dr <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>fo  <Plug>(coc-format-selected)
-nmap <leader>fo  <Plug>(coc-format-selected)
+xmap <leader>df  <Plug>(coc-format-selected)
+nmap <leader>df  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -77,13 +74,13 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>da  <Plug>(coc-codeaction-selected)
+nmap <leader>da  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>dac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>dx  <Plug>(coc-fix-current)
 
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent> <TAB> <Plug>(coc-range-select)
@@ -92,6 +89,7 @@ xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
+noremap <F3> :Format<CR>
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
@@ -102,23 +100,25 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" " Using CocList
-" " Show all diagnostics
-" nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" " Manage extensions
-" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" " Show commands
-" nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" " Find symbol of current document
-" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" " Search workspace symbols
-" nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" " Do default action for next item.
-" nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" " Do default action for previous item.
-" nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" " Resume latest coc list
-" nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <Leader>dda  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <Leader>dde  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <Leader>ddc  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <Leader>ddo  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <Leader>dds  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <Leader>ddj  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <Leader>ddk  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <Leader>ddp  :<C-u>CocListResume<CR>
+" yank ring
+nnoremap <silent> <Leader>ddy  :<C-u>CocList -A --normal yank<cr>
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -135,15 +135,4 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
+nmap <Leader>fy <Plug>(coc-translator-p)

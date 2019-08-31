@@ -14,11 +14,6 @@ source $VIMRUNTIME/ftplugin/man.vim
 call SingleCompile#SetCompilerTemplate('python', 'python3', 'CPython 3', 'python3', '', '')
 call SingleCompile#SetPriority('python', 'python3', 40)
 
-noremap <F3> :Autoformat<CR>
-"let g:formatdef_sql = '"sqlformat --reindent --indent_width 4 --use_space_around_operators --keywords upper --identifiers lower -"'
-let g:formatdef_sql = '"sqlfmt --use-spaces --tab-width 4"'
-let g:formatters_sql = ['sql']
-
 let g:indentLine_enabled = 1
 
 let g:Lf_ShortcutF = '<leader>ff'

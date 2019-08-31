@@ -5,7 +5,6 @@ call plug#begin('~/.vim/bundle')
 "补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
-Plug 'Chiel92/vim-autoformat' " TODO
 Plug 'vim-scripts/scratch.vim'
 Plug 'tpope/vim-repeat'
 Plug 'mg979/vim-visual-multi'
@@ -41,14 +40,11 @@ call plug#end()
 
 " TODO
 " snippets
-" coc-yank
 " nerd tree  o
-" formatter
 " nnn.vim
-" matchup custom like @startuml
-" coc-pairs
 " mg979/vim-visual-multi
 " vim repl
+" popup meme colorschemes
 
 " coc-json for json.
 " coc-tsserver for javascript and typescript.
