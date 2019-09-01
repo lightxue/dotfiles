@@ -33,5 +33,6 @@ let g:repl_exit_commands = {
 let g:repl_cursor_down = 1
 let g:repl_python_automerge = 1
 nnoremap <leader>rr :REPLToggle<Cr>
+tnoremap <C-n> <C-w>N
 let g:sendtorepl_invoke_key = "<leader>rs" " repl send
 let g:repl_position = 3
