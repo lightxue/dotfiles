@@ -51,27 +51,24 @@ call plug#end()
 
 " TODO
 " snippets
-" nerd tree  o
-" nnn.vim
-" mg979/vim-visual-multi
-" vim repl
-" popup meme colorschemes
+" nerd tree failed
+" vim-visual-multi
 
-" coc-json for json.
-" coc-tsserver for javascript and typescript.
-" coc-html for html, handlebars and razor.
-" coc-css for css, scss and less.
-" coc-vetur for vue, use vetur.
-" coc-yaml for yaml
-" coc-python for python, extension forked from vscode-python.
-" coc-highlight provides default document symbol highlighting and color support.
-" coc-snippets provides snippets solution.
-" coc-git provides git integration.
-" coc-yank provides yank highlights & history.
-" coc-vimlsp for viml.
-" npm i -g bash-language-server
-" coc-emoji emoji for markdown
-" coc-source review
-" coc-word
-" coc-sql
-" CocInstall coc-translator
+" CoCInstal coc-marketplace
+" CoCInstal coc-json
+" CoCInstal coc-tsserver
+" CoCInstal coc-html
+" CoCInstal coc-css
+" CoCInstal coc-vetur
+" CoCInstal coc-yaml
+" CoCInstal coc-python
+" CoCInstal coc-highlight
+" CoCInstal coc-snippets
+" CoCInstal coc-git
+" CoCInstal coc-yank
+" CoCInstal coc-vimlsp
+" CoCInstal coc-emoji
+" CoCInstal coc-source
+" CoCInstal coc-word
+" CoCInstal coc-sql
+" CoCInstal coc-translator
