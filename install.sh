@@ -39,10 +39,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # handy tools
-sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag nnn ripgrep axel cowsay exa
+sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag nnn ripgrep axel cowsay axel
 sudo pip3 install ipython jupyter tldr mycli
 
-#sudo npm install -g diff-so-fancy
-sudo npm install -g bash-language-server
+#npm install -g diff-so-fancy
+npm install -g bash-language-server
 
 ln -s $PWD/bin ~/.dotfiles.bin
