@@ -31,13 +31,13 @@ test -e ~/.vim && rm -rf ~/.vim.bak && mv ~/.vim ~/.vim.bak
 ln -s $PWD/vim/vim/ ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
 mkdir ~/.vim/bundle
-git clone https://github.com/junegunn/vim-plug.git ~/.vim/bundle/vim-plug
+git clone https://github.com/junegunn/vim-plug.git ~/.vim/bundle/vim-plug --depth=1
 
 # install git
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
 # install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf --depth=1
 ~/.fzf/install
 
 # handy tools
