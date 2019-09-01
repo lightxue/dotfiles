@@ -4,7 +4,7 @@ set mousehide " 默认不显示鼠标
 set so=0 " 移动时光标最多离底部3行
 set ruler " 显示行号和列号
 set wildmenu " 加强命令行自动补全
-set cmdheight=1 " 命令行占1行
+" set cmdheight=1 " 命令行占1行
 set nu " 显示行号
 set lazyredraw " 减少重绘
 set hid " 放弃缓冲区时隐藏而不卸载
@@ -18,9 +18,7 @@ set magic "搜索设置相关，\v \V \m \M，详细看help
 set showmatch " 括号匹配暂时跳转
 set mat=2 " 配对符号高亮"
 set hlsearch " 高亮搜索匹配的结果
-"set showbreak=->   "折行符
-"set showbreak=↪   "折行符
-let &showbreak = '↪  '
+let &showbreak = '↪  ' " 折行符
 
 try
     "set switchbuf=usetab " 打开缓冲时在原来的窗口打开
@@ -29,7 +27,7 @@ catch
 endtry
 
 " 每行超过80个的字符用下划线标示
-au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb,*.erb,*.hs,*.vim,*.php 2match Underlined /.\%81v/
+au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb,*.erb,*.hs,*.vim,*.php,*.js 2match Underlined /.\%81v/
 
 au BufNewFile,BufRead *.jce set filetype=cpp
 au BufNewFile,BufRead *.proto set filetype=proto
@@ -68,11 +66,10 @@ set statusline+=%r   "是否是只读
 set statusline+=%h   "是否是帮助文档
 set statusline+=%w   "是否是预览窗口
 set statusline+=\ %<%F   "文件路径
-"set statusline+=\ \ %<%{getcwd()} "显示当前工作目录,%<表示过长就从该位置收缩
+set statusline+=\ ---\ %<%{getcwd()} "显示当前工作目录,%<表示过长就从该位置收缩
 set statusline+=\ %=\    "右对齐
 set statusline+=[%{strlen(&ft)?&ft:'none'} "文件类型
 set statusline+=,\ %{strlen(&fenc)?&fenc:'none'} "文件类型
-"set statusline+=,\ %{&fileencoding}  "文件编码
 set statusline+=,\ %{&fileformat}]  "文件格式
 set statusline+=\ \ %l/%L:%c  "行号\总行号:列号
 set statusline+=\ \ %b-0x%B\   "字符十进制和十六进制的ASCII值
@@ -93,27 +90,12 @@ set lbr " 打开linebreak
 set tw=0 " textwidth, 一行的最大宽度
 set list " 显示不可见字符"
 set lcs=tab:▸-,trail:⌴ " tab用+---显示，行末空格用-显示
-"set lcs=tab:+-,trail:- " tab用+---显示，行末空格用-显示
-set ai " autoindent 按语法自动缩进
-set si " smartindent 开启新行时自动缩进
+set autoindent " 按语法自动缩进
+set smartindent " 开启新行时自动缩进
 set cindent " 按C的语法缩进
 set wrap  " 到屏幕边会回绕
 
-"au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
-"au BufRead,BufNewFile *.py,*.pyw set expandtab
-"fu! Select_c_style()
-    "if search('^\t', 'n', 150)
-        "set shiftwidth=8
-        "set noexpandtab
-    "el 
-        "set shiftwidth=4
-        "set expandtab
-    "en
-"endf
-"au BufRead,BufNewFile *.c,*.h,.cpp,.java,.php call Select_c_style()
 au BufRead,BufNewFile Makefile* set noexpandtab
-au BufRead,BufNewFile *.wiki set expandtab
-au FileType conque_term set nolist
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red

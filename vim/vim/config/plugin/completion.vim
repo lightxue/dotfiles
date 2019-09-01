@@ -1,3 +1,4 @@
+" === coc.nvim ===
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -59,11 +60,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>dr <Plug>(coc-rename)
+nnoremap <leader>dr <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>df  <Plug>(coc-format-selected)
-nmap <leader>df  <Plug>(coc-format-selected)
+xnoremap <leader>df  <Plug>(coc-format-selected)
+nnoremap <leader>df  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -74,16 +75,16 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>da  <Plug>(coc-codeaction-selected)
-nmap <leader>da  <Plug>(coc-codeaction-selected)
+xnoremap <leader>da  <Plug>(coc-codeaction-selected)
+nnoremap <leader>da  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
-nmap <leader>dac  <Plug>(coc-codeaction)
+nnoremap <leader>dac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>dx  <Plug>(coc-fix-current)
+nnoremap <leader>dx  <Plug>(coc-fix-current)
 
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
+nnoremap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
@@ -117,6 +118,8 @@ nnoremap <silent> <Leader>ddj  :<C-u>CocNext<CR>
 nnoremap <silent> <Leader>ddk  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <Leader>ddp  :<C-u>CocListResume<CR>
+" snippets
+nnoremap <silent> <Leader>ddn  :<C-u>CocList snippets<CR>
 " yank ring
 nnoremap <silent> <Leader>ddy  :<C-u>CocList -A --normal yank<cr>
 
@@ -135,4 +138,6 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-nmap <Leader>fy <Plug>(coc-translator-p)
+nnoremap <Leader>fy <Plug>(coc-translator-p)
+
+autocmd FileType json syntax match Comment +\/\/.\+$+

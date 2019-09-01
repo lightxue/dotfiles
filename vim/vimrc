@@ -5,14 +5,11 @@
 
 set backupcopy=yes
 
-"let g:dev_computer = 1
+source ~/.vim/config/bundle.vim " 先装插件，保证自定义配置优先级
+source ~/.vim/config/color.vim
+source ~/.vim/config/general.vim
+source ~/.vim/config/interface.vim
+source ~/.vim/config/shortcuts.vim
+runtime! config/plugin/**/*.vim
 
-runtime! config/**/*.vim
-
-" ~/.vim/config
-"
-" 其它人可能不习惯的设置恢复
-" set nolist
-" iunmap jk
-
-" vim: shiftwidth=4
+" vim:set expandtab shiftwidth=4 tabstop=4:

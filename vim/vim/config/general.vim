@@ -19,25 +19,6 @@ set wildignore+=*/.hg/*,*/.svn/*,*/.neocon/*
 set tags=./tags;/,tags,./**/tags "查找tags文件路径
 set tags+=~/.vim/**/tags
 
-"" 配置不同操作系统时需要的变量
-"if has("win32")
-"    "let g:_vimfiles = $VIM."/vimfiles"
-"    "let g:_vimrc = $VIM."/_vimrc"
-"    let g:_vimfiles = "~/.vim"
-"    let g:_vimrc = "~/.vimrc"
-"else
-"    let g:_vimfiles = "~/.vim"
-"    let g:_vimrc = "~/.vimrc"
-"endif
-
-"" windows上如果装了cygwin，设置shell为mintty
-"if has("win32")
-"  if filereadable("D:/cygwin/bin/mintty.exe")
-"    set shell=D:/cygwin/bin/mintty.exe
-"    set shellcmdflag=-i\ /Cygwin-Terminal.ico\ -
-"  endif
-"endif
-
 " 记录上次打开文件位置
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
