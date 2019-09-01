@@ -66,7 +66,7 @@ set statusline+=%r   "是否是只读
 set statusline+=%h   "是否是帮助文档
 set statusline+=%w   "是否是预览窗口
 set statusline+=\ %<%F   "文件路径
-set statusline+=\ ---\ %<%{getcwd()} "显示当前工作目录,%<表示过长就从该位置收缩
+" set statusline+=\ ---\ %<%{getcwd()} "显示当前工作目录,%<表示过长就从该位置收缩
 set statusline+=\ %=\    "右对齐
 set statusline+=[%{strlen(&ft)?&ft:'none'} "文件类型
 set statusline+=,\ %{strlen(&fenc)?&fenc:'none'} "文件类型
