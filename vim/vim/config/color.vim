@@ -10,21 +10,15 @@ if has("gui_running")
     let psc_style='cool'
 endif
 
-" 设置当前行当前列高亮
+" 设置当前行当前列高亮颜色
+set nocursorline
+set nocursorcolumn
 if has("gui_running")
-    set cursorline
-    set cursorcolumn
     hi cursorline guibg=#191E2F
     hi CursorColumn guibg=#191E2F
 else
-    "set nocursorline
-    "set nocursorcolumn
-    set cursorline
-    set cursorcolumn
     hi cursorline guibg=#191E2F
     hi CursorColumn guibg=#191E2F
-    "hi cursorline ctermbg=LightMagenta
-    "hi CursorColumn ctermbg=LightMagenta
 endif
 
 if &term =~ "xterm"
