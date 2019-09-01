@@ -19,6 +19,7 @@ sudo pip3 install thefuck
 
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $PWD/zsh/zshrc ~/.zshrc
+test -e ~/.zsh && rm -rf ~/.zsh.bak && mv ~/.zsh ~/.zsh.bak
 ln -s $PWD/zsh/zsh ~/.zsh
 
 # install tmux
@@ -26,6 +27,7 @@ sudo apt-get install -y tmux
 ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # install vim
+test -e ~/.vim && rm -rf ~/.vim.bak && mv ~/.vim ~/.vim.bak
 ln -s $PWD/vim/vim/ ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
 mkdir ~/.vim/bundle
@@ -45,4 +47,5 @@ sudo pip3 install ipython jupyter tldr mycli
 #npm install -g diff-so-fancy
 npm install -g bash-language-server
 
+test -e ~/.dotfiles.bin && rm -rf ~/.dotfiles.bin.bak && mv ~/.dotfiles.bin ~/.dotfiles.bin.bak
 ln -s $PWD/bin ~/.dotfiles.bin
