@@ -32,9 +32,11 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-scripts/scratch.vim'
 
 "文件/系统
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mcchrish/nnn.vim'
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
 Plug 'scrooloose/nerdtree'
