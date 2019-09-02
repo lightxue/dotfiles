@@ -1,3 +1,29 @@
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 编码与换行
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set ambiwidth=double " 使用 US-ASCII 字符两倍的宽度，帮助识别CJK
+set fo+=mB " formatoptions
+set ffs=unix,dos,mac " 文件格式支持
+scriptencoding utf-8
+set encoding=utf-8 " Vim内部使用编码
+" 编码识别顺序
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+" 不同终端使用编码不同
+if has("win32")
+    set termencoding=gbk
+else
+    set termencoding=utf-8
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UI展示
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 提示和菜单使用中文
+" set langmenu=zh_CN.UTF-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+" language messages zh_CN.utf-8
 set cc=0  " 不高亮任何列
 set showcmd " 显示输入的字符
 set mousehide " 默认不显示鼠标
@@ -18,7 +44,6 @@ set magic "搜索设置相关，\v \V \m \M，详细看help
 set showmatch " 括号匹配暂时跳转
 set mat=2 " 配对符号高亮"
 set hlsearch " 高亮搜索匹配的结果
-let &showbreak = '↪  ' " 折行符
 
 try
     "set switchbuf=usetab " 打开缓冲时在原来的窗口打开
@@ -32,28 +57,6 @@ au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb
 au BufNewFile,BufRead *.jce set filetype=cpp
 au BufNewFile,BufRead *.proto set filetype=proto
 au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 编码与换行
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set ambiwidth=double " 使用 US-ASCII 字符两倍的宽度，帮助识别CJK
-set fo+=mB " formatoptions
-set ffs=unix,dos,mac " 文件格式支持
-set encoding=utf-8 " Vim内部使用编码
-" 编码识别顺序
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-" 不同终端使用编码不同
-if has("win32")
-    set termencoding=gbk
-else
-    set termencoding=utf-8
-endif
-
-" 提示和菜单使用中文
-" set langmenu=zh_CN.UTF-8
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-" language messages zh_CN.utf-8
 
 
 """"""""""""""""""""""""""""""
@@ -88,8 +91,15 @@ set smarttab " 行首的tab用合适的空白符代替
 set tabstop=4 " 文件里tab代表的空格数
 set lbr " 打开linebreak
 set tw=0 " textwidth, 一行的最大宽度
+set showbreak=↪\ 
 set list " 显示不可见字符"
-set lcs=tab:▸-,trail:⌴ " tab用+---显示，行末空格用-显示
+if exists('g:nerd_font')
+    set listchars=tab:▸-,nbsp:.,trail:␣,extends:⟩,precedes:⟨
+    " set listchars=tab:▸-,eol:↲,nbsp:␣,trail:.,extends:⟩,precedes:⟨
+    " set lcs=tab:▸-,trail:⌴ " 特殊字符展示
+else
+    set listchars=tab:+-,trail:.
+endif
 set autoindent " 按语法自动缩进
 set smartindent " 开启新行时自动缩进
 set cindent " 按C的语法缩进

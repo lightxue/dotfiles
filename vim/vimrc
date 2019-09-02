@@ -4,6 +4,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set backupcopy=yes
+let g:nerd_font = 1
 
 source ~/.vim/config/bundle.vim " 先装插件，保证自定义配置优先级
 source ~/.vim/config/color.vim

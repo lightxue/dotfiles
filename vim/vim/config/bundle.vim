@@ -32,11 +32,9 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-scripts/scratch.vim'
 
 "文件/系统
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mcchrish/nnn.vim'
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
 Plug 'scrooloose/nerdtree'
@@ -44,6 +42,10 @@ Plug 'sillybun/vim-repl'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
+if exists('g:nerd_font')
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'ryanoasis/vim-devicons'
+endif
 
 " 其它
 Plug 'flazz/vim-colorschemes'
