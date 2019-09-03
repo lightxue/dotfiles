@@ -4,7 +4,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set backupcopy=yes
-let g:nerd_font = 1
+if exists('$VIM_NERD_FONT')
+    let g:nerd_font = 1
+endif
 
 source ~/.vim/config/bundle.vim " 先装插件，保证自定义配置优先级
 source ~/.vim/config/color.vim
@@ -12,5 +14,6 @@ source ~/.vim/config/general.vim
 source ~/.vim/config/interface.vim
 source ~/.vim/config/shortcuts.vim
 runtime! config/plugin/**/*.vim
+" ~/.vim/config/plugin/
 
 " vim:set expandtab shiftwidth=4 tabstop=4:

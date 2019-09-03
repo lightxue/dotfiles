@@ -44,6 +44,7 @@ set magic "搜索设置相关，\v \V \m \M，详细看help
 set showmatch " 括号匹配暂时跳转
 set mat=2 " 配对符号高亮"
 set hlsearch " 高亮搜索匹配的结果
+set conceallevel=3
 
 try
     "set switchbuf=usetab " 打开缓冲时在原来的窗口打开
@@ -94,11 +95,11 @@ set tw=0 " textwidth, 一行的最大宽度
 set showbreak=↪\ 
 set list " 显示不可见字符"
 if exists('g:nerd_font')
-    set listchars=tab:▸-,nbsp:.,trail:␣,extends:⟩,precedes:⟨
+    set listchars=tab:▸-,nbsp:␣,trail:⌴,extends:⟩,precedes:⟨
     " set listchars=tab:▸-,eol:↲,nbsp:␣,trail:.,extends:⟩,precedes:⟨
     " set lcs=tab:▸-,trail:⌴ " 特殊字符展示
 else
-    set listchars=tab:+-,trail:.
+    set listchars=tab:+-,nbsp:␣,trail:.
 endif
 set autoindent " 按语法自动缩进
 set smartindent " 开启新行时自动缩进
