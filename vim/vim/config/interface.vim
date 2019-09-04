@@ -44,7 +44,6 @@ set magic "搜索设置相关，\v \V \m \M，详细看help
 set showmatch " 括号匹配暂时跳转
 set mat=2 " 配对符号高亮"
 set hlsearch " 高亮搜索匹配的结果
-set conceallevel=3
 
 try
     "set switchbuf=usetab " 打开缓冲时在原来的窗口打开

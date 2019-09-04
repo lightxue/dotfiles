@@ -35,16 +35,18 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/scratch.vim'
 
 "文件/系统
-Plug 'mcchrish/nnn.vim'
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
-Plug 'scrooloose/nerdtree'
 Plug 'sillybun/vim-repl'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
+Plug 'mcchrish/nnn.vim'
+Plug 'scrooloose/nerdtree'
 if exists('g:nerd_font')
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 endif
 
 " 其它
