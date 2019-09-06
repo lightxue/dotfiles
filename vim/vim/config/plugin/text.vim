@@ -1,5 +1,5 @@
 " vim-easy-align
-vnoremap <Enter> <Plug>(EasyAlign)
+vmap <Enter> <Plug>(EasyAlign)
 
 " LeaderF
 let g:Lf_ShortcutF = '<Leader>ff'

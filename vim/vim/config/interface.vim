@@ -93,13 +93,7 @@ set lbr " 打开linebreak
 set tw=0 " textwidth, 一行的最大宽度
 set showbreak=↪\ 
 set list " 显示不可见字符"
-if exists('g:nerd_font')
-    set listchars=tab:▸-,nbsp:␣,trail:⌴,extends:⟩,precedes:⟨
-    " set listchars=tab:▸-,eol:↲,nbsp:␣,trail:.,extends:⟩,precedes:⟨
-    " set lcs=tab:▸-,trail:⌴ " 特殊字符展示
-else
-    set listchars=tab:+-,nbsp:␣,trail:.
-endif
+set listchars=tab:▸-,nbsp:.,trail:⌴
 set autoindent " 按语法自动缩进
 set smartindent " 开启新行时自动缩进
 set cindent " 按C的语法缩进
