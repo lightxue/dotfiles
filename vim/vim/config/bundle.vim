@@ -8,7 +8,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " 语言
-Plug 'Yggdroot/indentLine', { 'for': ['python', 'yaml', 'json', 'javascript'] }
+Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot' "多文件格式支持

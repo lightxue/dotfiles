@@ -10,6 +10,7 @@ nnoremap <Leader>av :AV<CR>
 
 " indentLine
 let g:indentLine_enabled = 1
+let g:indentLine_fileType = ['python', 'yaml', 'json', 'javascript']
 
 " nerdcommenter
 " Add spaces after comment delimiters by default
