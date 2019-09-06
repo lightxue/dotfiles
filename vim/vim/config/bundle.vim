@@ -37,6 +37,7 @@ Plug 'vim-scripts/scratch.vim'
 "文件/系统
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
 Plug 'sillybun/vim-repl'
+Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/Rename'

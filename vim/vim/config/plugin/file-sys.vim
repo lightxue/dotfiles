@@ -42,3 +42,12 @@ let g:repl_position = 3
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
 endif
+
+" vim-fugitive
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gl :Gpull<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gv :GV<CR>
+nnoremap <Leader>gb :Gblame<CR>
+set statusline^=%{FugitiveStatusline()}%{get(b:,'coc_current_function','')}

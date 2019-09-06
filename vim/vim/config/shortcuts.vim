@@ -70,7 +70,7 @@ endif
 nnoremap <Leader>ms :call ToggleMouse()<CR>
 
 " 某些时候自动换目录不方便
-nnoremap <Leader>ad :call ToggleAutochdir()<CR>
+" nnoremap <Leader>ad :call ToggleAutochdir()<CR>
 
 " 当前行和列高亮开关
 nnoremap <Leader>hc :call ToggleCursorLine()<CR>
