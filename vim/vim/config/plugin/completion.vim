@@ -122,6 +122,8 @@ nnoremap <silent> <Leader>ddp  :<C-u>CocListResume<CR>
 nnoremap <silent> <Leader>ddn  :<C-u>CocList snippets<CR>
 " yank ring
 nnoremap <silent> <Leader>ddy  :<C-u>CocList -A --normal yank<cr>
+" marketplace
+nnoremap <silent> <Leader>ddm  :<C-u>CocList marketplace<cr>
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -138,6 +140,7 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-nnoremap <Leader>fy <Plug>(coc-translator-p)
+" nmap <silent><leader>fy :call CocActionAsync('doHover')<CR>
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 
 autocmd FileType json syntax match Comment +\/\/.\+$+

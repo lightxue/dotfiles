@@ -78,4 +78,4 @@ call plug#end()
 " CoCInstal coc-source
 " CoCInstal coc-word
 " CoCInstal coc-sql
-" CoCInstal coc-translator
+" CoCInstal coc-ecdit
