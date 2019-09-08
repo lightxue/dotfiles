@@ -7,3 +7,6 @@
 [submodule "zsh/zsh/plugins/zsh-interactive-cd"]
 	path = zsh/zsh/plugins/zsh-interactive-cd
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
+[submodule "zsh/zsh/plugins/z"]
+	path = zsh/zsh/plugins/z
+	url = https://github.com/rupa/z.git

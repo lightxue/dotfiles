@@ -46,12 +46,13 @@ ZSH_CUSTOM=~/.zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-         fasd
          thefuck
          zsh-syntax-highlighting
+         z
          httpie
          history
          pip
+         npm
          supervisor
          extract
          cp
@@ -134,7 +135,7 @@ save_alias cat bat 'bat --style plain --paging never'
 save_alias pping prettyping
 save_alias l exa 'exa --long -a'
 save_alias ll exa 'exa --long'
-save_alias j fasd_cd 'fasd_cd -d' # cd, same functionality as j in autojump
+save_alias j z 'z' # cd, same functionality as j in autojump
 
 # 设置默认编辑器
 export VISUAL=vim
@@ -158,12 +159,6 @@ src_file ~/.zsh-custom
 
 # fzf
 src_file ~/.fzf.zsh
-#src_file ~/.zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
-# fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
-function jj() {
-    local dir
-    dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
-}
 
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
