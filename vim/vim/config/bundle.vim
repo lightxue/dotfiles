@@ -5,6 +5,7 @@ call plug#begin('~/.vim/bundle')
 " 补全
 " Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " 语言
@@ -33,7 +34,6 @@ Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/scratch.vim'
-Plug 'yuttie/comfortable-motion.vim'
 
 "文件/系统
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
@@ -45,11 +45,6 @@ Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
 Plug 'mcchrish/nnn.vim'
 Plug 'scrooloose/nerdtree'
-if exists('g:nerd_font')
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-endif
 
 " 其它
 Plug 'flazz/vim-colorschemes'
@@ -62,21 +57,21 @@ call plug#end()
 " nerd tree failed
 " vim-visual-multi
 
-" CoCInstal coc-marketplace
-" CoCInstal coc-json
-" CoCInstal coc-tsserver
-" CoCInstal coc-html
-" CoCInstal coc-css
-" CoCInstal coc-vetur
-" CoCInstal coc-yaml
-" CoCInstal coc-python
-" CoCInstal coc-highlight
-" CoCInstal coc-snippets
-" CoCInstal coc-git
-" CoCInstal coc-yank
-" CoCInstal coc-vimlsp
-" CoCInstal coc-emoji
-" CoCInstal coc-source
-" CoCInstal coc-word
-" CoCInstal coc-sql
-" CoCInstal coc-ecdit
+" :CoCInstal coc-marketplace
+" :CoCInstal coc-json
+" :CoCInstal coc-tsserver
+" :CoCInstal coc-html
+" :CoCInstal coc-css
+" :CoCInstal coc-vetur
+" :CoCInstal coc-yaml
+" :CoCInstal coc-python
+" :CoCInstal coc-highlight
+" :CoCInstal coc-snippets
+" :CoCInstal coc-git
+" :CoCInstal coc-yank
+" :CoCInstal coc-vimlsp
+" :CoCInstal coc-emoji
+" :CoCInstal coc-source
+" :CoCInstal coc-word
+" :CoCInstal coc-sql
+" :CoCInstal coc-ecdit

@@ -140,6 +140,8 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
+let g:snips_author = 'lightxue'
+
 " nmap <silent><leader>fy :call CocActionAsync('doHover')<CR>
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 

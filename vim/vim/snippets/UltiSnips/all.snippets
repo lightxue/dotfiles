@@ -70,7 +70,7 @@ endsnippet
 # modeline form ('set') to work in languages with comment terminators
 # (/* like C */).
 snippet modeline "Vim modeline"
-vim`!v ':set '. (&expandtab ? printf('et sw=%i ts=%i', &sw, &ts) : printf('noet sts=%i sw=%i ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':'`
+vim`!v ':set '. (&expandtab ? printf('expandtab shiftwidth=%i tabstop=%i', &sw, &ts) : printf('noexpandtab softtabstop=%i shiftwidth=%i tabstop=%i', &sts, &sw, &ts)) . (&tw ? ' textwidth='. &tw : '') . ':'`
 endsnippet
 
 #########
@@ -97,7 +97,7 @@ snippet datetime "YYYY-MM-DD hh:mm:ss" w
 endsnippet
 
 snippet todo "TODO comment" bw
-`!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%d-%m-%y')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
+`!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%Y-%m-%d')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
 endsnippet
 
 ##########

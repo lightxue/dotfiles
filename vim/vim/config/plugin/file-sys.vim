@@ -37,12 +37,6 @@ tnoremap <C-n> <C-w>N
 let g:sendtorepl_invoke_key = "<leader>rs" " repl send
 let g:repl_position = 3
 
-" vim-devicons
-" after a re-source, fix syntax matching issues (concealing brackets):
-if exists('g:loaded_webdevicons')
-    call webdevicons#refresh()
-endif
-
 " vim-fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>

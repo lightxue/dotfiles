@@ -14,10 +14,14 @@
     },
     "snippets": {
         "ultisnips": {
+            "enable": true,
             "directories": [
                 "snippets/custom",
                 "snippets/UltiSnips"
             ]
+        },
+        "snipmate": {
+            "enable": false
         },
         "snippets": {
             "author": "lightxue"
