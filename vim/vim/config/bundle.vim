@@ -33,6 +33,7 @@ Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/scratch.vim'
+Plug 'yuttie/comfortable-motion.vim'
 
 "文件/系统
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }

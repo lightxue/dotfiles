@@ -105,7 +105,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Show all diagnostics
 nnoremap <silent> <Leader>dda  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <Leader>dde  :<C-u>CocList extensions<cr>
+nnoremap <silent> <Leader>dde  :<C-u>CocList --normal extensions<cr>
 " Show commands
 nnoremap <silent> <Leader>ddc  :<C-u>CocList commands<cr>
 " Find symbol of current document
