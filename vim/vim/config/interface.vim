@@ -93,7 +93,7 @@ set lbr " 打开linebreak
 set tw=0 " textwidth, 一行的最大宽度
 set showbreak=↪\ 
 set list " 显示不可见字符"
-set listchars=tab:▸-,nbsp:.,trail:⌴
+set listchars=tab:➤-,nbsp:.,trail:⌴
 set autoindent " 按语法自动缩进
 set smartindent " 开启新行时自动缩进
 set cindent " 按C的语法缩进
