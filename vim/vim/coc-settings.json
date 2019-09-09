@@ -16,7 +16,6 @@
         "ultisnips": {
             "enable": true,
             "directories": [
-                "snippets/custom",
                 "snippets/UltiSnips"
             ]
         },

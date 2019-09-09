@@ -4,8 +4,8 @@ snippet #! "#!/usr/bin/env node" b
 #!/usr/bin/env node
 endsnippet
 
-snippet vreq "assign a CommonJS-style module to a var"
-var ${0:${1/(.+\/)*(\w+)(-|\b|$)(\..+$)?/\u$2/g}} = require('$1');
+snippet req "assign a CommonJS-style module to a const"
+const ${0:${1/(.+\/)*(\w+)(-|\b|$)(\..+$)?/\u$2/g}} = require('$1');
 endsnippet
 
 snippet ex "module.exports"

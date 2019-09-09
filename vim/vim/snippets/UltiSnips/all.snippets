@@ -40,15 +40,15 @@ $0
 endsnippet
 
 snippet fold "Insert a vim fold marker" b
-`!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]`${2:1} `!p snip.rv = get_comment_format()[2]`
+`!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]`${2:1} `!p snip.rv = get_comment_format()[2].strip()`
 endsnippet
 
 snippet foldc "Insert a vim fold close marker" b
-`!p snip.rv = get_comment_format()[0]` ${2:1}`!p snip.rv = foldmarker()[1]` `!p snip.rv = get_comment_format()[2]`
+`!p snip.rv = get_comment_format()[0]` ${2:1}`!p snip.rv = foldmarker()[1]` `!p snip.rv = get_comment_format()[2].strip()`
 endsnippet
 
 snippet foldp "Insert a vim fold marker pair" b
-`!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]` `!p snip.rv = get_comment_format()[2]`
+`!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]` `!p snip.rv = get_comment_format()[2].strip()`
 ${2:${VISUAL:Content}}
 `!p snip.rv = get_comment_format()[0]` `!p snip.rv = foldmarker()[1]` $1 `!p snip.rv = get_comment_format()[2]`
 endsnippet
@@ -96,8 +96,9 @@ snippet datetime "YYYY-MM-DD hh:mm:ss" w
 `!v strftime("%Y-%m-%d %H:%M:%S")`
 endsnippet
 
+# `!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%Y-%m-%d')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
 snippet todo "TODO comment" bw
-`!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%Y-%m-%d')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
+`!p snip.rv=get_comment_format()[0]` TODO: $0 <`!v strftime('%Y-%m-%d')` `!v g:snips_author`> `!p snip.rv=get_comment_format()[2].strip()`
 endsnippet
 
 ##########
@@ -105,6 +106,10 @@ endsnippet
 ##########
 snippet uuid "Random UUID" w
 `!p if not snip.c: import uuid; snip.rv = uuid.uuid4()`
+endsnippet
+
+snippet email "bkmgtp@gmail.com" w
+bkmgtp@gmail.com
 endsnippet
 
 # vim:ft=snippets:

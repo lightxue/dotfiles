@@ -105,4 +105,28 @@ pre_expand "create_table(snip)"
 snippet "tb(\d+x\d+)" "Customizable table" br
 endsnippet
 
+snippet pel "Pelican metadata" bs
+---
+title: ${1:title}
+date: `date '+%Y-%m-%d %H:%M:%S +08:00'`
+tags: $2
+category: $3
+slug: $4
+keywords: $5
+description: $6
+---
+
+${0:Content of your blog post}
+
+endsnippet
+
+
+snippet uml "start plantuml" !b
+@startuml
+
+$0
+
+@enduml
+endsnippet
+
 # vim:ft=snippets:
