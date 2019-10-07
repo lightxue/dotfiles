@@ -41,8 +41,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf --depth=1
 ~/.fzf/install
 
 # handy tools
-sudo apt-get install -y htop glances ack-grep httpie ctags cscope finger tree cloc aria2 silversearcher-ag nnn ripgrep axel cowsay axel
-sudo pip3 install ipython jupyter tldr mycli
+sudo apt-get install -y htop glances ack-grep ctags cscope finger tree cloc aria2 silversearcher-ag nnn ripgrep axel cowsay axel
+# brew install htop glances ctags cscope tree cloc aria2 nnn ripgrep axel cowsay axel
+sudo pip3 install ipython jupyter tldr mycli httpie
 
 #npm install -g diff-so-fancy
 npm install -g bash-language-server
