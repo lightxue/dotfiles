@@ -15,6 +15,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot' "多文件格式支持
 Plug 'vim-scripts/Tagbar', { 'on': 'TagbarToggle' }
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
+Plug 'xuhdev/SingleCompile'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
