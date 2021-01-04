@@ -47,3 +47,8 @@ let g:rainbow_conf = {
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
+
+
+call SingleCompile#ChooseCompiler('python', 'python3')
+nmap <F5> :SCCompile<cr>
+nmap <F7> :SCCompileRun<cr>

@@ -56,6 +56,8 @@ plugins=(git
          extract
          cp
          tmux
+         docker
+         docker-compose
          virtualenv
          rand-quote
          zsh-autosuggestions)
