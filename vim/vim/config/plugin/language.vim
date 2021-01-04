@@ -8,6 +8,10 @@ let g:tagbar_left=1
 nnoremap <Leader>hh :A<CR>
 nnoremap <Leader>av :AV<CR>
 
+" SingleCompile
+nnoremap <F7> :SCCompileRun<cr>
+call SingleCompile#ChooseCompiler('python', 'python3')
+
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_fileType = ['python', 'yaml', 'json', 'javascript']
