@@ -2,12 +2,14 @@
 
 PWD=`pwd`
 
+sudo apt-get update
 # install zsh
 sudo apt-get install -y zsh
 
 # install oh-my-zsh
 sudo apt-get install -y curl
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+REMOTE='https://github.com.cnpmjs.org/ohmyzsh/ohmyzsh.git' sh -c "$(curl -fsSL https://raw.staticdn.net/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # 更新子模块
 git submodule init
@@ -31,13 +33,14 @@ test -e ~/.vim && rm -rf ~/.vim.bak && mv ~/.vim ~/.vim.bak
 ln -s $PWD/vim/vim/ ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
 mkdir ~/.vim/bundle
-git clone https://github.com/junegunn/vim-plug.git ~/.vim/bundle/vim-plug --depth=1
+git clone https://github.com.cnpmjs.org/junegunn/vim-plug.git ~/.vim/bundle/vim-plug --depth=1
 
 # install git
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
 # install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf --depth=1
+git clone --depth 1 https://github.com.cnpmjs.org/junegunn/fzf.git ~/.fzf --depth=1
+sed -i 's/github.com/github.com.cnpmjs.org/g' ~/.fzf/install
 ~/.fzf/install
 
 # handy tools

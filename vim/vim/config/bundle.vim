@@ -58,21 +58,4 @@ call plug#end()
 " nerd tree failed
 " vim-visual-multi
 
-" :CoCInstal coc-marketplace
-" :CoCInstal coc-json
-" :CoCInstal coc-tsserver
-" :CoCInstal coc-html
-" :CoCInstal coc-css
-" :CoCInstal coc-vetur
-" :CoCInstal coc-yaml
-" :CoCInstal coc-python
-" :CoCInstal coc-highlight
-" :CoCInstal coc-snippets
-" :CoCInstal coc-git
-" :CoCInstal coc-yank
-" :CoCInstal coc-vimlsp
-" :CoCInstal coc-emoji
-" :CoCInstal coc-source
-" :CoCInstal coc-word
-" :CoCInstal coc-sql
-" :CoCInstal coc-ecdict
+" :CocInstall coc-marketplace coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlight coc-snippets coc-git coc-yank coc-vimlsp coc-emoji coc-word coc-sql coc-ecdict coc-go
