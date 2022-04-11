@@ -42,6 +42,7 @@ nnoremap <Leader>tm :tabmove<Space>
 
 " 空格翻页比较符合习惯
 nmap <Space> <C-D>
+vmap <Space> <C-D>
 
 " 设置tab宽度
 nnoremap <Leader>t2 :set shiftwidth=2<CR>
