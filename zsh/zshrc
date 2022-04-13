@@ -1,3 +1,4 @@
+source ~/.zplug/init.zsh
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -45,22 +46,28 @@ ZSH_CUSTOM=~/.zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-         zsh-syntax-highlighting
-         z
-         httpie
-         history
-         pip
-         npm
-         supervisor
-         extract
-         cp
-         tmux
-         docker
-         docker-compose
-         virtualenv
-         rand-quote
-         zsh-autosuggestions)
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/httpie", from:oh-my-zsh
+zplug "plugins/history", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/npm", from:oh-my-zsh
+zplug "plugins/supervisor", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "plugins/cp", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/docker-compose", from:oh-my-zsh
+zplug "plugins/virtualenv", from:oh-my-zsh
+zplug "plugins/rand-quote", from:oh-my-zsh
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "changyuheng/zsh-interactive-cd"
+zplug "rupa/z"
+zplug "BlaineEXE/zsh-cmd-status"
+zplug "zpm-zsh/ls"
 
 # User configuration
 
@@ -134,8 +141,8 @@ alias gbk='iconv -f gbk -t utf8'
 
 save_alias cat bat 'bat --style plain --paging never'
 save_alias pping prettyping
-save_alias l exa 'exa --long -a'
-save_alias ll exa 'exa --long'
+# save_alias l exa 'exa --long -a'
+# save_alias ll exa 'exa --long'
 save_alias j z 'z' # cd, same functionality as j in autojump
 
 # 设置默认编辑器
@@ -164,3 +171,18 @@ src_file ~/.fzf.zsh
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
 fi
+
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
