@@ -152,12 +152,7 @@ export EDITOR=vim
 # export LC_ALL=zh_CN.UTF-8
 
 # 设置PATH
-export PATH="$PATH:/usr/sbin:/usr/local/sbin"
-bin="$HOME/.dotfiles.bin"
-case `uname -s` in
-    Linux*) export PATH="$PATH:$bin/linux" ;;
-    Darwin*) export PATH="$PATH:$bin/mac"  ;;
-esac
+export PATH="$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin"
 
 function src_file() {
     [ -f $1 ] && source $1

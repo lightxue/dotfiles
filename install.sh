@@ -12,7 +12,7 @@ sudo apt-get install -y curl
 REMOTE='https://github.com/ohmyzsh/ohmyzsh.git' sh -c "$(curl -fsSL https://raw.staticdn.net/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # install zplug
-$ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 sudo apt-get install -y python3 python3-pip
 
