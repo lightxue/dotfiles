@@ -139,10 +139,7 @@ alias mi="make install"
 alias agi="sudo apt-get install -y"
 alias gbk='iconv -f gbk -t utf8'
 
-save_alias cat bat 'bat --style plain --paging never'
-save_alias pping prettyping
-# save_alias l exa 'exa --long -a'
-# save_alias ll exa 'exa --long'
+save_alias sed gsed # mac 使用GNU sed
 save_alias j z 'z' # cd, same functionality as j in autojump
 
 # 设置默认编辑器
@@ -181,3 +178,4 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
