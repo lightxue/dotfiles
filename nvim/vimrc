@@ -1,0 +1,19 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"light13's vim config
+"2010/12/16 21:56:07
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set backupcopy=yes
+if exists('$VIM_NERD_FONT')
+    let g:nerd_font = 1
+endif
+
+source ~/.config/nvim/vim/config/bundle.vim " 先装插件，保证自定义配置优先级
+source ~/.config/nvim/vim/config/color.vim
+source ~/.config/nvim/vim/config/general.vim
+source ~/.config/nvim/vim/config/interface.vim
+source ~/.config/nvim/vim/config/shortcuts.vim
+runtime! vim/config/plugin/**/*.vim
+" ~/.config/nvim/vim/config/plugin/
+
+" vim:set expandtab shiftwidth=4 tabstop=4:
