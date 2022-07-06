@@ -23,6 +23,10 @@ nnoremap <Leader>fu :set ff=unix<CR>
 nnoremap j gj
 nnoremap k gk
 
+" 正则 very magic
+nnoremap / /\v
+vnoremap / /\v
+
 " 有多个窗口时方便移动
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
