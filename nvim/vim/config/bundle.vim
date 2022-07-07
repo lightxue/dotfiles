@@ -1,6 +1,6 @@
 
 source ~/.vim/bundle/vim-plug/plug.vim
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/vim/bundle')
 
 " 补全
 " Plug 'honza/vim-snippets'
@@ -13,6 +13,13 @@ Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+Plug 'hrsh7th/cmp-buffer'
+Plug 'uga-rosa/cmp-dictionary'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'dmitmel/cmp-cmdline-history'
+Plug 'tamago324/cmp-zsh'
+Plug 'hrsh7th/cmp-nvim-lua'
 
 " 语言
 Plug 'Yggdroot/indentLine'
@@ -50,6 +57,7 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/scratch.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'jdhao/better-escape.vim'
+Plug 'rcarriga/nvim-notify'
 
 "文件/系统
 Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }

@@ -186,8 +186,33 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-  },
+    { name = 'path' },
+    { name = 'dictionary', keyword_length = 2 },
+    { name = 'zsh' },
+    { name = 'nvim_lua' }
+  }, {
+    { name = 'buffer' },
+  }
 }
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' },
+    { name = 'cmdline_history' }
+  }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' },
+    { name = 'cmdline_history' }
+  })
+})
 
 require('neoscroll').setup()
 EOF
