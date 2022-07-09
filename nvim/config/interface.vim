@@ -2,7 +2,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 编码与换行
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set ambiwidth=double " 使用 US-ASCII 字符两倍的宽度，帮助识别CJK
+" set ambiwidth=double " 使用 US-ASCII 字符两倍的宽度，帮助识别CJK
 set fo+=mB " formatoptions
 set ffs=unix,dos,mac " 文件格式支持
 scriptencoding utf-8
@@ -32,7 +32,7 @@ set ruler " 显示行号和列号
 set wildmenu " 加强命令行自动补全
 " set cmdheight=1 " 命令行占1行
 set nu " 显示行号
-" set lazyredraw " 减少重绘
+set lazyredraw " 减少重绘
 set hid " 放弃缓冲区时隐藏而不卸载
 set backspace=eol,start,indent
 set whichwrap=b,s,<,>,[,] " 使指定的左右移动光标的键在行首或行尾可以移到前一行或者后一行
@@ -91,9 +91,9 @@ set smarttab " 行首的tab用合适的空白符代替
 set tabstop=4 " 文件里tab代表的空格数
 set lbr " 打开linebreak
 set tw=0 " textwidth, 一行的最大宽度
-" set showbreak=↪\ 
+set showbreak=↪\ 
 set list " 显示不可见字符"
-set listchars=tab:➤-,nbsp:.,trail:⌴
+set listchars=tab:>-,nbsp:.,trail:⌴
 set autoindent " 按语法自动缩进
 set smartindent " 开启新行时自动缩进
 set cindent " 按C的语法缩进

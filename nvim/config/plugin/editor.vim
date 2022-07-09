@@ -1,9 +1,5 @@
 " undotree
-" nnoremap <Leader>ut :UndotreeToggle<CR>
-set undofile
-set undodir=~/.vim_undo
-
-nnoremap <Leader>ut :MundoToggle<CR>
+nnoremap <Leader>ut :UndotreeToggle<CR>
 
 " scratch
 nnoremap <Leader>ch :Scratch<CR>
@@ -13,3 +9,5 @@ let g:fencview_autodetect = 0
 
 " vim-which-key
 nnoremap <silent> <leader> :WhichKey ','<CR>
+
+let g:better_escape_shortcut = 'jk'

@@ -1,6 +1,6 @@
 
-source ~/.vim/bundle/vim-plug/plug.vim
-call plug#begin('~/.config/nvim/vim/bundle')
+source ~/.config/nvim/bundle/vim-plug/plug.vim
+call plug#begin('~/.config/nvim/bundle')
 
 " 补全
 " Plug 'honza/vim-snippets'
@@ -14,7 +14,7 @@ Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 Plug 'hrsh7th/cmp-buffer'
-Plug 'uga-rosa/cmp-dictionary'
+Plug 'uga-rosa/cmp-dictionary' " TODO 添加词典
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'dmitmel/cmp-cmdline-history'
@@ -51,17 +51,19 @@ Plug 'kylechui/nvim-surround'
 " 编辑器设置
 Plug 'liuchengxu/vim-which-key'
 Plug 'mbbill/fencview'
-" Plug 'mbbill/undotree'
-Plug 'simnalamburt/vim-mundo'
+Plug 'mbbill/undotree'
+" Plug 'simnalamburt/vim-mundo'
 Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/scratch.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'jdhao/better-escape.vim'
 Plug 'rcarriga/nvim-notify'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 "文件/系统
-Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
-Plug 'sillybun/vim-repl'
+" Plug 'pthrasher/conqueterm-vim', { 'on': ['ConqueTermVSplit', 'ConqueTermTab'] }
+" Plug 'sillybun/vim-repl'
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
