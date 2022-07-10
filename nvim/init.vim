@@ -6,8 +6,9 @@ source ~/.config/nvim/config/general.vim
 source ~/.config/nvim/config/interface.vim
 source ~/.config/nvim/config/shortcuts.vim
 runtime! config/plugin/**/*.vim
-" ~/.config/nvim/vim/config/plugin/
+" ~/.config/nvim/config/plugin/
 
+" ~/.config/nvim/lua
 lua require('completion')
 lua require('editor')
 lua require('file-sys')

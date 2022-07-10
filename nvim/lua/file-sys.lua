@@ -4,6 +4,9 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
+        { key = "C", action = "cd" },
+        { key = "s", action = "vsplit" },
+        { key = "O", action = "system_open" },
       },
     },
   },
