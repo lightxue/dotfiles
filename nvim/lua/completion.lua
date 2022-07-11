@@ -53,7 +53,7 @@ local servers = {
     'jsonls',
     'lemminx',
     'pyright',
-    'remark_ls',
+    -- 'remark_ls',
     'sqls',
     'sumneko_lua',
     'texlab',
@@ -129,7 +129,7 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'dictionary', keyword_length = 2 },
+        -- { name = 'dictionary', keyword_length = 2 },
         { name = 'zsh' },
         { name = 'nvim_lua' }
     }, {
@@ -162,4 +162,4 @@ require("cmp_dictionary").setup({
     },
 })
 
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load('bundle/friendly-snippets/snippets')
