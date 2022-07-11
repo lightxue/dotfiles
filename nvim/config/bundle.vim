@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/bundle')
 
 " 补全
 Plug 'jiangmiao/auto-pairs'
+" Plug 'windwp/nvim-autopairs'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
@@ -32,6 +33,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'xuhdev/SingleCompile'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
@@ -47,7 +49,9 @@ Plug 'tpope/vim-repeat'
 Plug 'kylechui/nvim-surround'
 
 " 编辑器设置
-Plug 'liuchengxu/vim-which-key'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/which-key.nvim'
+" Plug 'liuchengxu/vim-which-key'
 Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 " Plug 'simnalamburt/vim-mundo'
@@ -66,12 +70,15 @@ Plug 'f-person/git-blame.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
 " 其它
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
+Plug 'sainnhe/gruvbox-material'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'lightxue/SwissCalc'
 
 call plug#end()

@@ -62,26 +62,26 @@ au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 """"""""""""""""""""""""""""""
 " 状态栏设置，有了powerline不再使用
 """"""""""""""""""""""""""""""
-set laststatus=2 "状态栏有两行
-set statusline=\     "初始化为一个空格
-set statusline+=%m   "是否被修改
-set statusline+=%r   "是否是只读
-set statusline+=%h   "是否是帮助文档
-set statusline+=%w   "是否是预览窗口
-set statusline+=\ %<%F   "文件路径
-" set statusline+=\ ---\ %<%{getcwd()} "显示当前工作目录,%<表示过长就从该位置收缩
-set statusline+=\ %=\    "右对齐
-set statusline+=[%{strlen(&ft)?&ft:'none'} "文件类型
-set statusline+=,\ %{strlen(&fenc)?&fenc:'none'} "文件类型
-set statusline+=,\ %{&fileformat}]  "文件格式
-set statusline+=\ \ %l/%L:%c  "行号\总行号:列号
-set statusline+=\ \ %b-0x%B\   "字符十进制和十六进制的ASCII值
+" set laststatus=2 "状态栏有两行
+" set statusline=\     "初始化为一个空格
+" set statusline+=%m   "是否被修改
+" set statusline+=%r   "是否是只读
+" set statusline+=%h   "是否是帮助文档
+" set statusline+=%w   "是否是预览窗口
+" set statusline+=\ %<%F   "文件路径
+" " set statusline+=\ ---\ %<%{getcwd()} "显示当前工作目录,%<表示过长就从该位置收缩
+" set statusline+=\ %=\    "右对齐
+" set statusline+=[%{strlen(&ft)?&ft:'none'} "文件类型
+" set statusline+=,\ %{strlen(&fenc)?&fenc:'none'} "文件类型
+" set statusline+=,\ %{&fileformat}]  "文件格式
+" set statusline+=\ \ %l/%L:%c  "行号\总行号:列号
+" set statusline+=\ \ %b-0x%B\   "字符十进制和十六进制的ASCII值
 
-"set rulerformat=%30(%=%m%r%h%w\ %p%%\ %l:%v\ %{(&fenc!=''?&fenc:&enc).(&ff!='unix'?','.&ff:'')}%<%)
-"set statusline=%<%F\ %m%r%h%w%=%p%%\ %l:%v\ %{(&fenc!=''?&fenc:&enc).(&ff!='unix'?','.&ff:'')}
-set fillchars=stl:-,stlnc:-
-hi StatusLine guifg=orange guibg=NONE gui=none ctermfg=166 ctermbg=none cterm=none term=none
-hi StatusLineNC guifg=grey guibg=NONE gui=none ctermfg=grey ctermbg=none cterm=none term=none
+" "set rulerformat=%30(%=%m%r%h%w\ %p%%\ %l:%v\ %{(&fenc!=''?&fenc:&enc).(&ff!='unix'?','.&ff:'')}%<%)
+" "set statusline=%<%F\ %m%r%h%w%=%p%%\ %l:%v\ %{(&fenc!=''?&fenc:&enc).(&ff!='unix'?','.&ff:'')}
+" set fillchars=stl:-,stlnc:-
+" hi StatusLine guifg=orange guibg=NONE gui=none ctermfg=166 ctermbg=none cterm=none term=none
+" hi StatusLineNC guifg=grey guibg=NONE gui=none ctermfg=grey ctermbg=none cterm=none term=none
 """""""""""""""""""""""""""""""
 " 设置缩进
 """"""""""""""""""""""""""""""
