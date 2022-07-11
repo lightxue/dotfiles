@@ -3,7 +3,9 @@ let mapleader = ","
 let g:mapleader = ","
 
 " inoremap jk <Esc>
+inoremap Jk <Esc>
 cnoremap jk <C-c>
+cnoremap Jk <C-c>
 
 " 编辑配置文件
 nnoremap <Leader>e :e $MYVIMRC<CR>
