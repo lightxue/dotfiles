@@ -49,9 +49,7 @@ Plug 'tpope/vim-repeat'
 Plug 'kylechui/nvim-surround'
 
 " 编辑器设置
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/which-key.nvim'
-" Plug 'liuchengxu/vim-which-key'
 Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 " Plug 'simnalamburt/vim-mundo'
@@ -60,8 +58,6 @@ Plug 'vim-scripts/scratch.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'jdhao/better-escape.vim'
 Plug 'rcarriga/nvim-notify'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 "文件/系统
 Plug 'airblade/vim-rooter'
@@ -78,7 +74,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'flazz/vim-colorschemes'
 Plug 'sainnhe/gruvbox-material'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'lightxue/SwissCalc'
 
 call plug#end()
