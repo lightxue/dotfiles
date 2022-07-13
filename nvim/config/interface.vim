@@ -52,7 +52,7 @@ catch
 endtry
 
 " 每行超过80个的字符用下划线标示
-au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb,*.erb,*.hs,*.vim,*.php,*.js 2match Underlined /.\%81v/
+au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb,*.erb,*.hs,*.vim,*.php,*.js,*.go 2match Underlined /.\%81v/
 
 au BufNewFile,BufRead *.jce set filetype=cpp
 au BufNewFile,BufRead *.proto set filetype=proto

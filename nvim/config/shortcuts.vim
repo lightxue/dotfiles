@@ -32,13 +32,17 @@ nnoremap <C-Up> <C-W>-
 nnoremap <C-Down> <C-W>+
 nnoremap <C-Left> <C-W><
 nnoremap <C-Right> <C-W>>
+nnoremap <A-Up> <C-W>-
+nnoremap <A-Down> <C-W>+
+nnoremap <A-Left> <C-W><
+nnoremap <A-Right> <C-W>>
 
 " 保存文件
 nnoremap <Leader>s :w!<CR>
 
 " 标签页
 nnoremap <Leader>tn :tabnew %<CR>
-nnoremap <Leader>tc :tabclose<CR>
+" nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>te :tabedit<CR>:Startify<CR>
 nnoremap <Leader>tm :tabmove<Space>
 
@@ -63,11 +67,6 @@ cnoremap <C-F> <Right>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 cnoremap <C-D> <Del>
-
-" windows全屏
-if has('win32')
-    nnoremap <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
-endif
 
 " 方便远程连接时所有模式关闭鼠标，方便使用鼠标拷贝
 nnoremap <Leader>ms :call ToggleMouse()<CR>
@@ -94,7 +93,7 @@ nnoremap <Leader>bd :bd!<CR>
 nnoremap <Leader>qa :qa<CR>
 nnoremap <Leader>qq :q<CR>
 nnoremap <Leader>qf :q!<CR>
-nnoremap <Leader>qaf :qa!<CR>
+nnoremap <Leader>qe :qa!<CR>
 
 nnoremap <Leader>mk :make -j$(grep --count processor /proc/cpuinfo)<CR>
 

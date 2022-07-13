@@ -60,3 +60,5 @@ let g:vim_markdown_frontmatter = 1
 call SingleCompile#ChooseCompiler('python', 'python3')
 nmap <F5> :SCCompile<cr>
 nmap <F7> :SCCompileRun<cr>
+
+let g:mkdp_preview_options = { 'uml': {'server': 'https://plantuml.lightxue.com'} }

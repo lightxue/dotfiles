@@ -34,6 +34,7 @@ Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'xuhdev/SingleCompile'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
@@ -69,6 +70,7 @@ Plug 'vim-scripts/auto_mkdir'
 " Plug 'scrooloose/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 " 其它
 " Plug 'flazz/vim-colorschemes'
