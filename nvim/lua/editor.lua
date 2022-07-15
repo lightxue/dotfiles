@@ -42,3 +42,5 @@ require('lualine').setup({
         lualine_z = {}
     },
 })
+
+require'hop'.setup()

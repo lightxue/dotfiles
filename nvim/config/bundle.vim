@@ -24,21 +24,24 @@ Plug 'tamago324/cmp-zsh'
 Plug 'hrsh7th/cmp-nvim-lua'
 
 " 语言
-Plug 'Yggdroot/indentLine'
-" Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'luochen1990/rainbow'
-Plug 'scrooloose/nerdcommenter'
-Plug 'sheerun/vim-polyglot' "多文件格式支持
+" Plug 'Yggdroot/indentLine'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'sheerun/vim-polyglot' "多文件格式支持
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'xuhdev/SingleCompile'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'numToStr/Comment.nvim'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
-Plug 'Lokaltog/vim-easymotion'
+" Plug 'Lokaltog/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'andymass/vim-matchup'
@@ -65,6 +68,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
 Plug 'junegunn/gv.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
 " Plug 'scrooloose/nerdtree'
@@ -72,9 +76,12 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
+" UI
+
 " 其它
 " Plug 'flazz/vim-colorschemes'
-Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/gruvbox-material'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'lightxue/SwissCalc'
 

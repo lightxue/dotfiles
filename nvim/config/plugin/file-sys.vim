@@ -12,6 +12,7 @@ nnoremap <Leader>gl :Git pull<CR>
 nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>gg :Gllog<CR>
 nnoremap <Leader>gv :GV<CR>
+nnoremap <leader>gg <cmd>GitGutterToggle<cr>
 nnoremap <Leader>gb :GitBlameToggle<CR>
 let g:gitblame_enabled = 0
 let g:gitblame_date_format = '%Y-%m-%d %H:%M:%S'
@@ -27,5 +28,4 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fm <cmd>Telescope git_commits<cr>
 nnoremap <leader>ft <cmd>Telescope treesitter<cr>
-
 

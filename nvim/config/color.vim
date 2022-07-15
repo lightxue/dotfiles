@@ -3,7 +3,9 @@ set guifont=Monaco:h13       " 字体 && 字号
 
 set background=dark
 " colorscheme molokai_dark
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
+let g:tokyonight_style = "night"
+colorscheme tokyonight
 if has("gui_running")
     set guioptions= " 菜单栏、工具栏等都不要了
     "au GUIEnter * simalt ~x  " 窗口启动时自动最大化

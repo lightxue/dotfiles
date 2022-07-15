@@ -62,3 +62,4 @@ nmap <F5> :SCCompile<cr>
 nmap <F7> :SCCompileRun<cr>
 
 let g:mkdp_preview_options = { 'uml': {'server': 'https://plantuml.lightxue.com'} }
+nnoremap <Leader>md :MarkdownPreviewToggle<CR>

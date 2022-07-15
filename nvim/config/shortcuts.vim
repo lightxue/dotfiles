@@ -87,13 +87,19 @@ nnoremap <Leader>hl :nohlsearch<CR>
 nnoremap <Leader>nw :call ToggleWrap()<CR>
 
 " buffer相关
-nnoremap <Leader>bd :bd!<CR>
+" nnoremap <Leader>bd :bd!<CR>
 
 " 关闭
-nnoremap <Leader>qa :qa<CR>
-nnoremap <Leader>qq :q<CR>
-nnoremap <Leader>qf :q!<CR>
-nnoremap <Leader>qe :qa!<CR>
+" eXit Muliple
+nnoremap <Leader>xm :qa<CR>
+" eXit
+nnoremap <Leader>xx :q<CR>
+" eXit Buffer
+nnoremap <Leader>xb :bd!<CR>
+" eXit force
+nnoremap <Leader>xf :q!<CR>
+" eXit Kill
+nnoremap <Leader>xk :qa!<CR>
 
 nnoremap <Leader>mk :make -j$(grep --count processor /proc/cpuinfo)<CR>
 
@@ -164,10 +170,12 @@ function! ToggleMouse()
     if &mouse == 'a'
         set mouse=
         set nonu
+        GitGutterDisable
         echo 'mouse off'
     else
         set mouse=a
         set nu
+        GitGutterEnable
         echo 'mouse on'
     endif
 endfunction
