@@ -18,8 +18,20 @@ require("nvim-tree").setup({
   },
 })
 
-require("toggleterm").setup{}
+require("toggleterm").setup({
+  size = function(term)
+    if term.direction == "horizontal" then
+      return 15
+    elseif term.direction == "vertical" then
+      return vim.o.columns * 0.5
+    end
+  end,
+  direction = 'float'
+})
 vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical <CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>ts', '<cmd>ToggleTermSendCurrentLine<CR>', { noremap = true })
 vim.keymap.set('v', '<leader>ts', '<cmd>ToggleTermSendVisualSelection<CR>', { noremap = true })
 
