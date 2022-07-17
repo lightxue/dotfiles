@@ -121,7 +121,7 @@ funcion save_alias() {
     fi
 }
 
-alias vi='vim'
+alias vi='nvim'
 alias more='less'
 #alias tmux='tmux -2'
 alias wl='wc -l'
