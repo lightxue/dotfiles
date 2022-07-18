@@ -2,3 +2,5 @@ tldr
 mycli
 httpie
 iredis
+bpytop
+glances

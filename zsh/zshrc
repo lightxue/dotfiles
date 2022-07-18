@@ -68,7 +68,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "changyuheng/zsh-interactive-cd"
 zplug "rupa/z"
 zplug "BlaineEXE/zsh-cmd-status"
-zplug "zpm-zsh/ls"
+zplug "DarrinTisdale/zsh-aliases-exa"
 
 # User configuration
 
@@ -142,7 +142,7 @@ alias gbk='iconv -f gbk -t utf8'
 
 save_alias sed gsed # mac 使用GNU sed
 save_alias j z 'z' # cd, same functionality as j in autojump
-save_alias cat bat
+save_alias tree exa 'exa --tree' # cd, same functionality as j in autojump
 
 # 设置默认编辑器
 export VISUAL=nvim

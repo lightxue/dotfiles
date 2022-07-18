@@ -12,12 +12,19 @@ BOT="${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN} -d ${BASEDIR}"
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive "${PLUGIN_DIR}"
 
 if [[ $OSTYPE == 'darwin'* ]]; then
     $BOT -p "${PLUGIN_DIR}/dotbot-brew/brew.py" -c "brew.conf.yaml"
 else
-    $BOT -p "${PLUGIN_DIR}/dotbot_plugin_aptget/aptget.py" -c "aptget.conf.yaml"
+    echo sudo $BOT -p "${PLUGIN_DIR}/dotbot_plugin_aptget/aptget.py" -c "aptget.conf.yaml"
 fi
-$BOT -p "${PLUGIN_DIR}/dotbot-asdf/asdf.py" -c "asdf.conf.yaml"
+
+[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 source "$HOME/.asdf/asdf.sh"
+$BOT -p "${PLUGIN_DIR}/dotbot-asdf/asdf.py" -c "asdf.conf.yaml"
+npm install --global yarn
+pip install --user -r requirements.txt
+cat requirements-pipx.txt | xargs -n 1 pipx install
+
 $BOT -c "install.conf.yaml"

@@ -1,11 +1,3 @@
-- shell:
-  -
-    command: '[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2'
-    description: Cloning asdf
-    stdin: true
-    stdout: true
-    quiet: false
-
 - asdf:
   - plugin: python
     global: latest
@@ -35,23 +27,3 @@
     global: latest
     versions:
       - latest
-
-- shell:
-  -
-    command: '. $HOME/.asdf/asdf.sh && npm install --global yarn'
-    description: Installing yarn
-    stdin: true
-    stdout: true
-    quiet: false
-  -
-    command: '. $HOME/.asdf/asdf.sh && pip install --user -r requirements.txt'
-    description: pip installing
-    stdin: true
-    stdout: true
-    quiet: false
-  -
-    command: '. $HOME/.asdf/asdf.sh && cat requirements-pipx.txt | xargs -n 1 pipx install'
-    description: pipx installing
-    stdin: true
-    stdout: true
-    quiet: false
