@@ -1,0 +1,17 @@
+- brew:
+    - zsh
+    - curl
+    - git
+    - asdf
+    - python3
+    - lua
+    - tmux
+    - htop
+    - glances
+    - ack
+    - tree
+    - cloc
+    - aria2
+    - ripgrep
+    - cowsay
+    - cheat

@@ -1,0 +1,36 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: 
+  - '~'
+  - '~/.config'
+
+- shell:
+  -
+    command: '[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+    description: Installing oh-my-zsh
+    stdin: true
+    stdout: true
+    quiet: false
+  -
+    command: '[ -d ~/.zplug ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh'
+    description: Installing zplug
+    stdin: true
+    stdout: true
+    quiet: false
+
+- link:
+    ~/.zshrc:
+      path: zsh/zshrc
+      force: true
+    ~/.config/nvim:
+      path: nvim
+      force: true
+    ~/.gitconfig:
+      path: git/gitconfig
+      force: true
+    ~/.tmux.conf:
+      path: tmux/tmux.conf
+      force: true
+

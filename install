@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+DOTBOT_DIR="dotbot"
+PLUGIN_DIR="dotbot-plugin"
+DOTBOT_BIN="bin/dotbot"
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BOT="${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN} -d ${BASEDIR}"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+    $BOT -p "${PLUGIN_DIR}/dotbot-brew/brew.py" -c "brew.conf.yaml"
+else
+    $BOT -p "${PLUGIN_DIR}/dotbot_plugin_aptget/aptget.py" -c "aptget.conf.yaml"
+fi
+$BOT -p "${PLUGIN_DIR}/dotbot-asdf/asdf.py" -c "asdf.conf.yaml"
+source "$HOME/.asdf/asdf.sh"
+$BOT -c "install.conf.yaml"

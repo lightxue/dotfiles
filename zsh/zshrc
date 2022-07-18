@@ -61,6 +61,7 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/virtualenv", from:oh-my-zsh
 zplug "plugins/rand-quote", from:oh-my-zsh
+zplug "plugins/asdf", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -141,15 +142,17 @@ alias gbk='iconv -f gbk -t utf8'
 
 save_alias sed gsed # mac 使用GNU sed
 save_alias j z 'z' # cd, same functionality as j in autojump
+save_alias cat bat
 
 # 设置默认编辑器
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 # export LC_ALL=zh_CN.UTF-8
 
 # 设置PATH
 export PATH="$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin"
+export GOPATH="$HOME/.go"
 
 function src_file() {
     [ -f $1 ] && source $1
@@ -159,14 +162,12 @@ src_file ~/.zsh-custom
 
 # fzf
 src_file ~/.fzf.zsh
+# asdf
+src_file "$HOME/.asdf/asdf.sh"
 
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
 fi
-
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -178,4 +179,3 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
