@@ -8,14 +8,6 @@ require("nvim-lsp-installer").setup {
 
 local lspconfig = require('lspconfig')
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -25,21 +17,55 @@ local on_attach = function(client, bufnr)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<leader>dwa', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', '<leader>dwr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set('n', '<leader>dwl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
     vim.keymap.set('n', '<leader>dD', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<leader>drn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>dca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'gl', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<leader>df', vim.lsp.buf.formatting, bufopts)
+
+
+    vim.keymap.set("n", "gh", require("lspsaga.finder").lsp_finder, bufopts)
+
+    local action = require("lspsaga.codeaction")
+
+    -- code action
+    vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", bufopts)
+    vim.keymap.set("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", bufopts)
+
+    -- show hover doc
+    vim.keymap.set("n", "K", require("lspsaga.hover").render_hover_doc, bufopts)
+
+    local action = require("lspsaga.action")
+    -- scroll down hover doc or scroll in definition preview
+    vim.keymap.set("n", "<C-f>", function()
+        action.smart_scroll_with_saga(1)
+    end, bufopts)
+    -- scroll up hover doc
+    vim.keymap.set("n", "<C-b>", function()
+        action.smart_scroll_with_saga(-1)
+    end, bufopts)
+
+    -- show signature help
+    vim.keymap.set("n", "gs", require("lspsaga.signaturehelp").signature_help, bufopts)
+    -- rename
+    -- close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
+    vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, bufopts)
+    -- preview definition
+    vim.keymap.set("n", "gD", require("lspsaga.definition").preview_definition, bufopts)
+
+    vim.keymap.set("n", "<leader>de", require("lspsaga.diagnostic").show_line_diagnostics, bufopts)
+    vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
+
+    -- jump diagnostic
+    vim.keymap.set("n", "[e", require("lspsaga.diagnostic").goto_prev, bufopts)
+    vim.keymap.set("n", "]e", require("lspsaga.diagnostic").goto_next, bufopts)
+    -- or jump to error
+    vim.keymap.set("n", "[E", function()
+        require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+    end, bufopts)
+    vim.keymap.set("n", "]E", function()
+        require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+    end, bufopts)
 end
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
@@ -90,6 +116,8 @@ end
 -- luasnip setup
 local luasnip = require 'luasnip'
 
+local lspkind = require('lspkind')
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
@@ -134,6 +162,12 @@ cmp.setup {
         { name = 'nvim_lua' }
     }, {
         { name = 'buffer' },
+    },
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol_text', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        })
     }
 }
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -163,3 +197,6 @@ cmp.setup.cmdline(':', {
 -- })
 
 require("luasnip.loaders.from_vscode").lazy_load('bundle/friendly-snippets/snippets')
+
+local saga = require 'lspsaga'
+saga.init_lsp_saga()

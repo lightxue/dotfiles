@@ -22,6 +22,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'dmitmel/cmp-cmdline-history'
 Plug 'tamago324/cmp-zsh'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'onsails/lspkind.nvim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " 语言
 " Plug 'Yggdroot/indentLine'
@@ -35,6 +37,7 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'numToStr/Comment.nvim'
+Plug  'max397574/lua-dev.nvim'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
@@ -90,3 +93,7 @@ call plug#end()
 " TODO
 " vim-visual-multi
 " https://github.com/glepnir/lspsaga.nvim
+" "max397574/lua-dev.nvim"
+" ahmedkhalf/project.nvim
+" mfussenegger/nvim-dap
+" "Pocco81/dap-buddy.nvim"
