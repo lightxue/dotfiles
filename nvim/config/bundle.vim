@@ -68,9 +68,14 @@ Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
-" Plug 'scrooloose/nerdtree'
-Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+" Plug 'kyazdani42/nvim-tree.lua'  " 还有些bug，比如:e .时消失，或是跳到别的标
+" 签页
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 " UI
@@ -84,3 +89,4 @@ call plug#end()
 
 " TODO
 " vim-visual-multi
+" https://github.com/glepnir/lspsaga.nvim
