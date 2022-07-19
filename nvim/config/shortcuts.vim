@@ -42,7 +42,6 @@ nnoremap <Leader>s :w!<CR>
 
 " 标签页
 nnoremap <Leader>tn :tabnew %<CR>
-" nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>te :tabedit<CR>:Startify<CR>
 nnoremap <Leader>tm :tabmove<Space>
 

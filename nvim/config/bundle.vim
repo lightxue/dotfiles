@@ -28,8 +28,6 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'lukas-reineke/indent-blankline.nvim'
-" Plug 'scrooloose/nerdcommenter'
-" Plug 'sheerun/vim-polyglot' "多文件格式支持
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'xuhdev/SingleCompile'
@@ -40,7 +38,6 @@ Plug 'numToStr/Comment.nvim'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
-" Plug 'Lokaltog/vim-easymotion'
 Plug 'phaazon/hop.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -79,8 +76,6 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 " UI
 
 " 其它
-" Plug 'flazz/vim-colorschemes'
-" Plug 'sainnhe/gruvbox-material'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'lightxue/SwissCalc'

@@ -20,14 +20,10 @@ endif
 " UI展示
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 提示和菜单使用中文
-" set langmenu=zh_CN.UTF-8
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-" language messages zh_CN.utf-8
 set cc=0  " 不高亮任何列
 set showcmd " 显示输入的字符
 set mousehide " 默认不显示鼠标
-set so=0 " 移动时光标最多离底部3行
+set so=0 " 移动时光标最多离底部0行
 set ruler " 显示行号和列号
 set wildmenu " 加强命令行自动补全
 " set cmdheight=1 " 命令行占1行
@@ -55,8 +51,8 @@ endtry
 au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb,*.erb,*.hs,*.vim,*.php,*.js,*.go 2match Underlined /.\%81v/
 
 au BufNewFile,BufRead *.jce set filetype=cpp
-au BufNewFile,BufRead *.proto set filetype=proto
-au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+" au BufNewFile,BufRead *.proto set filetype=proto
+" au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 
 
 """"""""""""""""""""""""""""""
@@ -102,9 +98,9 @@ set wrap  " 到屏幕边会回绕
 au BufRead,BufNewFile Makefile* set noexpandtab
 
 " Use the below highlight group when displaying bad whitespace is desired.
-highlight BadWhitespace ctermbg=red guibg=red
+" highlight BadWhitespace ctermbg=red guibg=red
 
 " Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/

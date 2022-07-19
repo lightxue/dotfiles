@@ -16,12 +16,3 @@ set nopaste " 粘贴时保留原有格式 --> 关闭了，不然autoclose不能�
 set wildignorecase "打开文件忽略大小写
 set wildignore=*.o,*~,*.pyc  "打开文件、补全文件等时忽略提示这些后缀的文件
 set wildignore+=*/.hg/*,*/.svn/*,*/.neocon/*
-set tags=./tags;/,tags,./**/tags "查找tags文件路径
-set tags+=~/.vim/**/tags
-
-" 记录上次打开文件位置
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-set viminfo^=%

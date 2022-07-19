@@ -16,10 +16,6 @@ nnoremap <Leader>gb :GitBlameToggle<CR>
 let g:gitblame_enabled = 0
 let g:gitblame_date_format = '%Y-%m-%d %H:%M:%S'
 
-
-" set statusline^=%{FugitiveStatusline()}
-
-
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
