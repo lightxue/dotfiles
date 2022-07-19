@@ -19,7 +19,6 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<leader>dD', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'gl', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<leader>df', vim.lsp.buf.formatting, bufopts)
 
@@ -51,7 +50,8 @@ local on_attach = function(client, bufnr)
     -- close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
     vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, bufopts)
     -- preview definition
-    vim.keymap.set("n", "gD", require("lspsaga.definition").preview_definition, bufopts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "gd", require("lspsaga.definition").preview_definition, bufopts)
 
     vim.keymap.set("n", "<leader>de", require("lspsaga.diagnostic").show_line_diagnostics, bufopts)
     vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
