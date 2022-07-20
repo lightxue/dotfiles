@@ -143,6 +143,7 @@ alias gbk='iconv -f gbk -t utf8'
 save_alias sed gsed # mac 使用GNU sed
 save_alias j z 'z' # cd, same functionality as j in autojump
 save_alias tree exa 'exa --tree' # cd, same functionality as j in autojump
+save_alias btop bpytop
 
 # 设置默认编辑器
 export VISUAL=nvim
