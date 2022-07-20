@@ -23,7 +23,3 @@
     global: latest
     versions:
       - latest
-  - plugin: vim
-    global: latest
-    versions:
-      - latest
