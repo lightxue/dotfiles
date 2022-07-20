@@ -48,3 +48,5 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 require("project_nvim").setup({})
 require('telescope').load_extension('projects')
+
+require('gitsigns').setup()

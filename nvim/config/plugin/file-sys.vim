@@ -11,6 +11,7 @@ nnoremap <Leader>gc :Git commit<CR>
 nnoremap <Leader>gl :Git pull<CR>
 nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>gg :Gllog<CR>
+nnoremap <Leader>gd :Gitsigns diffthis<CR>
 nnoremap <Leader>gv :GV<CR>
 nnoremap <Leader>gb :GitBlameToggle<CR>
 let g:gitblame_enabled = 0
