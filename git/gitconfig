@@ -7,7 +7,7 @@
 	last = log -3 HEAD
 	d = difftool
 [core]
-	editor = vim
+	editor = nvim
 	;pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
