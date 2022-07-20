@@ -1,0 +1,6 @@
+sudo dnf install wget yum-utils make gcc openssl-devel bzip2-devel libffi-devel zlib-devel
+sudo dnf install zsh htop curl wget python3 tmux aria2 jq cowsay
+sudo dnf install git lua netcat zip unzip
+sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+sudo yum install ripgrep
+yum install ncurses-devel
