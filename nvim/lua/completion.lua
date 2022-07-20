@@ -79,7 +79,7 @@ local servers = {
     'jsonls',
     'lemminx',
     'pyright',
-    -- 'remark_ls',
+    'remark_ls',
     'sqls',
     'sumneko_lua',
     'texlab',

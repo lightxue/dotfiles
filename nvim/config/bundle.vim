@@ -16,7 +16,7 @@ Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 Plug 'rafamadriz/friendly-snippets' " vscode snippet
 Plug 'hrsh7th/cmp-buffer'
-Plug 'uga-rosa/cmp-dictionary' " TODO 添加词典
+Plug 'uga-rosa/cmp-dictionary'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'dmitmel/cmp-cmdline-history'
@@ -43,7 +43,6 @@ Plug  'max397574/lua-dev.nvim'
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
 Plug 'phaazon/hop.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'andymass/vim-matchup'
 Plug 'junegunn/vim-easy-align'
 Plug 'lfv89/vim-interestingwords'
@@ -64,7 +63,8 @@ Plug 'jdhao/better-escape.vim'
 Plug 'rcarriga/nvim-notify'
 
 "文件/系统
-Plug 'airblade/vim-rooter'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'ahmedkhalf/project.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
 Plug 'junegunn/gv.vim'
@@ -92,8 +92,5 @@ call plug#end()
 
 " TODO
 " vim-visual-multi
-" https://github.com/glepnir/lspsaga.nvim
-" "max397574/lua-dev.nvim"
-" ahmedkhalf/project.nvim
 " mfussenegger/nvim-dap
 " "Pocco81/dap-buddy.nvim"

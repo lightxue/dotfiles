@@ -23,4 +23,5 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fm <cmd>Telescope git_commits<cr>
 nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+nnoremap <leader>fp <cmd>Telescope projects<cr>
 

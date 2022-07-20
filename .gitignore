@@ -8,3 +8,4 @@ vim/vim/sessions/
 .netrwhist
 /autojump/
 nvim/bundle/
+.luarc.json
