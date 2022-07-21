@@ -31,3 +31,4 @@
   - traceroute:
   - unzip:
   - zip:
+    - zoxide:

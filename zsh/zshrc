@@ -64,9 +64,9 @@ zplug "plugins/rand-quote", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
+# zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "changyuheng/zsh-interactive-cd"
-zplug "rupa/z"
 zplug "BlaineEXE/zsh-cmd-status"
 zplug "DarrinTisdale/zsh-aliases-exa"
 
@@ -141,8 +141,7 @@ alias agi="sudo apt-get install -y"
 alias gbk='iconv -f gbk -t utf8'
 
 save_alias sed gsed # mac 使用GNU sed
-save_alias j z 'z' # cd, same functionality as j in autojump
-save_alias tree exa 'exa --tree' # cd, same functionality as j in autojump
+save_alias tree exa 'exa --tree'
 save_alias btop bpytop
 
 # 设置默认编辑器
@@ -169,6 +168,8 @@ src_file "$HOME/.asdf/asdf.sh"
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
 fi
+
+eval "$(zoxide init zsh --cmd j)"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
