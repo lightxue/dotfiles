@@ -20,7 +20,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<leader>dD', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gl', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<leader>df', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<leader>ii', vim.lsp.buf.formatting, bufopts)
+    -- TODO range_formatting
 
 
     vim.keymap.set("n", "gh", require("lspsaga.finder").lsp_finder, bufopts)

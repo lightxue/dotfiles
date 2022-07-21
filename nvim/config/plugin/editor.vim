@@ -18,3 +18,6 @@ nnoremap <Leader><Leader>l <cmd>HopLine<CR>
 vnoremap <Leader><Leader>w <cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })<CR>
 vnoremap <Leader><Leader>b <cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<CR>
 vnoremap <Leader><Leader>l <cmd>HopLine<CR>
+
+nnoremap <Leader>pi <cmd>PlugInstall<CR>
+nnoremap <Leader>pu <cmd>PlugUpdate<CR>

@@ -37,7 +37,8 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'numToStr/Comment.nvim'
-Plug  'max397574/lua-dev.nvim'
+Plug 'max397574/lua-dev.nvim'
+Plug 'windwp/nvim-ts-autotag'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
@@ -82,10 +83,10 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 " UI
-
-" 其它
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'nvim-lualine/lualine.nvim'
+
+" 其它
 Plug 'lightxue/SwissCalc'
 
 call plug#end()

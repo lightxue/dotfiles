@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
   ensure_installed = "all",
-  sync_install = false,
+  sync_install = true,
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -71,3 +71,5 @@ require 'colorizer'.setup {
 require("indent_blankline").setup {}
 
 require('Comment').setup()
+
+require('nvim-ts-autotag').setup()

@@ -17,12 +17,12 @@ nnoremap <F7> :SCCompileRun<cr>
 call SingleCompile#ChooseCompiler('python', 'python3')
 
 " indentLine
-let g:indentLine_enabled = 1
-let g:indentLine_fileType = ['python', 'yaml', 'json', 'javascript']
+" let g:indentLine_enabled = 1
+" let g:indentLine_fileType = ['python', 'yaml', 'json', 'javascript']
 
 " nerdcommenter
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+" let g:NERDSpaceDelims = 1
 
 
 call SingleCompile#ChooseCompiler('python', 'python3')
@@ -31,3 +31,8 @@ nmap <F7> :SCCompileRun<cr>
 
 let g:mkdp_preview_options = { 'uml': {'server': 'https://plantuml.lightxue.com'} }
 nnoremap <Leader>md :MarkdownPreviewToggle<CR>
+
+nnoremap <Leader>ij <CMD>%!jq --indent 4<CR>
+vnoremap <Leader>ij :!jq --indent 4<CR>
+nnoremap <Leader>is <CMD>%!sqlformat - -rs -k upper<CR>
+vnoremap <Leader>is :!sqlformat - -rs -k upper<CR>
