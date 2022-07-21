@@ -1,7 +1,6 @@
 - aptget:
   - build-essential:
       upgrade: true
-  - libreadline-dev:
   - ncurses-dev:
   - zsh:
   - curl:
@@ -31,4 +30,20 @@
   - traceroute:
   - unzip:
   - zip:
-    - zoxide:
+  - zoxide:
+  # python dependence
+  - libssl-dev:
+  - zlib1g-dev:
+  - libbz2-dev:
+  - libreadline-dev:
+  - libsqlite3-dev:
+  - wget:
+  - llvm:
+  - libncurses5-dev:
+  - libncursesw5-dev:
+  - xz-utils:
+  - tk-dev:
+  - libffi-dev:
+  - liblzma-dev:
+  - libgdbm-dev:
+  - libgdbm-compat-dev:
