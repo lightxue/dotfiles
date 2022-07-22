@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
 
     vim.keymap.set("n", "gh", require("lspsaga.finder").lsp_finder, bufopts)
 
-    local action = require("lspsaga.codeaction")
+    -- local action = require("lspsaga.codeaction")
 
     -- code action
     vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", bufopts)

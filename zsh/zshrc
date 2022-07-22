@@ -151,8 +151,8 @@ export EDITOR=nvim
 # export LC_ALL=zh_CN.UTF-8
 
 # 设置PATH
-export PATH="$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin"
 export GOPATH="$HOME/.local/go"
+export PATH="$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
 
 function src_file() {
     [ -f $1 ] && source $1
