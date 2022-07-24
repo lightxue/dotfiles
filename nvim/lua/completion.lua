@@ -18,9 +18,9 @@ local on_attach = function(client, bufnr)
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<leader>dD', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<Leader>dD', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gl', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<leader>ii', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<Leader>ii', vim.lsp.buf.formatting, bufopts)
     -- TODO range_formatting
 
 
@@ -29,8 +29,8 @@ local on_attach = function(client, bufnr)
     -- local action = require("lspsaga.codeaction")
 
     -- code action
-    vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", bufopts)
-    vim.keymap.set("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", bufopts)
+    vim.keymap.set("n", "<Leader>ca", "<CMD>Lspsaga code_action<CR>", bufopts)
+    vim.keymap.set("v", "<Leader>ca", "<CMD><C-U>Lspsaga range_code_action<CR>", bufopts)
 
     -- show hover doc
     vim.keymap.set("n", "K", require("lspsaga.hover").render_hover_doc, bufopts)
@@ -54,8 +54,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gd", require("lspsaga.definition").preview_definition, bufopts)
 
-    vim.keymap.set("n", "<leader>de", require("lspsaga.diagnostic").show_line_diagnostics, bufopts)
-    vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
+    vim.keymap.set("n", "<Leader>de", require("lspsaga.diagnostic").show_line_diagnostics, bufopts)
+    vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setloclist, opts)
 
     -- jump diagnostic
     vim.keymap.set("n", "[e", require("lspsaga.diagnostic").goto_prev, bufopts)
@@ -67,6 +67,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "]E", function()
         require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
     end, bufopts)
+
+    vim.keymap.set("n", "<Leader>dc", '<CMD>NvimContextVtToggle<CR>', bufopts)
+
+    require("nvim-navic").attach(client, bufnr)
+    require('illuminate').on_attach(client, bufnr)
 end
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
@@ -80,7 +85,7 @@ local servers = {
     'jsonls',
     'lemminx',
     'pyright',
-    'remark_ls',
+    -- 'remark_ls',
     'sqls',
     'sumneko_lua',
     'texlab',
@@ -201,3 +206,9 @@ require("luasnip.loaders.from_vscode").lazy_load('bundle/friendly-snippets/snipp
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
+
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())

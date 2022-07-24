@@ -46,6 +46,9 @@ function _G.set_terminal_keymaps()
 end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
+require('telescope').setup {}
+require('telescope').load_extension('fzf')
+
 require("project_nvim").setup({})
 require('telescope').load_extension('projects')
 

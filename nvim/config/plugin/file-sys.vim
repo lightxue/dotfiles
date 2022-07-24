@@ -18,11 +18,11 @@ let g:gitblame_enabled = 0
 let g:gitblame_date_format = '%Y-%m-%d %H:%M:%S'
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fm <cmd>Telescope oldfiles<cr> " MRU
-nnoremap <leader>ft <cmd>Telescope treesitter<cr>
-nnoremap <leader>fp <cmd>Telescope projects<cr>
-
+nnoremap <leader>ff <CMD>Telescope find_files<CR>
+nnoremap <leader>fg <CMD>Telescope live_grep<CR>
+nnoremap <leader>fb <CMD>Telescope buffers<CR>
+nnoremap <leader>fh <CMD>Telescope help_tags<CR>
+nnoremap <leader>fm <CMD>Telescope oldfiles<CR> " MRU
+nnoremap <leader>ft <CMD>Telescope treesitter<CR>
+nnoremap <leader>fp <CMD>Telescope projects<CR>
+nnoremap <leader>fc <CMD>Telescope neoclip<CR>

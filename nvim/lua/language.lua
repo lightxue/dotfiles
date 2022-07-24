@@ -68,8 +68,20 @@ require 'colorizer'.setup {
     }
 }
 
-require("indent_blankline").setup {}
+require("indent_blankline").setup {
+    show_trailing_blankline_indent = false,
+    filetype = {
+        'python',
+        'yaml',
+        'javascript',
+        'lua',
+        'json',
+    },
+}
 
 require('Comment').setup()
 
 require('nvim-ts-autotag').setup()
+require('nvim_context_vt').setup({
+  enabled = false,
+})

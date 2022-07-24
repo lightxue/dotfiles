@@ -6,8 +6,7 @@ endif
 call plug#begin('~/.config/nvim/bundle')
 
 " 补全
-Plug 'jiangmiao/auto-pairs'
-" Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
@@ -26,9 +25,9 @@ Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " 语言
-" Plug 'Yggdroot/indentLine'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
@@ -39,6 +38,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'numToStr/Comment.nvim'
 Plug 'max397574/lua-dev.nvim'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'haringsrob/nvim_context_vt'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
@@ -51,6 +51,9 @@ Plug 'mg979/vim-visual-multi'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-repeat'
 Plug 'kylechui/nvim-surround'
+Plug 'RRethy/vim-illuminate'
+Plug 'NMAC427/guess-indent.nvim'
+Plug 'monaqa/dial.nvim'
 
 " 编辑器设置
 Plug 'folke/which-key.nvim'
@@ -62,9 +65,12 @@ Plug 'vim-scripts/scratch.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'jdhao/better-escape.vim'
 Plug 'rcarriga/nvim-notify'
+Plug 'AckslD/nvim-neoclip.lua'
+Plug 'nacro90/numb.nvim'
 
 "文件/系统
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'ahmedkhalf/project.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
@@ -85,9 +91,11 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 " UI
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'SmiteshP/nvim-navic'
 
 " 其它
 Plug 'lightxue/SwissCalc'
+Plug 'NTBBloodbath/rest.nvim'
 
 call plug#end()
 

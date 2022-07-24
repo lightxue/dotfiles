@@ -11,8 +11,10 @@ runtime! config/plugin/**/*.vim
 " ~/.config/nvim/lua
 lua require('completion')
 lua require('editor')
+lua require('text')
 lua require('file-sys')
 lua require('language')
 lua require('ui')
+lua require('misc')
 
 " vim:set expandtab shiftwidth=4 tabstop=4:
