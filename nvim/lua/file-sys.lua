@@ -78,7 +78,6 @@ local function run_current_file()
     require("toggleterm").exec(cmd .. ' ' .. fn)
 end
 
-
 require("toggleterm").setup({
     size = function(term)
         if term.direction == "horizontal" then
@@ -89,11 +88,13 @@ require("toggleterm").setup({
     end,
     direction = 'float'
 })
-vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical <CR>', { noremap = true })
-vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>ts', '<cmd>ToggleTermSendCurrentLine<CR>', { noremap = true })
-vim.keymap.set('v', '<leader>ts', '<cmd>ToggleTermSendVisualSelection<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>tr', run_current_file, { noremap = true })
+local kmopts = { noremap = true }
+vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<CR>', kmopts)
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical <CR>', kmopts)
+vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', kmopts)
+vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', kmopts)
+vim.keymap.set('n', '<leader>ts', '<cmd>ToggleTermSendCurrentLine<CR>', kmopts)
+vim.keymap.set('v', '<leader>ts', '<cmd>ToggleTermSendVisualSelection<CR>', kmopts)
+vim.keymap.set('n', '<leader>tr', run_current_file, kmopts)
+vim.keymap.set('n', '<leader>tl', "<cmd>TermExec cmd='r'<CR>", kmopts) -- run last command in zsh
 -- https://github.com/sbdchd/vim-run
