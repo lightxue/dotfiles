@@ -39,6 +39,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'max397574/lua-dev.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'haringsrob/nvim_context_vt'
+Plug 'rafcamlet/nvim-luapad'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
