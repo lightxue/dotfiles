@@ -25,7 +25,12 @@ Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " 语言
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+let nproc = system('nproc')
+if nproc > 4
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+else
+    Plug 'nvim-treesitter/nvim-treesitter'
+endif
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'lukas-reineke/indent-blankline.nvim'
