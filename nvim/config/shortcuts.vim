@@ -170,11 +170,12 @@ function! ToggleMouse()
         set mouse=
         set nonu
         GitGutterDisable
+        Gitsigns toggle_signs false
         echo 'mouse off'
     else
         set mouse=a
         set nu
-        GitGutterEnable
+        Gitsigns toggle_signs true
         echo 'mouse on'
     endif
 endfunction
