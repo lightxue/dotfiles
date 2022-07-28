@@ -102,7 +102,7 @@ nnoremap <Leader>xk :qa!<CR>
 
 nnoremap <Leader>mk :make -j$(grep --count processor /proc/cpuinfo)<CR>
 
-nnoremap <Leader>fs :%!sudo cat > %<CR>
+nnoremap <Leader>fs :%!sudo tee %<CR>
 
 nnoremap <Leader>cw :call CleanWhiteSpace()<CR>
 
@@ -169,7 +169,6 @@ function! ToggleMouse()
     if &mouse == 'a'
         set mouse=
         set nonu
-        GitGutterDisable
         Gitsigns toggle_signs false
         echo 'mouse off'
     else
