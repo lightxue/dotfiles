@@ -5,7 +5,6 @@
   - zsh:
   - curl:
   - git:
-  - asdf:
   - python3:
   - python3-pip:
   - lua:
@@ -30,7 +29,6 @@
   - traceroute:
   - unzip:
   - zip:
-  - zoxide:
   # python dependence
   - libssl-dev:
   - zlib1g-dev:

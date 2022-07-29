@@ -14,6 +14,8 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 git submodule update --init --recursive "${PLUGIN_DIR}"
 
+$BOT -c "install.conf.yaml"
+
 if [[ $OSTYPE == 'darwin'* ]]; then
     $BOT -p "${PLUGIN_DIR}/dotbot-brew/brew.py" -c "brew.conf.yaml"
 else
@@ -23,8 +25,11 @@ fi
 [ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 source "$HOME/.asdf/asdf.sh"
 $BOT -p "${PLUGIN_DIR}/dotbot-asdf/asdf.py" -c "asdf.conf.yaml"
+
+npm config set registry http://mirrors.cloud.tencent.com/npm/
 npm install --global yarn
+
+pip config set global.index-url http://mirrors.tencent.com/pypi/simple                                                                                                                                                         master [2580e4f] modified
+pip config set global.trusted-host mirrors.tencent.com
 pip install --user -r requirements.txt
 cat requirements-pipx.txt | xargs -n 1 pipx install
-
-$BOT -c "install.conf.yaml"
