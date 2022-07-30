@@ -36,7 +36,6 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
-Plug 'xuhdev/SingleCompile'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'norcalli/nvim-colorizer.lua'
@@ -45,6 +44,16 @@ Plug 'max397574/lua-dev.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'haringsrob/nvim_context_vt'
 Plug 'rafcamlet/nvim-luapad'
+
+" debugger
+Plug 'mfussenegger/nvim-dap'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'nvim-telescope/telescope-dap.nvim'
+Plug 'mfussenegger/nvim-dap-python'
+Plug 'leoluz/nvim-dap-go'
+Plug 'mxsdev/nvim-dap-vscode-js'
+Plug 'jbyuki/one-small-step-for-vimkind'
 
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
@@ -107,5 +116,3 @@ call plug#end()
 
 " TODO
 " vim-visual-multi
-" mfussenegger/nvim-dap
-" "Pocco81/dap-buddy.nvim"

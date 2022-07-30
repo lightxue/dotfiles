@@ -33,3 +33,6 @@ pip config set global.index-url http://mirrors.tencent.com/pypi/simple          
 pip config set global.trusted-host mirrors.tencent.com
 pip install --user -r requirements.txt
 cat requirements-pipx.txt | xargs -n 1 pipx install
+
+export GOPATH="$HOME/.local/go"
+go install github.com/go-delve/delve/cmd/dlv@latest

@@ -15,6 +15,7 @@ lua require('text')
 lua require('file-sys')
 lua require('language')
 lua require('ui')
+lua require('debugger').setup()
 lua require('misc')
 
 " vim:set expandtab shiftwidth=4 tabstop=4:
