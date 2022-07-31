@@ -32,7 +32,9 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 require('telescope').setup {}
 require('telescope').load_extension('fzf')
 
-require("project_nvim").setup({})
+require("project_nvim").setup({
+    silent_chdir = false,
+})
 require('telescope').load_extension('projects')
 
 require('gitsigns').setup()
