@@ -20,4 +20,4 @@ require('telescope').load_extension('neoclip')
 
 require('numb').setup()
 
-vim.notify = require("notify")
+-- vim.notify = require("notify")

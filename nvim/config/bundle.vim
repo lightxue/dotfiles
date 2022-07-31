@@ -75,7 +75,6 @@ Plug 'folke/which-key.nvim'
 Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 " Plug 'simnalamburt/vim-mundo'
-Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/scratch.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'jdhao/better-escape.vim'
@@ -107,6 +106,7 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'SmiteshP/nvim-navic'
+Plug 'goolord/alpha-nvim'
 
 " 其它
 Plug 'lightxue/SwissCalc'

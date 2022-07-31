@@ -37,3 +37,5 @@ require('lualine').setup({
     },
 })
 
+
+require("startify").setup()
