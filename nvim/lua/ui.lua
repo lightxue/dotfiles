@@ -21,7 +21,7 @@ require('lualine').setup({
             'fileformat'
         },
         lualine_y = { '%l/%L:%c' },
-        lualine_z = { '%b-0x%B' }
+        lualine_z = { '%b:0x%B' }
     },
     inactive_sections = {
         lualine_a = {},
