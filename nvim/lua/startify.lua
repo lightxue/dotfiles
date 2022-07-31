@@ -51,9 +51,10 @@ local function cowsay(lines)
 end
 
 local function alpha_reset()
-    local startify = require'alpha.themes.startify'
-    startify.section.header.val = cowsay(require'alpha.fortune'())
-    require'alpha'.setup(startify.config)
+    -- local startify = require'alpha.themes.startify'
+    local dashboard = require'alpha.themes.dashboard'
+    dashboard.section.header.val = cowsay(require'alpha.fortune'())
+    require'alpha'.setup(dashboard.opts)
 end
 
 function M.setup()
