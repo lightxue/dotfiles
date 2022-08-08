@@ -24,6 +24,9 @@
     ~/.zshrc:
       path: zsh/zshrc
       force: true
+    ~/.p10k.zsh:
+      path: zsh/p10k.zsh
+      force: true
     ~/.config/nvim:
       path: nvim
       force: true
