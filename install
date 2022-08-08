@@ -29,7 +29,7 @@ $BOT -p "${PLUGIN_DIR}/dotbot-asdf/asdf.py" -c "asdf.conf.yaml"
 npm config set registry http://mirrors.cloud.tencent.com/npm/
 npm install --global yarn
 
-pip config set global.index-url http://mirrors.tencent.com/pypi/simple                                                                                                                                                         master [2580e4f] modified
+pip config set global.index-url http://mirrors.tencent.com/pypi/simple
 pip config set global.trusted-host mirrors.tencent.com
 pip install --user -r requirements.txt
 cat requirements-pipx.txt | xargs -n 1 pipx install

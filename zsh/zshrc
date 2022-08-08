@@ -68,7 +68,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "changyuheng/zsh-interactive-cd"
 zplug "BlaineEXE/zsh-cmd-status"
-zplug "DarrinTisdale/zsh-aliases-exa"
+# zplug "DarrinTisdale/zsh-aliases-exa"
 
 # User configuration
 
