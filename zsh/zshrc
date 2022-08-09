@@ -160,13 +160,11 @@ export EDITOR=nvim
 
 # 设置PATH
 export GOPATH="$HOME/.local/go"
-export PATH="$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
+export PATH="/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
 
 function src_file() {
     [ -f $1 ] && source $1
 }
-
-src_file ~/.zsh-custom
 
 # fzf
 src_file ~/.fzf.zsh
