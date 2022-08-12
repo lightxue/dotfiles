@@ -76,7 +76,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "changyuheng/zsh-interactive-cd"
 zplug "BlaineEXE/zsh-cmd-status"
 # zplug "DarrinTisdale/zsh-aliases-exa"
-zplug romkatv/powerlevel10k, as:theme, depth:1
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # User configuration
 
@@ -112,6 +112,17 @@ export LC_ALL=en_US.UTF-8
 
 
 # add by lightxue
+
+function src_file() {
+    [ -f $1 ] && source $1
+}
+
+# asdf
+src_file "$HOME/.asdf/asdf.sh"
+# fzf
+src_file ~/.fzf.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+src_file ~/.p10k.zsh
 
 # 自定义命令
 # 查询IP地址
@@ -163,18 +174,9 @@ export EDITOR=nvim
 export GOPATH="$HOME/.local/go"
 export PATH="/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
 
-function src_file() {
-    [ -f $1 ] && source $1
-}
-
-# fzf
-src_file ~/.fzf.zsh
-# asdf
-src_file "$HOME/.asdf/asdf.sh"
-
-if [ "$TERM" = "xterm" ]; then
-    export TERM=xterm-256color
-fi
+# if [ "$TERM" = "xterm" ]; then
+#     export TERM=xterm-256color
+# fi
 
 eval "$(zoxide init zsh --cmd j)"
 
@@ -188,6 +190,3 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

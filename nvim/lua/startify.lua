@@ -11,7 +11,8 @@ local function init_theme()
         btn("m", "  Frecency/MRU", "<Cmd>Telescope oldfiles<CR>"),
         btn("p", "  Find project", "<Cmd>Telescope projects<CR>"),
         btn("b", "  Find buffer",  "<Cmd>Telescope buffers<CR>"),
-        btn("g", "  Find word",    "<Cmd>Telescope live_grep<CR>"),
+        btn("w", "  Find word",    "<Cmd>Telescope live_grep<CR>"),
+        btn("x", "  Quit",    "<Cmd>q<CR>"),
     }
     dashboard.section.footer.val = [[
 Vim is a way of life
