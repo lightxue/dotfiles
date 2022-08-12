@@ -84,17 +84,6 @@ zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -112,6 +101,17 @@ export LC_ALL=en_US.UTF-8
 
 
 # add by lightxue
+#
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# 设置默认编辑器
+export VISUAL=nvim
+export EDITOR=nvim
+
+# 设置PATH
+export GOPATH="$HOME/.local/go"
+export PATH="/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
 
 function src_file() {
     [ -f $1 ] && source $1
@@ -163,16 +163,6 @@ alias gbk='iconv -f gbk -t utf8'
 save_alias sed gsed # mac 使用GNU sed
 save_alias tree exa 'exa --tree'
 save_alias btop bpytop
-
-# 设置默认编辑器
-export VISUAL=nvim
-export EDITOR=nvim
-
-# export LC_ALL=zh_CN.UTF-8
-
-# 设置PATH
-export GOPATH="$HOME/.local/go"
-export PATH="/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
 
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
