@@ -113,6 +113,11 @@ export EDITOR=nvim
 export GOPATH="$HOME/.local/go"
 export PATH="/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
 
+# 设置终端类型
+if [ "$TERM" = "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
 function src_file() {
     [ -f $1 ] && source $1
 }
@@ -148,12 +153,6 @@ alias more='less'
 alias wl='wc -l'
 alias tf='tail -f'
 alias cnter='sort | uniq -c | sort -nr'
-
-if [ $(uname -s) = 'Linux' ]; then
-    alias mk="make -j$(grep --count processor /proc/cpuinfo)"
-else
-    alias mk="make"
-fi
 alias mc="make clean"
 alias mck="mc && mk"
 alias mi="make install"
@@ -163,9 +162,12 @@ alias gbk='iconv -f gbk -t utf8'
 save_alias sed gsed # mac 使用GNU sed
 save_alias tree exa 'exa --tree'
 save_alias btop bpytop
+save_alias p bpython
 
-if [ "$TERM" = "xterm" ]; then
-    export TERM=xterm-256color
+if [ $(uname -s) = 'Linux' ]; then
+    alias mk="make -j$(grep --count processor /proc/cpuinfo)"
+else
+    alias mk="make"
 fi
 
 eval "$(zoxide init zsh --cmd j)"
