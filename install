@@ -27,7 +27,7 @@ source "$HOME/.asdf/asdf.sh"
 $BOT -p "${PLUGIN_DIR}/dotbot-asdf/asdf.py" -c "asdf.conf.yaml"
 
 npm config set registry http://mirrors.cloud.tencent.com/npm/
-npm install --global yarn
+npm install --global yarn gtop
 
 pip config set global.index-url http://mirrors.tencent.com/pypi/simple
 pip config set global.trusted-host mirrors.tencent.com

@@ -56,6 +56,10 @@ ZSH_CUSTOM=~/.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/macos", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/history", from:oh-my-zsh
@@ -69,8 +73,10 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/virtualenv", from:oh-my-zsh
 zplug "plugins/rand-quote", from:oh-my-zsh
-zplug "plugins/asdf", from:oh-my-zsh
+zplug "plugins/gitignore", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
+zplug "plugins/zsh_reload", from:oh-my-zsh
+zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 # zplug "marlonrichert/zsh-autocomplete"
@@ -78,6 +84,8 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "changyuheng/zsh-interactive-cd"
 zplug "BlaineEXE/zsh-cmd-status"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "MichaelAquilina/zsh-you-should-use"
+zplug "jeffreytse/zsh-vi-mode"
 
 # User configuration
 
@@ -153,6 +161,8 @@ alias mck="mc && mk"
 alias mi="make install"
 alias agi="sudo apt-get install -y"
 alias gbk='iconv -f gbk -t utf8'
+alias be='bindkey -e'
+alias bi='bindkey -v'
 
 save_alias sed gsed # mac 使用GNU sed
 save_alias tree exa 'exa --tree'
@@ -166,6 +176,12 @@ else
 fi
 
 eval "$(zoxide init zsh --cmd j)"
+
+zvm_config() {
+  ZVM_VI_ESCAPE_BINDKEY=jk
+  # Always starting with insert mode for each command line
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+}
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
