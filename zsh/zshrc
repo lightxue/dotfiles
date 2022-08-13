@@ -111,7 +111,7 @@ export EDITOR=nvim
 
 # 设置PATH
 export GOPATH="$HOME/.local/go"
-export PATH="/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin"
+export PATH="$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin"
 
 # 设置终端类型
 if [ "$TERM" = "xterm" ]; then
