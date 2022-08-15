@@ -36,7 +36,6 @@ alias duf='du -sh *'
 alias ff='find . -type f -name'
 
 save_alias sed gsed # mac 使用GNU sed
-# save_alias tree exa 'exa --tree'
 save_alias btop bpytop
 save_alias p bpython
 

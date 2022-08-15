@@ -5,6 +5,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# 环境变量
+# 语言
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+# 设置默认编辑器
+export VISUAL=nvim
+export EDITOR=nvim
+# 设置PATH
+export GOPATH="$HOME/.local/go"
+export PATH="$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin"
+# 设置终端类型
+if [ "$TERM" = "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
 source ~/.zplug/init.zsh
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -107,25 +122,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-# add by lightxue
-#
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# 设置默认编辑器
-export VISUAL=nvim
-export EDITOR=nvim
-
-# 设置PATH
-export GOPATH="$HOME/.local/go"
-export PATH="$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin"
-
-# 设置终端类型
-if [ "$TERM" = "xterm" ]; then
-    export TERM=xterm-256color
-fi
 
 function src_file() {
     [ -f $1 ] && source $1
