@@ -3,23 +3,19 @@
     global: latest
     versions:
       - latest
+    url: https://github.com/danhper/asdf-python.git
   - plugin: nodejs
     global: latest
     versions:
       - latest
+    url: https://github.com/asdf-vm/asdf-nodejs.git
   - plugin: neovim
     global: latest
     versions:
       - latest
-  - plugin: bat
-    global: latest
-    versions:
-      - latest
-  - plugin: exa
-    global: latest
-    versions:
-      - latest
+    url: https://github.com/richin13/asdf-neovim.git
   - plugin: golang
     global: latest
     versions:
       - latest
+    url: https://github.com/kennyp/asdf-golang.git
