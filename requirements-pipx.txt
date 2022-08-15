@@ -4,3 +4,4 @@ httpie
 iredis
 bpytop
 glances
+pygments

@@ -56,6 +56,7 @@ ZSH_CUSTOM=~/.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/aliases", from:oh-my-zsh
 zplug "plugins/macos", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -75,7 +76,6 @@ zplug "plugins/virtualenv", from:oh-my-zsh
 zplug "plugins/rand-quote", from:oh-my-zsh
 zplug "plugins/gitignore", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
-zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -131,49 +131,8 @@ function src_file() {
     [ -f $1 ] && source $1
 }
 
-# fzf
 src_file ~/.fzf.zsh
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-src_file ~/.p10k.zsh
-
-# 别名
-
-funcion save_alias() {
-    local cmd=$1
-    local dep_cmd=$2
-    local alias_cmd=$2
-    if [ -n "$3" ]; then
-        alias_cmd="$3"
-    fi
-    if type $dep_cmd > /dev/null; then
-        alias $cmd="$alias_cmd"
-    fi
-}
-
-alias vi='nvim'
-alias more='less'
-#alias tmux='tmux -2'
-alias wl='wc -l'
-alias tf='tail -f'
-alias cnter='sort | uniq -c | sort -nr'
-alias mc="make clean"
-alias mck="mc && mk"
-alias mi="make install"
-alias agi="sudo apt-get install -y"
-alias gbk='iconv -f gbk -t utf8'
-alias be='bindkey -e'
-alias bi='bindkey -v'
-
-save_alias sed gsed # mac 使用GNU sed
-save_alias tree exa 'exa --tree'
-save_alias btop bpytop
-save_alias p bpython
-
-if [ $(uname -s) = 'Linux' ]; then
-    alias mk="make -j$(grep --count processor /proc/cpuinfo)"
-else
-    alias mk="make"
-fi
+src_file ~/.p10k.zsh # To customize prompt, run `p10k configure`
 
 eval "$(zoxide init zsh --cmd j)"
 
