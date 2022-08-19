@@ -45,3 +45,9 @@
   - liblzma-dev:
   - libgdbm-dev:
   - libgdbm-compat-dev:
+  - lua5.2:
+  - lua5.2-doc:
+  - liblua5.2-dev:
+  - nginx-full:
+  - luajit:
+  - libnginx-mod-http-lua:
