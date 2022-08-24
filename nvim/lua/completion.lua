@@ -45,8 +45,6 @@ local on_attach = function(client, bufnr)
         action.smart_scroll_with_saga(-1)
     end, bufopts)
 
-    -- show signature help
-    vim.keymap.set("n", "gs", require("lspsaga.signaturehelp").signature_help, bufopts)
     -- rename
     -- close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
     vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, bufopts)
