@@ -136,6 +136,10 @@ zvm_config() {
   ZVM_VI_ESCAPE_BINDKEY=jk
   # Always starting with insert mode for each command line
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  bind -m vi-command 'Control-l: clear-screen'
+  bind -m vi-insert 'Control-l: clear-screen'
+  bind -m vi-command 'Control-d: exit_zsh'
+  bind -m vi-insert 'Control-d: exit_zsh'
 }
 
 # Install plugins if there are plugins that have not been installed
