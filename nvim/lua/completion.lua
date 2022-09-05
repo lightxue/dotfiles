@@ -35,15 +35,15 @@ local on_attach = function(client, bufnr)
     -- show hover doc
     vim.keymap.set("n", "K", require("lspsaga.hover").render_hover_doc, bufopts)
 
-    local action = require("lspsaga.action")
-    -- scroll down hover doc or scroll in definition preview
-    vim.keymap.set("n", "<C-f>", function()
-        action.smart_scroll_with_saga(1)
-    end, bufopts)
-    -- scroll up hover doc
-    vim.keymap.set("n", "<C-b>", function()
-        action.smart_scroll_with_saga(-1)
-    end, bufopts)
+    -- local action = require("lspsaga.action")
+    -- -- scroll down hover doc or scroll in definition preview
+    -- vim.keymap.set("n", "<C-f>", function()
+    --     action.smart_scroll_with_saga(1)
+    -- end, bufopts)
+    -- -- scroll up hover doc
+    -- vim.keymap.set("n", "<C-b>", function()
+    --     action.smart_scroll_with_saga(-1)
+    -- end, bufopts)
 
     -- rename
     -- close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
