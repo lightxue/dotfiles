@@ -100,7 +100,7 @@ zplug "changyuheng/zsh-interactive-cd"
 zplug "BlaineEXE/zsh-cmd-status"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "MichaelAquilina/zsh-you-should-use"
-zplug "jeffreytse/zsh-vi-mode"
+# zplug "jeffreytse/zsh-vi-mode"
 
 # User configuration
 

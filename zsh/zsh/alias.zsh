@@ -16,7 +16,7 @@ alias agi="sudo apt-get install -y"
 alias gbk='iconv -f gbk -t utf8'
 
 alias be='bindkey -e'
-alias bi='bindkey -v'
+alias bv='bindkey -v'
 
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 
