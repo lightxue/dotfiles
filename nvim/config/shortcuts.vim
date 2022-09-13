@@ -106,6 +106,8 @@ nnoremap <Leader>fs :%!sudo tee %<CR>
 
 nnoremap <Leader>cw :call CleanWhiteSpace()<CR>
 
+nnoremap <Leader>nn :Scalc<CR>
+
 " 设置回绕
 function! ToggleWrap()
     if &wrap
