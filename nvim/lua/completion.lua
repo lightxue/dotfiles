@@ -8,6 +8,63 @@ require("nvim-lsp-installer").setup {
 
 local lspconfig = require('lspconfig')
 
+local lspsaga_on_attach = function(client, bufnr)
+    local saga = require 'lspsaga'
+    saga.init_lsp_saga()
+    local keymap = vim.keymap.set
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+    -- Lsp finder find the symbol definition implement reference
+    -- if there is no implement it will hide
+    -- when you use action in finder like open vsplit then you can
+    -- use <C-t> to jump back
+    keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", bufopts)
+
+    -- Code action
+    keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", bufopts)
+
+    -- Rename
+    keymap("n", "gr", "<cmd>Lspsaga rename<CR>", bufopts)
+
+    -- Peek Definition
+    -- you can edit the definition file in this flaotwindow
+    -- also support open/vsplit/etc operation check definition_action_keys
+    -- support tagstack C-t jump back
+    keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", bufopts)
+
+    -- Show line diagnostics
+    keymap("n", "<leader>de", "<cmd>Lspsaga show_line_diagnostics<CR>", bufopts)
+
+    -- Show cursor diagnostic
+    keymap("n", "<leader>de", "<cmd>Lspsaga show_cursor_diagnostics<CR>", bufopts)
+
+    -- Diagnsotic jump can use `<c-o>` to jump back
+    keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", bufopts)
+    keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", bufopts)
+
+    -- Only jump to error
+    keymap("n", "[E", function()
+      require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+    end, bufopts)
+    keymap("n", "]E", function()
+      require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+    end, bufopts)
+
+    -- Outline
+    keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",bufopts)
+
+    -- Hover Doc
+    keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", bufopts)
+
+    -- Float terminal
+    keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", bufopts)
+    -- if you want pass somc cli command into terminal you can do like this
+    -- open lazygit in lspsaga float terminal
+    keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", bufopts)
+    -- close floaterm
+    keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], bufopts)
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -23,53 +80,16 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<Leader>ii', vim.lsp.buf.formatting, bufopts)
     -- TODO range_formatting
 
+    lspsaga_on_attach (client, bufnr)
 
-    vim.keymap.set("n", "gh", require("lspsaga.finder").lsp_finder, bufopts)
-
-    -- local action = require("lspsaga.codeaction")
-
-    -- code action
-    vim.keymap.set("n", "<Leader>ca", "<CMD>Lspsaga code_action<CR>", bufopts)
-    vim.keymap.set("v", "<Leader>ca", "<CMD><C-U>Lspsaga range_code_action<CR>", bufopts)
-
-    -- show hover doc
-    vim.keymap.set("n", "K", require("lspsaga.hover").render_hover_doc, bufopts)
-
-    -- local action = require("lspsaga.action")
-    -- -- scroll down hover doc or scroll in definition preview
-    -- vim.keymap.set("n", "<C-f>", function()
-    --     action.smart_scroll_with_saga(1)
-    -- end, bufopts)
-    -- -- scroll up hover doc
-    -- vim.keymap.set("n", "<C-b>", function()
-    --     action.smart_scroll_with_saga(-1)
-    -- end, bufopts)
-
-    -- rename
-    -- close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
-    vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, bufopts)
     -- preview definition
     vim.keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set("n", "gd", require("lspsaga.definition").preview_definition, bufopts)
-
-    vim.keymap.set("n", "<Leader>de", require("lspsaga.diagnostic").show_line_diagnostics, bufopts)
-    vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setloclist, opts)
-
-    -- jump diagnostic
-    vim.keymap.set("n", "[e", require("lspsaga.diagnostic").goto_prev, bufopts)
-    vim.keymap.set("n", "]e", require("lspsaga.diagnostic").goto_next, bufopts)
-    -- or jump to error
-    vim.keymap.set("n", "[E", function()
-        require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-    end, bufopts)
-    vim.keymap.set("n", "]E", function()
-        require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-    end, bufopts)
-
+    vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setloclist, bufopts)
     vim.keymap.set("n", "<Leader>dc", '<CMD>NvimContextVtToggle<CR>', bufopts)
 
     require("nvim-navic").attach(client, bufnr)
-    require('illuminate').on_attach(client, bufnr)
+    require('illuminate').on_attach(client)
+
 end
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
@@ -201,9 +221,6 @@ cmp.setup.cmdline(':', {
 -- })
 
 require("luasnip.loaders.from_vscode").lazy_load('bundle/friendly-snippets/snippets')
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
 
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
