@@ -10,7 +10,7 @@ local lspconfig = require('lspconfig')
 
 local lspsaga_on_attach = function(client, bufnr)
     local saga = require 'lspsaga'
-    saga.init_lsp_saga()
+    saga.setup({})
     local keymap = vim.keymap.set
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -105,7 +105,7 @@ local servers = {
     'pyright',
     -- 'remark_ls',
     'sqls',
-    'sumneko_lua',
+    -- 'lua_ls',
     'texlab',
     'tsserver',
     'vimls',
