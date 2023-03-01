@@ -10,7 +10,7 @@
       - latest
     url: https://github.com/asdf-vm/asdf-nodejs.git
   - plugin: neovim
-    global: latest
+    global: stable
     versions:
       - latest
     url: https://github.com/richin13/asdf-neovim.git

@@ -861,7 +861,7 @@ local fortune_list = {
     },
     {
         "只有两样东西可能是无限的 -- 宇宙的大小和人类的愚蠢",
-        "不过, 对于前者我不太确定 :-)",
+        "不过, 对于前者我不太确定",
         "",
         "—— 爱因斯坦"
     },
@@ -920,7 +920,7 @@ local fortune_list = {
         "—— Ralph Johnson (设计模式四人帮之一)"
     },
     {
-        "软件设计就像做爱, 一次犯错, 你要用余下的一生来维护 :-)",
+        "软件设计就像做爱, 一次犯错, 你要用余下的一生来维护",
         "",
         "—— Michael Sinz"
     },
@@ -951,7 +951,7 @@ local fortune_list = {
         "—— Norm Schryer (贝尔实验室科学家)"
     },
     {
-        "你写下的任何代码, 六个月后再去看, 都像是别人写的 :-)",
+        "你写下的任何代码, 六个月后再去看, 都像是别人写的",
         "",
         "—— Tom Cargill (贝尔实验室科学家)"
     },
@@ -968,7 +968,7 @@ local fortune_list = {
         "—— Alan Perlis (第一个图灵奖得主)"
     },
     {
-        "世界上只有两种编程语言 -- 要么充满了抱怨; 要么没人使用 :-)",
+        "世界上只有两种编程语言 -- 要么充满了抱怨; 要么没人使用",
         "",
         "—— Bjarne Stroustrup"
     },
@@ -978,18 +978,18 @@ local fortune_list = {
         "—— Larry Flon"
     },
     {
-        "C 语言诡异离奇, 缺陷重重, 但却获得了巨大的成功 :-)",
+        "C 语言诡异离奇, 缺陷重重, 但却获得了巨大的成功",
         "",
         "—— Dennis Ritchie"
     },
     {
         "(相对 C 而言)在 C++ 里, 想搬起石头砸自己的脚更为困难了; ",
-        "不过一旦你真这么做了, 整条腿都得报销 :-)",
+        "不过一旦你真这么做了, 整条腿都得报销",
         "",
         "—— Bjarne Stroustrup"
     },
     {
-        "Java 与 JavaScript 的关系, 如同雷锋与雷峰塔的关系 :-)"
+        "Java 与 JavaScript 的关系, 如同雷锋与雷峰塔的关系"
     },
 
     {
@@ -1023,13 +1023,13 @@ local fortune_list = {
     {
         "软件开发是一场程序员和上帝的竞赛: ",
         "程序员要开发出更强更好、连傻瓜都会用的软件; 而上帝在努力创造更傻的傻瓜。",
-        "到目前为止, 一直是上帝赢 :-)",
+        "到目前为止, 一直是上帝赢",
         "",
         "—— Rick Cook"
     },
 
     {
-        "如果建筑工人像程序员写软件那样盖房子, 那第一只飞来的啄木鸟就能毁掉人类文明 :-)",
+        "如果建筑工人像程序员写软件那样盖房子, 那第一只飞来的啄木鸟就能毁掉人类文明",
         "",
         "—— Gerald Weinberg"
     },
@@ -1046,7 +1046,7 @@ local fortune_list = {
     },
     {
         "调试代码比写代码更困难; ",
-        "因此, 如果你尽自己所能写出了最复杂的代码, 你将没有更大的智慧去调试它 :-)"
+        "因此, 如果你尽自己所能写出了最复杂的代码, 你将没有更大的智慧去调试它"
     },
 
     {
@@ -1063,12 +1063,20 @@ local fortune_list = {
     },
 
     {
-        "软件就像性 -- 免费的时候更好 :-)",
+        "软件就像性 -- 免费的时候更好",
         "",
         "Software is like sex, it`s better when it`s free.",
         "",
         "—— Linus Torvalds"
-    }
+    },
+
+    {
+        "关于工具，一个最重要的，也是最不易察觉的方面是，工具对使用此工具的人的习惯的潜移默化的影响。如果这个工具是一门程序语言，不管我们是否喜欢它，它都会影响我们的思维惯式。",
+        "",
+        "A most important, but also most elusive, aspect of any tool is its influence on the habits of those who train themselves in its use. If the tool is a programming language this influence is, whether we like it or not, an influence on our thinking habits. — Edsger Dijkstra, computer scientist",
+        "",
+        "—— Edsger Dijkstra"
+    },
 }
 
 local box_chars = {
