@@ -23,6 +23,7 @@ Plug 'tamago324/cmp-zsh'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " 语言
 let nproc = system('nproc')
