@@ -8,6 +8,7 @@
 	d = difftool
 [core]
 	editor = nvim
+	quotepath = false
 	;pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
