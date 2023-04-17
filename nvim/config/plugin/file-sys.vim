@@ -1,9 +1,4 @@
-" nerdtree
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '\.o$']
-" let g:NERDTreeDirArrowExpandable = '▸'
-" let g:NERDTreeDirArrowCollapsible = '▾'
-nnoremap <Leader>nt :NERDTreeToggle<CR>
-" nnoremap <Leader>nt :NvimTreeToggle<CR>
+nnoremap <Leader>nt :NvimTreeToggle<CR>
 
 " vim-fugitive
 nnoremap <Leader>gs :Git<CR>

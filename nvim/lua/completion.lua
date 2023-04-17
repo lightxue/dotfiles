@@ -77,15 +77,16 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<Leader>dD', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gl', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<Leader>ii', vim.lsp.buf.formatting, bufopts)
-    -- TODO range_formatting
-
-    lspsaga_on_attach (client, bufnr)
 
     -- preview definition
     vim.keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setloclist, bufopts)
     vim.keymap.set("n", "<Leader>dc", '<CMD>NvimContextVtToggle<CR>', bufopts)
+
+    vim.keymap.set('n', '<Leader>ii', vim.lsp.buf.format, bufopts)
+    -- TODO range_formatting
+
+    lspsaga_on_attach (client, bufnr)
 
     require("nvim-navic").attach(client, bufnr)
     require('illuminate').on_attach(client)
@@ -153,11 +154,18 @@ cmp.setup {
     mapping = cmp.mapping.preset.insert({
         ['<C-j>'] = cmp.mapping.scroll_docs(-4),
         ['<C-k>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        -- ['<CR>'] = cmp.mapping.confirm {
-        --     behavior = cmp.ConfirmBehavior.Replace,
-        --     select = true,
-        -- },
+        -- ['<C-Space>'] = cmp.mapping.complete(),
+        ["<C-l>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                else
+                    fallback()
+                end
+            end,
+            s = cmp.mapping.confirm({ select = true }),
+            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        }),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()

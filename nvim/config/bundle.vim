@@ -12,7 +12,9 @@ Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP cli
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
-Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+" Snippets plugin
+" follow latest release and install jsregexp.
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
 Plug 'rafamadriz/friendly-snippets' " vscode snippet
 Plug 'hrsh7th/cmp-buffer'
 Plug 'uga-rosa/cmp-dictionary'
@@ -94,11 +96,8 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'PhilRunninger/nerdtree-visual-selection'
-" Plug 'kyazdani42/nvim-tree.lua'  " 还有些bug，比如:e .时消失，或是跳到别的标
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
 " 签页
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
