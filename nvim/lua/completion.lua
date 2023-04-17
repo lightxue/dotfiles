@@ -104,7 +104,7 @@ local servers = {
     'lemminx',
     'pyright',
     -- 'remark_ls',
-    'sqls',
+    'sqlls',
     -- 'lua_ls',
     'texlab',
     'tsserver',
