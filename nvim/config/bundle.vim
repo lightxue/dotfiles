@@ -14,7 +14,7 @@ Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 " Snippets plugin
 " follow latest release and install jsregexp.
-Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*'}
 Plug 'rafamadriz/friendly-snippets' " vscode snippet
 Plug 'hrsh7th/cmp-buffer'
 Plug 'uga-rosa/cmp-dictionary'
@@ -100,7 +100,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 " 签页
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " UI
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }

@@ -14,3 +14,5 @@ nnoremap <Leader>ij <CMD>%!jq --indent 4<CR>
 vnoremap <Leader>ij :!jq --indent 4<CR>
 nnoremap <Leader>is <CMD>%!sqlformat - -rs -k upper<CR>
 vnoremap <Leader>is :!sqlformat - -rs -k upper<CR>
+
+autocmd Filetype go setlocal noexpandtab nolist
