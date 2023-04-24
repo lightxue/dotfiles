@@ -5,29 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
--- OR setup with some options
-require("nvim-tree").setup({
-  -- sort_by = "case_sensitive",
-  view = {
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-        { key = "C", action = "cd" },
-        { key = "s", action = "vsplit" },
-        { key = "O", action = "system_open" },
-      },
-    },
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = false,
-  },
-})
+require('./nvtree')
 
 function _G.set_terminal_keymaps()
     local opts = {noremap = true}
