@@ -22,15 +22,15 @@ vim.keymap.set({'n', 'x', 'o'}, 'gS', '<Plug>(leap-backward-to)')
 -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
 -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-cross-window)')
 
-require('flit').setup {
-  keys = { f = 'f', F = 'F', t = 't', T = 'T' },
-  -- A string like "nv", "nvo", "o", etc.
-  labeled_modes = "v",
-  multiline = false,
-  -- Like `leap`s similar argument (call-specific overrides).
-  -- E.g.: opts = { equivalence_classes = {} }
-  opts = {}
-}
+-- require('flit').setup {
+--   keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+--   -- A string like "nv", "nvo", "o", etc.
+--   labeled_modes = "v",
+--   multiline = false,
+--   -- Like `leap`s similar argument (call-specific overrides).
+--   -- E.g.: opts = { equivalence_classes = {} }
+--   opts = {}
+-- }
 
 require('neoclip').setup()
 require('telescope').load_extension('neoclip')

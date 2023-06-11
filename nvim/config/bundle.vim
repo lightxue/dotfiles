@@ -62,7 +62,7 @@ Plug 'jbyuki/one-small-step-for-vimkind'
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
 Plug 'phaazon/hop.nvim'
 Plug 'ggandor/leap.nvim'
-Plug 'ggandor/flit.nvim'
+" Plug 'ggandor/flit.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'andymass/vim-matchup'
 Plug 'junegunn/vim-easy-align'
