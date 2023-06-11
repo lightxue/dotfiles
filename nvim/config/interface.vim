@@ -3,9 +3,9 @@
 " 编码与换行
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set ambiwidth=double " 使用 US-ASCII 字符两倍的宽度，帮助识别CJK
-set fo+=mB " formatoptions
+" set fo+=mB " formatoptions
 set ffs=unix,dos,mac " 文件格式支持
-scriptencoding utf-8
+" scriptencoding utf-8
 set encoding=utf-8 " Vim内部使用编码
 " 编码识别顺序
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -83,19 +83,19 @@ au BufNewFile,BufRead *.jce set filetype=cpp
 """"""""""""""""""""""""""""""
 set expandtab " 插入tab时换成合适数量的空格
 set shiftwidth=4 " 缩进一步使用的空格数目
-set smarttab " 行首的tab用合适的空白符代替
+" set smarttab " 行首的tab用合适的空白符代替
 set tabstop=4 " 文件里tab代表的空格数
 set lbr " 打开linebreak
 set tw=0 " textwidth, 一行的最大宽度
 set showbreak=↪\ 
 set list " 显示不可见字符"
 set listchars=tab:>-,nbsp:.,trail:⌴
-set autoindent " 按语法自动缩进
-set smartindent " 开启新行时自动缩进
-set cindent " 按C的语法缩进
+" set autoindent " 按语法自动缩进
+" set smartindent " 开启新行时自动缩进
+" set cindent " 按C的语法缩进
 set wrap  " 到屏幕边会回绕
 
-au BufRead,BufNewFile Makefile* set noexpandtab
+autocmd BufRead,BufNewFile Makefile* set noexpandtab
 
 " Use the below highlight group when displaying bad whitespace is desired.
 " highlight BadWhitespace ctermbg=red guibg=red

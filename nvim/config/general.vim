@@ -12,7 +12,7 @@ set noswapfile
 set backupext=.bak   " 自动备份文件后缀
 set autochdir " 设定文件浏览器目录为当前目录
 set foldmethod=manual        " 选择代码折叠类型
-set nopaste " 粘贴时保留原有格式 --> 关闭了，不然autoclose不能自动补全括号
+" set nopaste " 粘贴时保留原有格式 --> 关闭了，不然autoclose不能自动补全括号
 set wildignorecase "打开文件忽略大小写
 set wildignore=*.o,*~,*.pyc  "打开文件、补全文件等时忽略提示这些后缀的文件
 set wildignore+=*/.hg/*,*/.svn/*,*/.neocon/*
