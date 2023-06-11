@@ -36,7 +36,7 @@ local lspsaga_on_attach = function(client, bufnr)
     keymap("n", "<leader>de", "<cmd>Lspsaga show_line_diagnostics<CR>", bufopts)
 
     -- Show cursor diagnostic
-    keymap("n", "<leader>de", "<cmd>Lspsaga show_cursor_diagnostics<CR>", bufopts)
+    -- keymap("n", "<leader>de", "<cmd>Lspsaga show_cursor_diagnostics<CR>", bufopts)
 
     -- Diagnsotic jump can use `<c-o>` to jump back
     keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", bufopts)
@@ -51,7 +51,7 @@ local lspsaga_on_attach = function(client, bufnr)
     end, bufopts)
 
     -- Outline
-    keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",bufopts)
+    -- keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",bufopts)
 
     -- Hover Doc
     keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", bufopts)
@@ -146,6 +146,11 @@ local lspkind = require('lspkind')
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
+    -- 默认不选中
+    preselect = require('cmp').PreselectMode.None,
+    complete = {
+        completeopt=menu,menuone,noinsert,noselect
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -195,9 +200,9 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        -- { name = 'dictionary', keyword_length = 2 },
         { name = 'zsh' },
-        { name = 'nvim_lua' }
+        { name = 'nvim_lua' },
+        -- { name = 'dictionary', keyword_length = 3 },
     }, {
         { name = 'buffer' },
     },
@@ -220,12 +225,11 @@ cmp.setup.cmdline('/', {
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
+    sources = {
+        { name = 'path' },
         { name = 'cmdline' },
         { name = 'cmdline_history' }
-    })
+    }
 })
 
 -- require("cmp_dictionary").setup({
