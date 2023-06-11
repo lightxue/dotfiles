@@ -243,6 +243,7 @@ require("luasnip.loaders.from_vscode").lazy_load('bundle/friendly-snippets/snipp
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
+-- 函数后自动补括号
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
