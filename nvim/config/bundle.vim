@@ -39,7 +39,7 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
-Plug 'p00f/nvim-ts-rainbow'
+Plug 'HiPhish/nvim-ts-rainbow2'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'numToStr/Comment.nvim'
@@ -61,6 +61,8 @@ Plug 'jbyuki/one-small-step-for-vimkind'
 " 文本操作
 Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
 Plug 'phaazon/hop.nvim'
+Plug 'ggandor/leap.nvim'
+Plug 'ggandor/flit.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'andymass/vim-matchup'
 Plug 'junegunn/vim-easy-align'
