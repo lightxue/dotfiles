@@ -1,4 +1,5 @@
-nnoremap <Leader>nt :NvimTreeToggle<CR>
+nnoremap <Leader>nt :Neotree toggle filesystem left<CR>
+let g:neo_tree_remove_legacy_commands = 1
 
 " vim-fugitive
 nnoremap <Leader>gs :Git<CR>

@@ -96,8 +96,11 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/auto_mkdir'
 Plug 'ryanoasis/vim-devicons'
-Plug 'nvim-tree/nvim-tree.lua'
+" Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
+
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'MunifTanjim/nui.nvim'
 " 签页
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
