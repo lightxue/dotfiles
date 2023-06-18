@@ -47,6 +47,7 @@ Plug 'max397574/lua-dev.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'haringsrob/nvim_context_vt'
 Plug 'rafcamlet/nvim-luapad'
+Plug 'mechatroner/rainbow_csv'
 
 " debugger
 Plug 'mfussenegger/nvim-dap'
@@ -86,6 +87,8 @@ Plug 'jdhao/better-escape.vim'
 Plug 'rcarriga/nvim-notify'
 Plug 'AckslD/nvim-neoclip.lua'
 Plug 'nacro90/numb.nvim'
+Plug 'LunarVim/bigfile.nvim'
+Plug 'lambdalisue/suda.vim'
 
 "文件/系统
 Plug 'nvim-telescope/telescope.nvim'

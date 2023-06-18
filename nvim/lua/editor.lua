@@ -14,9 +14,11 @@ require("which-key").setup()
 require('neoscroll').setup()
 
 require'hop'.setup()
-require('leap')
-vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-forward-to)')
-vim.keymap.set({'n', 'x', 'o'}, 'gS', '<Plug>(leap-backward-to)')
+local leap = require('leap')
+-- Disable auto-jumping to the first match
+leap.opts.safe_labels = {}
+vim.keymap.set({'n', 'x', 'o'}, 't', '<Plug>(leap-forward-to)')
+vim.keymap.set({'n', 'x', 'o'}, 'T', '<Plug>(leap-backward-to)')
 -- vim.keymap.set({'x', 'o'}, 'x', '<Plug>(leap-forward-till)')
 -- vim.keymap.set({'x', 'o'}, 'X', '<Plug>(leap-backward-till)')
 -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
@@ -38,3 +40,4 @@ require('telescope').load_extension('neoclip')
 require('numb').setup()
 
 -- vim.notify = require("notify")
+require("bigfile").setup {}
