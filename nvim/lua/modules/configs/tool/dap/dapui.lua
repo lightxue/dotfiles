@@ -4,6 +4,10 @@ return function()
         dap = require('modules.utils.icons').get('dap'),
     }
 
+    require("nvim-dap-virtual-text").setup {
+        commented = true,
+    }
+
     require('dapui').setup({
         icons = { expanded = icons.ui.ArrowOpen, collapsed = icons.ui.ArrowClosed, current_frame = icons.ui.Indicator },
         mappings = {

@@ -1,5 +1,5 @@
 return function()
-    require('modules.utils').gen_lspkind_hl()
+    -- require('modules.utils').gen_lspkind_hl()
 
     local icons = {
         cmp = require('modules.utils.icons').get('cmp', true),

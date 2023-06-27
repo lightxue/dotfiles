@@ -144,7 +144,7 @@ local plug_map = {
     -- 	:with_noremap()
     -- 	:with_silent()
     -- 	:with_desc("ui: Change colorscheme for current session"),
-    ['n|<leader>fn'] = map_cu(':enew'):with_noremap():with_silent():with_desc('buffer: New'),
+    ['n|<leader>fn'] = map_cu('Telescope notify'):with_noremap():with_silent():with_desc('find: Notify history'),
     -- ["n|<leader>fg"] = map_cu("Telescope git_files")
     -- 	:with_noremap()
     -- 	:with_silent()
