@@ -7,7 +7,7 @@
 set ffs=unix,dos,mac " 文件格式支持
 " scriptencoding utf-8
 set encoding=utf-8 " Vim内部使用编码
-" 编码识别顺序
+" 编码识别顺序 TODO 未加到lua
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 " 不同终端使用编码不同
 if has("win32")
@@ -25,11 +25,11 @@ set showcmd " 显示输入的字符
 set mousehide " 默认不显示鼠标
 set so=0 " 移动时光标最多离底部0行
 set ruler " 显示行号和列号
-set wildmenu " 加强命令行自动补全
+set wildmenu " 加强命令行自动补全 TODO 未加到lua
 " set cmdheight=1 " 命令行占1行
 set nu " 显示行号
-set lazyredraw " 减少重绘
-set hid " 放弃缓冲区时隐藏而不卸载
+set lazyredraw " 减少重绘 TODO 未加到lua
+set hid " 放弃缓冲区时隐藏而不卸载 TODO 未加到lua
 set backspace=eol,start,indent
 set whichwrap=b,s,<,>,[,] " 使指定的左右移动光标的键在行首或行尾可以移到前一行或者后一行
 set ignorecase "搜索时忽略大小写

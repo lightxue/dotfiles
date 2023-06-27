@@ -6,7 +6,7 @@ endif
 call plug#begin('~/.config/nvim/bundle')
 
 " 补全
-Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-autopairs' " TODO m4xshen/autoclose.nvim
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
@@ -37,7 +37,7 @@ endif
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim' " TODO
 Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 Plug 'HiPhish/nvim-ts-rainbow2'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -60,7 +60,7 @@ Plug 'mxsdev/nvim-dap-vscode-js'
 Plug 'jbyuki/one-small-step-for-vimkind'
 
 " 文本操作
-Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste
+Plug 'ConradIrwin/vim-bracketed-paste' " 插入模式C-V自动set paste TODO
 Plug 'phaazon/hop.nvim'
 Plug 'ggandor/leap.nvim'
 " Plug 'ggandor/flit.nvim'
@@ -98,9 +98,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'vim-scripts/Rename'
-Plug 'vim-scripts/auto_mkdir'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'vim-scripts/Rename'
+" Plug 'vim-scripts/auto_mkdir'
+" Plug 'ryanoasis/vim-devicons'
 " Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
 

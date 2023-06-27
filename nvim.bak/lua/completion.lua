@@ -147,9 +147,9 @@ local lspkind = require('lspkind')
 local cmp = require 'cmp'
 cmp.setup {
     -- 默认不选中
-    preselect = require('cmp').PreselectMode.None,
+    preselect = cmp.PreselectMode.None,
     complete = {
-        completeopt=menu,menuone,noinsert,noselect
+        completeopt = 'menu,menuone,noinsert,noselect'
     },
     snippet = {
         expand = function(args)
