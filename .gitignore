@@ -9,3 +9,4 @@ vim/vim/sessions/
 /autojump/
 nvim/bundle/
 .luarc.json
+nvim/lazy-lock.json
