@@ -2,22 +2,26 @@ local tool = {}
 
 tool['tpope/vim-fugitive'] = {
     lazy = true,
-    cmd = { 'Git', 'G' },
+    cmd = { 'Git', 'G', 'Gllog' },
 }
--- TODO
--- Plug 'f-person/git-blame.nvim'
--- Plug 'junegunn/gv.vim'
--- only for fcitx5 user who uses non-English language during coding
--- tool["pysan3/fcitx5.nvim"] = {
--- 	lazy = true,
--- 	event = "BufReadPost",
--- 	cond = vim.fn.executable("fcitx5-remote") == 1,
--- 	config = require("tool.fcitx5"),
--- }
+
+tool['junegunn/gv.vim'] = {
+    lazy = true,
+    cmd = { 'GV' },
+    dependencies = {
+        'tpope/vim-fugitive',
+    }
+}
+
+tool['f-person/git-blame.nvim'] = {
+    lazy = true,
+    config = require('tool.git-blame'),
+    cmd = { 'GitBlameToggle' },
+}
+
 tool['nvim-neo-tree/neo-tree.nvim'] = {
     lazy = true,
     branch = 'v2.x',
-    -- cmd = { 'Neotree', },
     event = 'VeryLazy',
     config = require('tool.neo-tree'),
     dependencies = {

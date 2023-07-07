@@ -35,13 +35,6 @@ settings['format_disabled_dirs'] = {
 ---@type boolean
 settings['load_big_files_faster'] = true
 
--- Change the colors of the global palette here.
--- Settings will complete their replacement at initialization.
--- Parameters will be automatically completed as you type.
--- Example: { sky = "#04A5E5" }
----@type palette
-settings['palette_overwrite'] = {}
-
 -- Set the colorscheme to use here.
 -- Available values are: `catppuccin`, `catppuccin-latte`, `catppucin-mocha`, `catppuccin-frappe`, `catppuccin-macchiato`, `edge`, `nord`.
 ---@type string
@@ -81,7 +74,6 @@ settings['server_formatting_block_list'] = {
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 ---@type string[]
 settings['lsp_deps'] = {
-    'pylsp',
     'awk_ls',
     'bashls',
     'clangd',
@@ -91,9 +83,10 @@ settings['lsp_deps'] = {
     'html',
     'jsonls',
     'lemminx',
-    -- 'pyright',
-    'sqlls',
+    'ltex',
     'lua_ls',
+    'pylsp',
+    'sqlls',
     'texlab',
     'tsserver',
     'vimls',

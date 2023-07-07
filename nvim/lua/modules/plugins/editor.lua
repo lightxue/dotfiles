@@ -41,10 +41,9 @@ editor['numToStr/Comment.nvim'] = {
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('editor.comment'),
 }
--- TODO 是否添加
 editor['sindrets/diffview.nvim'] = {
     lazy = true,
-    cmd = { 'DiffviewOpen', 'DiffviewClose' },
+    cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewFileHistory' },
 }
 editor['junegunn/vim-easy-align'] = {
     lazy = true,
@@ -109,7 +108,10 @@ editor['nvim-treesitter/nvim-treesitter'] = {
     config = require('editor.treesitter'),
     dependencies = {
         { 'nvim-treesitter/nvim-treesitter-textobjects' },
-        { 'nvim-treesitter/nvim-treesitter-context' },
+        {
+            'nvim-treesitter/nvim-treesitter-context',
+            config = require('editor.ts-context'),
+        },
         { 'HiPhish/nvim-ts-rainbow2' },
         { 'JoosepAlviste/nvim-ts-context-commentstring' },
         { 'mfussenegger/nvim-treehopper' },
