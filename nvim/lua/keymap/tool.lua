@@ -7,20 +7,22 @@ require('keymap.helpers')
 
 local plug_map = {
     -- Plugin: vim-fugitive
-    ['n|<leader>gs'] = map_cr('Git'):with_noremap():with_silent():with_desc('git: Status'),
+    ['n|<leader>gs'] = map_callback(function()
+            vim.api.nvim_command('Git')
+            vim.api.nvim_command('wincmd K')
+            vim.api.nvim_command('resize 13')
+        end)
+        :with_noremap()
+        :with_silent()
+        :with_desc('git: Status'),
     ['n|<leader>gc'] = map_cr('Git commit'):with_noremap():with_silent():with_desc('git: Commit'),
     ['n|<leader>gpl'] = map_cr('Git pull'):with_noremap():with_silent():with_desc('git: Pull'),
     ['n|<leader>gps'] = map_cr('Git push'):with_noremap():with_silent():with_desc('git: Push'),
     ['n|<leader>gl'] = map_cr('Gllog'):with_noremap():with_silent():with_desc('git: Log'),
     ['n|<leader>gv'] = map_cr('GV'):with_noremap():with_silent():with_desc('git: View'),
-    ['n|<leader>gb'] = map_cr('GitBlameToggle'):with_noremap():with_silent():with_desc('git: Blame'),
+    ['n|<leader>gd'] = map_cr('Gvdiffsplit'):with_silent():with_noremap():with_desc('git: Diff this'),
     -- Plugin: diffview TODO 改成toggle
-    ['n|<leader>gd'] = map_cr('DiffviewOpen'):with_silent():with_noremap():with_desc('git: Show diff'),
-    ['n|<leader>gD'] = map_cr('DiffviewClose'):with_silent():with_noremap():with_desc('git: Close diff'),
-    -- Plugin: nvim-tree
-    -- ["n|<C-n>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("filetree: Toggle"),
-    -- ["n|<leader>nf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent():with_desc("filetree: Find file"),
-    -- ["n|<leader>nr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent():with_desc("filetree: Refresh"),
+    ['n|<leader>gD'] = map_cr('DiffviewOpen'):with_silent():with_noremap():with_desc('git: Show diff view'),
     -- Plugin: neo-tree
     ['n|<leader>nt'] = map_cr('Neotree toggle filesystem left')
         :with_noremap()

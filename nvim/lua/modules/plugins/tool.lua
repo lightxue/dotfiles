@@ -2,7 +2,7 @@ local tool = {}
 
 tool['tpope/vim-fugitive'] = {
     lazy = true,
-    cmd = { 'Git', 'G', 'Gllog' },
+    cmd = { 'Git', 'G', 'Gllog', 'Gvdiffsplit' },
 }
 
 tool['junegunn/gv.vim'] = {
@@ -10,13 +10,7 @@ tool['junegunn/gv.vim'] = {
     cmd = { 'GV' },
     dependencies = {
         'tpope/vim-fugitive',
-    }
-}
-
-tool['f-person/git-blame.nvim'] = {
-    lazy = true,
-    config = require('tool.git-blame'),
-    cmd = { 'GitBlameToggle' },
+    },
 }
 
 tool['nvim-neo-tree/neo-tree.nvim'] = {

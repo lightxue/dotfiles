@@ -1,7 +1,7 @@
 local ui = {}
 ui['folke/tokyonight.nvim'] = {
     lazy = true,
-    config = require('ui.tokyonight')
+    config = require('ui.tokyonight'),
 }
 ui['goolord/alpha-nvim'] = {
     lazy = true,

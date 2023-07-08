@@ -38,7 +38,7 @@ return function()
         -- preselect = cmp.PreselectMode.Item,
         preselect = require('cmp').PreselectMode.None,
         complete = {
-            completeopt = 'menu,menuone,noinsert,noselect'
+            completeopt = 'menu,menuone,noinsert,noselect',
         },
         window = {
             completion = {
@@ -116,7 +116,7 @@ return function()
         -- You can set mappings if you want
         mapping = cmp.mapping.preset.insert({
             -- ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-            ["<CR>"] = cmp.mapping({
+            ['<CR>'] = cmp.mapping({
                 i = function(fallback)
                     if cmp.visible() and cmp.get_active_entry() then
                         cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })

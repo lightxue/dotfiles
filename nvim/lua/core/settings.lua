@@ -28,7 +28,7 @@ settings['diagnostics_level'] = 'Hint'
 -- Set the format disabled directories here, files under these dirs won't be formatted on save.
 ---@type string[]
 settings['format_disabled_dirs'] = {
-    home .. '/format_disabled_dir_under_home',
+    '~/format_disabled_dir',
 }
 
 -- Set it to false if you don't use nvim to open big files.

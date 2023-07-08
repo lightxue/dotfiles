@@ -49,37 +49,52 @@ local core_map = {
     --- 标签页
     ['n|<leader>tn'] = map_cr('tabnew %'):with_noremap():with_silent():with_desc('tab: Create a new tab'),
     ['n|<leader>to'] = map_cr('tabonly'):with_noremap():with_silent():with_desc('tab: Only keep current tab'),
-    ['n|<leader>te'] = map_cr('tabedit<CR>:Startify'):with_noremap():with_silent():with_desc('tab: Open startify in new tab'),
+    ['n|<leader>te'] = map_cr('tabedit<CR>:Startify')
+        :with_noremap()
+        :with_silent()
+        :with_desc('tab: Open startify in new tab'),
 
     ['n|<S-Tab>'] = map_cr('normal za'):with_noremap():with_silent():with_desc('edit: Toggle code fold'),
     ['n|<leader>l'] = map_cmd('<C-L>'):with_noremap():with_silent():with_desc('window: Redraw'),
 
-    ['n|<leader>nw'] = map_callback(function ()
-        vim.o.wrap = not vim.o.wrap
-    end):with_noremap():with_silent():with_desc('edit: Toggle wrap'),
+    ['n|<leader>nw'] = map_callback(function()
+            vim.o.wrap = not vim.o.wrap
+        end)
+        :with_noremap()
+        :with_silent()
+        :with_desc('edit: Toggle wrap'),
 
-    ['n|<leader>hl'] = map_callback(function ()
-        vim.o.hlsearch = not vim.o.hlsearch
-    end):with_noremap():with_silent():with_desc('edit: Toggle hlsearch'),
+    ['n|<leader>hl'] = map_callback(function()
+            vim.o.hlsearch = not vim.o.hlsearch
+        end)
+        :with_noremap()
+        :with_silent()
+        :with_desc('edit: Toggle hlsearch'),
 
-    ['n|<leader>cw'] = map_callback(function ()
-        local save_cursor = vim.fn.getpos(".")
-        vim.cmd([[%s/\s\+$//e]])
-        vim.cmd([[%s/\r$//e]])
-        vim.fn.setpos(".", save_cursor)
-    end):with_noremap():with_silent():with_desc('edit: Clean trailing whitespace'),
+    ['n|<leader>cw'] = map_callback(function()
+            local save_cursor = vim.fn.getpos('.')
+            vim.cmd([[%s/\s\+$//e]])
+            vim.cmd([[%s/\r$//e]])
+            vim.fn.setpos('.', save_cursor)
+        end)
+        :with_noremap()
+        :with_silent()
+        :with_desc('edit: Clean trailing whitespace'),
 
-    ['n|<leader>ms'] = map_callback(function ()
-        if vim.o.mouse == 'a' then
-            vim.o.mouse = ''
-            vim.o.number = false
-            vim.api.nvim_command('Gitsigns toggle_signs false')
-        else
-            vim.o.mouse = 'a'
-            vim.o.number = true
-            vim.api.nvim_command('Gitsigns toggle_signs true')
-        end
-    end):with_noremap():with_silent():with_desc('edit: Toggle mouse mode'),
+    ['n|<leader>ms'] = map_callback(function()
+            if vim.o.mouse == 'a' then
+                vim.o.mouse = ''
+                vim.o.number = false
+                vim.api.nvim_command('Gitsigns toggle_signs false')
+            else
+                vim.o.mouse = 'a'
+                vim.o.number = true
+                vim.api.nvim_command('Gitsigns toggle_signs true')
+            end
+        end)
+        :with_noremap()
+        :with_silent()
+        :with_desc('edit: Toggle mouse mode'),
     -- Suckless
     -- ["n|<Esc>"] = map_cr("noh"):with_noremap():with_silent():with_desc("edit: Clear search highlight"),
     -- ["n|<C-q>"] = map_cr("wq"):with_desc("edit: Save file and quit"),

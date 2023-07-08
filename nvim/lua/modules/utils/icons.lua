@@ -94,6 +94,7 @@ local data = {
         Fire = '',
         Folder = '',
         FolderOpen = '',
+        FolderWithHeart = '󱃪',
         Gear = '',
         History = '󰄉',
         Incoming = '󰏷',
@@ -125,6 +126,7 @@ local data = {
         Sort = '',
         Spell = '󰓆',
         Symlink = '',
+        Tab = '',
         Table = '',
         Telescope = '',
     },
@@ -147,12 +149,14 @@ local data = {
         EscapeST = '',
         Gavel = '',
         Glass = '󰂖',
+        NoActiveLsp = '󱚧',
         PyEnv = '󰌠',
         Squirrel = '',
         Tag = '',
         Tree = '',
         Watch = '',
         Lego = '',
+        LspAvailable = '󱜙',
         Vbar = '│',
         Add = '+',
         Added = '',
@@ -183,15 +187,10 @@ local data = {
         undefined = '',
     },
     dap = {
-        -- Breakpoint = '󰝥',
         Breakpoint = '🔴',
-        -- BreakpointCondition = '󰟃',
         BreakpointCondition = '♦️',
-        -- BreakpointRejected = '',
         BreakpointRejected = '⛔️',
-        -- LogPoint = '',
         LogPoint = 'ℹ️',
-        -- Stopped = '',
         Stopped = '👉',
         Pause = '',
         Play = '',
@@ -202,10 +201,23 @@ local data = {
         StepOver = '󰆷',
         Terminate = '󰝤',
     },
+    neo_tree_git = {
+        -- Change type
+        added = '✚', -- NOTE: you can set any of these to an empty string to not show them
+        deleted = '✖',
+        modified = '',
+        renamed = '󰁕',
+        -- Status type
+        untracked = '?',
+        ignored = '',
+        unstaged = '',
+        staged = '',
+        conflict = '',
+    },
 }
 
 ---Get a specific icon set.
----@param category "kind"|"type"|"documents"|"git"|"ui"|"diagnostics"|"misc"|"cmp"|"dap"
+---@param category "kind"|"type"|"documents"|"git"|"ui"|"diagnostics"|"misc"|"cmp"|"dap"|"neo_tree_git"
 ---@param add_space? boolean @Add trailing space after the icon.
 function icons.get(category, add_space)
     if add_space then
