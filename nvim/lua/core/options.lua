@@ -93,7 +93,7 @@ local function load_options()
         showmode = false,
         sidescrolloff = 5,
         signcolumn = 'yes',
-        splitbelow = true,
+        splitbelow = false,
         splitkeep = 'cursor',
         splitright = true,
         startofline = false,

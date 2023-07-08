@@ -8,13 +8,21 @@ require('keymap.helpers')
 local plug_map = {
     -- Plugin: vim-fugitive
     ['n|<leader>gs'] = map_callback(function()
-            vim.api.nvim_command('Git')
-            vim.api.nvim_command('wincmd K')
-            vim.api.nvim_command('resize 13')
+            -- 当前窗口
+            if string.match(vim.fn.bufname(''), 'fugitive:///.*/.git//$') then
+                vim.cmd('quit')
+            -- 其它窗口
+            elseif vim.fn.buflisted(vim.fn.bufname('fugitive:///*/.git//$')) ~= 0 then
+                vim.cmd([[ execute ":bdelete" bufname('fugitive:///*/.git//$') ]])
+            -- 未打开
+            else
+                vim.cmd('Git')
+                vim.cmd('resize 13')
+            end
         end)
         :with_noremap()
         :with_silent()
-        :with_desc('git: Status'),
+        :with_desc('git: Toggle status'),
     ['n|<leader>gc'] = map_cr('Git commit'):with_noremap():with_silent():with_desc('git: Commit'),
     ['n|<leader>gpl'] = map_cr('Git pull'):with_noremap():with_silent():with_desc('git: Pull'),
     ['n|<leader>gps'] = map_cr('Git push'):with_noremap():with_silent():with_desc('git: Push'),
