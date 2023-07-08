@@ -5,20 +5,56 @@ local map_cmd = bind.map_cmd
 local map_callback = bind.map_callback
 require('keymap.helpers')
 
+local function get_shebang_cmd()
+    local shebang_head = '#!'
+    local lines = vim.api.nvim_buf_get_lines(0, 0, 1, true)
+    local first_line = #lines > 0 and lines[1] or ''
+    if first_line:find(shebang_head, 1, true) == 1 then
+        return first_line:sub(#shebang_head + 1)
+    end
+    return nil
+end
+
+local ft_cmd = {
+    python = 'python3',
+    lua = 'lua',
+    javascript = 'node',
+    go = 'go run',
+    sh = 'bash',
+    c = 'gcc',  -- TODO 需要编译且运行
+    cpp = 'g++'  -- TODO
+}
+local function get_filetype_cmd()
+    return ft_cmd[vim.bo.filetype]
+end
+
+local function run_current_file()
+    local fn = vim.fn.expand('%:p')
+    local cmd = get_shebang_cmd() or get_filetype_cmd()
+    if cmd == nil then
+        vim.notify('Not proper command to run current file', vim.log.levels.ERROR)
+        return
+    elseif fn == nil or fn == '' then
+        vim.notify('Invalid file path to run', vim.log.levels.ERROR)
+        return
+    end
+    require("toggleterm").exec(cmd .. ' ' .. fn)
+end
+
 local plug_map = {
     -- Plugin: vim-fugitive
     ['n|<leader>gs'] = map_callback(function()
-            -- 当前窗口
-            if string.match(vim.fn.bufname(''), 'fugitive:///.*/.git//$') then
-                vim.cmd('quit')
-            -- 其它窗口
-            elseif vim.fn.buflisted(vim.fn.bufname('fugitive:///*/.git//$')) ~= 0 then
-                vim.cmd([[ execute ":bdelete" bufname('fugitive:///*/.git//$') ]])
-            -- 未打开
-            else
-                vim.cmd('Git')
-                vim.cmd('resize 13')
+            local windows = vim.api.nvim_list_wins()
+            for _, win in ipairs(windows) do
+                local buf = vim.api.nvim_win_get_buf(win)
+                local buf_name = vim.api.nvim_buf_get_name(buf)
+                if string.match(buf_name, 'fugitive://.*/.git//$') then
+                    vim.api.nvim_win_close(win, true)
+                    return
+                end
             end
+            vim.cmd('Git')
+            vim.cmd('resize 13')
         end)
         :with_noremap()
         :with_silent()
@@ -28,7 +64,21 @@ local plug_map = {
     ['n|<leader>gps'] = map_cr('Git push'):with_noremap():with_silent():with_desc('git: Push'),
     ['n|<leader>gl'] = map_cr('Gllog'):with_noremap():with_silent():with_desc('git: Log'),
     ['n|<leader>gv'] = map_cr('GV'):with_noremap():with_silent():with_desc('git: View'),
-    ['n|<leader>gd'] = map_cr('Gvdiffsplit'):with_silent():with_noremap():with_desc('git: Diff this'),
+    ['n|<leader>gd'] = map_callback(function()
+            local windows = vim.api.nvim_list_wins()
+            for _, win in ipairs(windows) do
+                local buf = vim.api.nvim_win_get_buf(win)
+                local buf_name = vim.api.nvim_buf_get_name(buf)
+                if string.match(buf_name, 'fugitive://.*/.git//.+') then
+                    vim.api.nvim_win_close(win, true)
+                    return
+                end
+            end
+            vim.cmd('Gvdiffsplit')
+        end)
+        :with_silent()
+        :with_noremap()
+        :with_desc('git: Toggle diff this'),
     -- Plugin: diffview TODO 改成toggle
     ['n|<leader>gD'] = map_cr('DiffviewOpen'):with_silent():with_noremap():with_desc('git: Show diff view'),
     -- Plugin: neo-tree
@@ -53,15 +103,7 @@ local plug_map = {
         :with_noremap()
         :with_silent()
         :with_desc('terminal: Toggle horizontal'),
-    ['i|<leader>tt'] = map_cmd('<Esc><Cmd>ToggleTerm<CR>')
-        :with_noremap()
-        :with_silent()
-        :with_desc('terminal: Toggle horizontal'),
     ['n|<leader>ts'] = map_cr([[execute v:count . "ToggleTerm direction=horizontal"]])
-        :with_noremap()
-        :with_silent()
-        :with_desc('terminal: Toggle horizontal'),
-    ['i|<leader>ts'] = map_cmd('<Esc><Cmd>ToggleTerm direction=horizontal<CR>')
         :with_noremap()
         :with_silent()
         :with_desc('terminal: Toggle horizontal'),
@@ -73,10 +115,6 @@ local plug_map = {
         :with_noremap()
         :with_silent()
         :with_desc('terminal: Toggle vertical'),
-    ['i|<leader>tv'] = map_cmd('<Esc><Cmd>ToggleTerm direction=vertical<CR>')
-        :with_noremap()
-        :with_silent()
-        :with_desc('terminal: Toggle vertical'),
     ['t|<leader>tv'] = map_cmd('<Cmd>ToggleTerm<CR>')
         :with_noremap()
         :with_silent()
@@ -85,17 +123,14 @@ local plug_map = {
         :with_noremap()
         :with_silent()
         :with_desc('terminal: Toggle float'),
-    ['i|<leader>tf'] = map_cmd('<Esc><Cmd>ToggleTerm direction=float<CR>')
+    ['t|<leader>tf'] = map_cmd('<Cmd>ToggleTerm<CR>')
         :with_noremap()
         :with_silent()
         :with_desc('terminal: Toggle float'),
-    ['t|<leader>tf'] = map_cmd('<Cmd>ToggleTerm<CR>'):with_noremap():with_silent():with_desc('terminal: Toggle float'),
-    ['n|<leader>tg'] = map_callback(function()
-            _toggle_lazygit()
-        end)
+    ['n|<leader>tr'] = map_callback(run_current_file)
         :with_noremap()
         :with_silent()
-        :with_desc('git: Toggle lazygit'),
+        :with_desc('terminal: Run current file'),
 
     -- Plugin: trouble
     ['n|<leader>ee'] = map_cr('TroubleToggle'):with_noremap():with_silent():with_desc('lsp: Toggle trouble list'),
