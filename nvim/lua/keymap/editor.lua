@@ -14,14 +14,6 @@ local plug_map = {
         return et('<Plug>(accelerated_jk_gk)')
     end):with_expr(),
 
-    -- Plugin: auto_session
-    -- ["n|<leader>ss"] = map_cu("SessionSave"):with_noremap():with_silent():with_desc("session: Save"),
-    -- ["n|<leader>sr"] = map_cu("SessionRestore"):with_noremap():with_silent():with_desc("session: Restore"),
-    -- ["n|<leader>sd"] = map_cu("SessionDelete"):with_noremap():with_silent():with_desc("session: Delete"),
-
-    -- Plugin: nvim-bufdel
-    ['n|<leader>xb'] = map_cr('BufDel'):with_noremap():with_silent():with_desc('buffer: Close current'),
-
     -- Plugin: clever-f
     ['n|;'] = map_callback(function()
         return et('<Plug>(clever-f-repeat-forward)')

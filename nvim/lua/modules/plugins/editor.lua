@@ -26,11 +26,7 @@ editor['LunarVim/bigfile.nvim'] = {
     config = require('editor.bigfile'),
     cond = require('core.settings').load_big_files_faster,
 }
--- TODO 是否添加
-editor['ojroques/nvim-bufdel'] = {
-    lazy = true,
-    event = 'BufReadPost',
-}
+
 editor['rhysd/clever-f.vim'] = {
     lazy = true,
     event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
