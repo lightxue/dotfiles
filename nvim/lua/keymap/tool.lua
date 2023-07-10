@@ -21,8 +21,8 @@ local ft_cmd = {
     javascript = 'node',
     go = 'go run',
     sh = 'bash',
-    c = 'gcc',  -- TODO 需要编译且运行
-    cpp = 'g++'  -- TODO
+    c = 'gcc', -- TODO 需要编译且运行
+    cpp = 'g++', -- TODO
 }
 local function get_filetype_cmd()
     return ft_cmd[vim.bo.filetype]
@@ -38,7 +38,7 @@ local function run_current_file()
         vim.notify('Invalid file path to run', vim.log.levels.ERROR)
         return
     end
-    require("toggleterm").exec(cmd .. ' ' .. fn)
+    require('toggleterm').exec(cmd .. ' ' .. fn)
 end
 
 local plug_map = {

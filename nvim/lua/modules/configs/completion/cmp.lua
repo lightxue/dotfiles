@@ -187,7 +187,7 @@ return function()
     })
 
     cmp.setup.filetype({ 'swisscalc' }, {
-        enabled = false
+        enabled = false,
     })
 
     -- require('cmp').setup.buffer({ enabled = false })
