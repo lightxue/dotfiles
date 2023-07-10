@@ -65,8 +65,8 @@ completion['hrsh7th/nvim-cmp'] = {
 }
 completion['zbirenbaum/copilot.lua'] = {
     lazy = true,
-    cmd = 'Copilot',
-    event = 'InsertEnter',
+    cmd = 'Copilot', -- 主动调命令时才启用
+    -- event = 'InsertEnter',
     config = require('completion.copilot'),
     dependencies = {
         {

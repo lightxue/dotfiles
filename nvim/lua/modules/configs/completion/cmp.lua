@@ -35,11 +35,11 @@ return function()
     local cmp = require('cmp')
     cmp.setup({
         -- 默认不选中
-        -- preselect = cmp.PreselectMode.Item,
-        preselect = require('cmp').PreselectMode.None,
-        complete = {
-            completeopt = 'menu,menuone,noinsert,noselect',
-        },
+        preselect = cmp.PreselectMode.Item,
+        -- preselect = require('cmp').PreselectMode.None,
+        -- complete = {
+        --     completeopt = 'menu,menuone,noinsert,noselect',
+        -- },
         window = {
             completion = {
                 border = border('PmenuBorder'),
@@ -115,24 +115,24 @@ return function()
         },
         -- You can set mappings if you want
         mapping = cmp.mapping.preset.insert({
-            -- ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-            ['<CR>'] = cmp.mapping({
-                i = function(fallback)
-                    if cmp.visible() and cmp.get_active_entry() then
-                        cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-                    else
-                        fallback()
-                    end
-                end,
-                s = cmp.mapping.confirm({ select = true }),
-                c = function(fallback)
-                    if cmp.visible() and cmp.get_active_entry() then
-                        cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-                    else
-                        fallback()
-                    end
-                end,
-            }),
+            ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+            -- ['<CR>'] = cmp.mapping({
+            --     i = function(fallback)
+            --         if cmp.visible() and cmp.get_active_entry() then
+            --             cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            --         else
+            --             fallback()
+            --         end
+            --     end,
+            --     s = cmp.mapping.confirm({ select = true }),
+            --     c = function(fallback)
+            --         if cmp.visible() and cmp.get_active_entry() then
+            --             cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            --         else
+            --             fallback()
+            --         end
+            --     end,
+            -- }),
             ['<C-p>'] = cmp.mapping.select_prev_item(),
             ['<C-n>'] = cmp.mapping.select_next_item(),
             ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -186,12 +186,8 @@ return function()
         },
     })
 
-    local autocmd = vim.api.nvim_create_autocmd
-    autocmd('FileType', {
-        pattern = 'swisscalc',
-        callback = function()
-            require('cmp').setup.buffer({ enabled = false })
-        end,
+    cmp.setup.filetype({ 'swisscalc' }, {
+        enabled = false
     })
 
     -- require('cmp').setup.buffer({ enabled = false })
