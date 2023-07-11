@@ -9,7 +9,9 @@ return function()
         local git_remote = vim.fn.system({ 'git', 'config', '--get', 'remote.origin.url' })
         if string.find(git_remote, '.*git.woa.*') then
             require('copilot.command').disable()
-            vim.notify('copilot disabled for git.woa.com code', vim.log.levels.INFO)
+            vim.notify('copilot disabled for git.woa.com code',
+                       vim.log.levels.INFO,
+                       { title = 'copilot' })
             return
         end
 
@@ -20,7 +22,9 @@ return function()
             local path = vim.api.nvim_buf_get_name(buf)
             if string.sub(path, 1, string.len(work_path)) == work_path then
                 require('copilot.command').disable()
-                vim.notify('copilot disabled for work code', vim.log.levels.INFO)
+                vim.notify('copilot disabled for work code',
+                           vim.log.levels.INFO
+                           { title = 'copilot' })
                 return
             end
         end
@@ -43,13 +47,15 @@ return function()
             filetypes = {
                 ['dap-repl'] = false,
                 ['big_file_disabled_ft'] = false,
+                ['markdown'] = false,
+                ['csv'] = false,
             },
         })
 
         protect_work_code()
         vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost' }, {
             pattern = { '*' },
-            callback = function(ev)
+            callback = function()
                 protect_work_code()
             end,
         })
