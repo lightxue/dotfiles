@@ -24,7 +24,7 @@ tool['nvim-neo-tree/neo-tree.nvim'] = {
         { 'MunifTanjim/nui.nvim' },
     },
 }
--- TODO 是否添加
+-- TODO 可通过SSH复制到剪贴板，并高亮复制内容
 tool['ibhagwan/smartyank.nvim'] = {
     lazy = true,
     event = 'BufReadPost',
@@ -92,16 +92,21 @@ tool['nvim-telescope/telescope.nvim'] = {
             config = require('tool.project'),
         },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        { 'nvim-telescope/telescope-frecency.nvim', dependencies = {
-            { 'kkharji/sqlite.lua' },
-        } },
-        -- TODO
-        -- {
-        --           "AckslD/nvim-neoclip.lua",
-        --           dependencies = {
-        --               { "kkharji/sqlite.lua" },
-        --       }
-        --       },
+        {
+            'nvim-telescope/telescope-frecency.nvim',
+            dependencies = {
+                { 'kkharji/sqlite.lua' },
+            }
+        },
+        {
+            "AckslD/nvim-neoclip.lua",
+            config = function()
+                require('neoclip').setup({})
+            end,
+            dependencies = {
+                { "kkharji/sqlite.lua" },
+            }
+        },
         { 'jvgrootveld/telescope-zoxide' },
         { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },
@@ -132,10 +137,6 @@ tool['mfussenegger/nvim-dap'] = {
         { 'jay-babu/mason-nvim-dap.nvim' },
         { 'theHamsta/nvim-dap-virtual-text' },
         { 'nvim-telescope/telescope-dap.nvim' },
-        -- { "mfussenegger/nvim-dap-python" },
-        -- { "leoluz/nvim-dap-go" },
-        -- { "mxsdev/nvim-dap-vscode-js" },
-        -- { "jbyuki/one-small-step-for-vimkind" },
     },
 }
 

@@ -123,10 +123,7 @@ local plug_map = {
         :with_noremap()
         :with_silent()
         :with_desc('terminal: Toggle float'),
-    ['t|<leader>tf'] = map_cmd('<Cmd>ToggleTerm<CR>')
-        :with_noremap()
-        :with_silent()
-        :with_desc('terminal: Toggle float'),
+    ['t|<leader>tf'] = map_cmd('<Cmd>ToggleTerm<CR>'):with_noremap():with_silent():with_desc('terminal: Toggle float'),
     ['n|<leader>tr'] = map_callback(run_current_file)
         :with_noremap()
         :with_silent()
@@ -185,21 +182,13 @@ local plug_map = {
         :with_desc('find: Word in project'),
     ['n|<leader>fe'] = map_cu('Telescope oldfiles'):with_noremap():with_silent():with_desc('find: File by history'),
     ['n|<leader>ff'] = map_cu('Telescope find_files'):with_noremap():with_silent():with_desc('find: File in project'),
-    -- ["n|<leader>fc"] = map_cu("Telescope colorscheme")
-    -- 	:with_noremap()
-    -- 	:with_silent()
-    -- 	:with_desc("ui: Change colorscheme for current session"),
+    ['n|<leader>fc'] = map_cu('Telescope neoclip'):with_noremap():with_silent():with_desc('find: Clipboard'),
     ['n|<leader>fn'] = map_cu('Telescope notify'):with_noremap():with_silent():with_desc('find: Notify history'),
-    -- ["n|<leader>fg"] = map_cu("Telescope git_files")
-    -- 	:with_noremap()
-    -- 	:with_silent()
-    -- 	:with_desc("find: file in git project"),
     ['n|<leader>fj'] = map_cu('Telescope jump by zoxide')
         :with_noremap()
         :with_silent()
         :with_desc('edit: Change current direrctory by zoxide'),
     ['n|<leader>fb'] = map_cu('Telescope buffers'):with_noremap():with_silent():with_desc('find: Buffer opened'),
-    -- ["n|<leader>fs"] = map_cu("Telescope grep_string"):with_noremap():with_silent():with_desc("find: Current word"),
 
     -- Plugin: dap
     ['n|<F6>'] = map_callback(function()
