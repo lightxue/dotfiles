@@ -78,9 +78,12 @@ editor['mbbill/fencview'] = {
     cmd = { 'FencView', 'FencAutoDetect', 'FencManualEncoding' },
     config = require('editor.suda'),
 }
+editor['Mr-LLLLL/interestingwords.nvim'] = {
+    lazy = true,
+    event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
+    config = require('editor.interestingwords'),
+}
 -- TODO
--- Mr-LLLLL/interestingwords.nvim TODO
--- Plug 'thinca/vim-visualstar'
 -- Plug 'monaqa/dial.nvim'
 -- https://github.com/LintaoAmons/scratch.nvim
 

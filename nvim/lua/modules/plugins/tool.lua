@@ -24,7 +24,7 @@ tool['nvim-neo-tree/neo-tree.nvim'] = {
         { 'MunifTanjim/nui.nvim' },
     },
 }
--- TODO 可通过SSH复制到剪贴板，并高亮复制内容
+-- 可通过SSH复制到剪贴板，并高亮复制内容
 tool['ibhagwan/smartyank.nvim'] = {
     lazy = true,
     event = 'BufReadPost',
@@ -60,7 +60,6 @@ tool['folke/which-key.nvim'] = {
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('tool.which-key'),
 }
--- TODO 是否添加
 tool['gelguy/wilder.nvim'] = {
     lazy = true,
     event = 'CmdlineEnter',
