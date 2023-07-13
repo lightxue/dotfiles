@@ -5,12 +5,6 @@ editor['rainbowhxch/accelerated-jk.nvim'] = {
     event = 'VeryLazy',
     config = require('editor.accelerated-jk'),
 }
--- TODO 是否添加
--- editor["rmagatti/auto-session"] = {
--- 	lazy = true,
--- 	cmd = { "SessionSave", "SessionRestore", "SessionDelete" },
--- 	config = require("editor.auto-session"),
--- }
 editor['m4xshen/autoclose.nvim'] = {
     lazy = true,
     event = 'InsertEnter',
@@ -119,11 +113,6 @@ editor['nvim-treesitter/nvim-treesitter'] = {
         {
             'NvChad/nvim-colorizer.lua',
             config = require('editor.colorizer'),
-        },
-        {
-            -- TODO 是否添加
-            'abecodes/tabout.nvim',
-            config = require('editor.tabout'),
         },
     },
 }

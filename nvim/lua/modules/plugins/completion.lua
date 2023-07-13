@@ -38,7 +38,7 @@ completion['hrsh7th/nvim-cmp'] = {
             dependencies = { 'rafamadriz/friendly-snippets' },
             config = require('completion.luasnip'),
         },
-        { 'lukas-reineke/cmp-under-comparator' }, -- TODO 是否添加？
+        { 'lukas-reineke/cmp-under-comparator' },
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-nvim-lua' },
@@ -51,7 +51,7 @@ completion['hrsh7th/nvim-cmp'] = {
         { 'f3fora/cmp-spell' },
         { 'uga-rosa/cmp-dictionary' },
         -- { "kdheepak/cmp-latex-symbols" },
-        { 'ray-x/cmp-treesitter', commit = 'c8e3a74' }, -- TODO 是否添加？
+        { 'ray-x/cmp-treesitter', commit = 'c8e3a74' },
         -- { "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
         -- {
         -- 	"jcdickinson/codeium.nvim",
