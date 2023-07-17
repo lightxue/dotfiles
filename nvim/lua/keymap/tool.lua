@@ -21,8 +21,8 @@ local ft_cmd = {
     javascript = 'node',
     go = 'go run',
     sh = 'bash',
-    c = 'gcc', -- TODO 需要编译且运行
-    cpp = 'g++', -- TODO
+    c = 'gcc',
+    cpp = 'g++',
 }
 local function get_filetype_cmd()
     return ft_cmd[vim.bo.filetype]
@@ -180,7 +180,7 @@ local plug_map = {
         :with_noremap()
         :with_silent()
         :with_desc('find: Word in project'),
-    ['n|<leader>fe'] = map_cu('Telescope oldfiles'):with_noremap():with_silent():with_desc('find: File by history'),
+    -- ['n|<leader>fe'] = map_cu('Telescope oldfiles'):with_noremap():with_silent():with_desc('find: File by history'),
     ['n|<leader>ff'] = map_cu('Telescope find_files'):with_noremap():with_silent():with_desc('find: File in project'),
     ['n|<leader>fc'] = map_cu('Telescope neoclip'):with_noremap():with_silent():with_desc('find: Clipboard'),
     ['n|<leader>fn'] = map_cu('Telescope notify'):with_noremap():with_silent():with_desc('find: Notify history'),
@@ -189,6 +189,7 @@ local plug_map = {
         :with_silent()
         :with_desc('edit: Change current direrctory by zoxide'),
     ['n|<leader>fb'] = map_cu('Telescope buffers'):with_noremap():with_silent():with_desc('find: Buffer opened'),
+    ['n|<leader>fh'] = map_cu('Telescope help_tags'):with_noremap():with_silent():with_desc('find: Help tags'),
 
     -- Plugin: dap
     ['n|<F6>'] = map_callback(function()

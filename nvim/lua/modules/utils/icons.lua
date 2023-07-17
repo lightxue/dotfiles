@@ -166,12 +166,10 @@ local data = {
     },
     cmp = {
         Codeium = '',
-        TabNine = '',
         Copilot = '',
         Copilot_alt = '',
         -- Add source-specific icons here
         buffer = '',
-        cmp_tabnine = '',
         codeium = '',
         copilot = '',
         copilot_alt = '',

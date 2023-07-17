@@ -56,7 +56,6 @@ return function()
             comparators = {
                 require('copilot_cmp.comparators').prioritize,
                 require('copilot_cmp.comparators').score,
-                -- require("cmp_tabnine.compare"),
                 compare.offset, -- Items closer to cursor will have lower priority
                 compare.exact,
                 -- compare.scopes,
@@ -80,7 +79,6 @@ return function()
                     string.format(' %s  %s', lspkind_icons[vim_item.kind] or icons.cmp.undefined, vim_item.kind or '')
 
                 vim_item.menu = setmetatable({
-                    cmp_tabnine = '[TN]',
                     copilot = '[CPLT]',
                     buffer = '[BUF]',
                     orgmode = '[ORG]',
@@ -174,10 +172,8 @@ return function()
             { name = 'tmux' },
             { name = 'orgmode' },
             { name = 'buffer' },
-            -- { name = "latex_symbols" },
             { name = 'copilot' },
             { name = 'codeium' },
-            -- { name = "cmp_tabnine" },
         },
         experimental = {
             ghost_text = {
@@ -186,27 +182,7 @@ return function()
         },
     })
 
-    cmp.setup.filetype({ 'swisscalc' }, {
+    cmp.setup.filetype({ 'swisscalc', '' }, {
         enabled = false,
     })
-
-    -- require('cmp').setup.buffer({ enabled = false })
-    -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-    -- cmp.setup.cmdline('/', {
-    --     mapping = cmp.mapping.preset.cmdline(),
-    --     sources = {
-    --         { name = 'buffer' },
-    --         { name = 'cmdline_history' }
-    --     }
-    -- })
-
-    -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-    -- cmp.setup.cmdline(':', {
-    --     mapping = cmp.mapping.preset.cmdline(),
-    --     sources = {
-    --         { name = 'path' },
-    --         { name = 'cmdline' },
-    --         { name = 'cmdline_history' }
-    --     }
-    -- })
 end

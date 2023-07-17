@@ -50,6 +50,7 @@ tool['akinsho/toggleterm.nvim'] = {
     },
     config = require('tool.toggleterm'),
 }
+-- TODO 熟悉使用
 tool['folke/trouble.nvim'] = {
     lazy = true,
     cmd = { 'Trouble', 'TroubleToggle', 'TroubleRefresh' },
@@ -95,16 +96,16 @@ tool['nvim-telescope/telescope.nvim'] = {
             'nvim-telescope/telescope-frecency.nvim',
             dependencies = {
                 { 'kkharji/sqlite.lua' },
-            }
+            },
         },
         {
-            "AckslD/nvim-neoclip.lua",
+            'AckslD/nvim-neoclip.lua',
             config = function()
                 require('neoclip').setup({})
             end,
             dependencies = {
-                { "kkharji/sqlite.lua" },
-            }
+                { 'kkharji/sqlite.lua' },
+            },
         },
         { 'jvgrootveld/telescope-zoxide' },
         { 'nvim-telescope/telescope-live-grep-args.nvim' },

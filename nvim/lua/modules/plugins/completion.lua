@@ -50,28 +50,32 @@ completion['hrsh7th/nvim-cmp'] = {
         { 'hrsh7th/cmp-path' },
         { 'f3fora/cmp-spell' },
         { 'uga-rosa/cmp-dictionary' },
-        -- { "kdheepak/cmp-latex-symbols" },
         { 'ray-x/cmp-treesitter', commit = 'c8e3a74' },
-        -- { "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
         -- {
         -- 	"jcdickinson/codeium.nvim",
+        --     -- 鉴权报错 https://github.com/jcdickinson/codeium.nvim/issues/70
+        --     -- 待修复 https://github.com/jcdickinson/codeium.nvim/pull/74
+        --     commit = "b1ff0d6c993e3d87a4362d2ccd6c660f7444599f",
         -- 	dependencies = {
         -- 		"nvim-lua/plenary.nvim",
-        -- 		"MunifTanjim/nui.nvim",
         -- 	},
-        -- 	config = require("completion.codeium"),
+        --     config = function()
+        --         require('codeium').setup({})
+        --     end,
         -- },
     },
 }
 completion['zbirenbaum/copilot.lua'] = {
     lazy = true,
-    cmd = 'Copilot', -- 主动调命令时才启用
+    cmd = 'Copilot',
     event = 'InsertEnter',
     config = require('completion.copilot'),
     dependencies = {
         {
             'zbirenbaum/copilot-cmp',
-            config = require('completion.copilot-cmp'),
+            config = function()
+                require('copilot_cmp').setup({})
+            end,
         },
     },
 }

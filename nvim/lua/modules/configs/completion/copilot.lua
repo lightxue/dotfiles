@@ -9,9 +9,7 @@ return function()
         local git_remote = vim.fn.system({ 'git', 'config', '--get', 'remote.origin.url' })
         if string.find(git_remote, '.*git.woa.*') then
             require('copilot.command').disable()
-            vim.notify('copilot disabled for git.woa.com code',
-                       vim.log.levels.INFO,
-                       { title = 'copilot' })
+            vim.notify('copilot disabled for git.woa.com code', vim.log.levels.INFO, { title = 'copilot' })
             return
         end
 
@@ -22,9 +20,7 @@ return function()
             local path = vim.api.nvim_buf_get_name(buf)
             if string.sub(path, 1, string.len(work_path)) == work_path then
                 require('copilot.command').disable()
-                vim.notify('copilot disabled for work code',
-                           vim.log.levels.INFO
-                           { title = 'copilot' })
+                vim.notify('copilot disabled for work code', vim.log.levels.INFO({ title = 'copilot' }))
                 return
             end
         end

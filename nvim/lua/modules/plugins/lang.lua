@@ -6,6 +6,7 @@ lang['fatih/vim-go'] = {
     build = ':GoInstallBinaries',
     config = require('lang.vim-go'),
 }
+-- TODO
 -- lang['iamcco/markdown-preview.nvim'] = {
 --     lazy = true,
 --     ft = 'markdown',

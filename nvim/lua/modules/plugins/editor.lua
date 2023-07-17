@@ -86,6 +86,7 @@ editor['Mr-LLLLL/interestingwords.nvim'] = {
 -- TODO
 -- Plug 'monaqa/dial.nvim'
 -- https://github.com/LintaoAmons/scratch.nvim
+-- https://github.com/chentoast/marks.nvim
 
 ----------------------------------------------------------------------
 --                  :treesitter related plugins                    --
