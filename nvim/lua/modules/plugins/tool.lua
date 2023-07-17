@@ -15,7 +15,7 @@ tool['junegunn/gv.vim'] = {
 
 tool['nvim-neo-tree/neo-tree.nvim'] = {
     lazy = true,
-    branch = 'v2.x',
+    branch = 'v3.x',
     event = 'VeryLazy',
     config = require('tool.neo-tree'),
     dependencies = {
