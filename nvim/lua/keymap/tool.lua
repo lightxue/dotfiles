@@ -189,6 +189,7 @@ local plug_map = {
         :with_desc('edit: Change current direrctory by zoxide'),
     ['n|<leader>fb'] = map_cu('Telescope buffers'):with_noremap():with_silent():with_desc('find: Buffer opened'),
     ['n|<leader>fh'] = map_cu('Telescope help_tags'):with_noremap():with_silent():with_desc('find: Help tags'),
+    ['n|<leader>ft'] = map_cu('Telescope treesitter'):with_noremap():with_silent():with_desc('find: Treesitter'),
 
     -- Plugin: dap
     ['n|<F6>'] = map_callback(function()
