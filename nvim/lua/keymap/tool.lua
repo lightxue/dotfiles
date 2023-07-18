@@ -60,9 +60,8 @@ local plug_map = {
         :with_silent()
         :with_desc('git: Toggle status'),
     ['n|<leader>gc'] = map_cr('Git commit'):with_noremap():with_silent():with_desc('git: Commit'),
-    ['n|<leader>gpl'] = map_cr('Git pull'):with_noremap():with_silent():with_desc('git: Pull'),
-    ['n|<leader>gps'] = map_cr('Git push'):with_noremap():with_silent():with_desc('git: Push'),
-    ['n|<leader>gl'] = map_cr('Gllog'):with_noremap():with_silent():with_desc('git: Log'),
+    ['n|<leader>gl'] = map_cr('Git pull'):with_noremap():with_silent():with_desc('git: Pull'),
+    ['n|<leader>gp'] = map_cr('Git push'):with_noremap():with_silent():with_desc('git: Push'),
     ['n|<leader>gv'] = map_cr('GV'):with_noremap():with_silent():with_desc('git: View'),
     ['n|<leader>gd'] = map_callback(function()
             local windows = vim.api.nvim_list_wins()
