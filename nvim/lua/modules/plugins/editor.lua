@@ -83,6 +83,13 @@ editor['Mr-LLLLL/interestingwords.nvim'] = {
     event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
     config = require('editor.interestingwords'),
 }
+editor['chentoast/marks.nvim'] = {
+    lazy = true,
+    event = 'VeryLazy',
+    config = function ()
+        require('marks').setup({})
+    end
+}
 -- TODO
 -- Plug 'monaqa/dial.nvim'
 -- https://github.com/LintaoAmons/scratch.nvim
