@@ -7,12 +7,12 @@ local lang = {}
 --     config = require('lang.vim-go'),
 -- }
 -- TODO
--- lang['iamcco/markdown-preview.nvim'] = {
---     lazy = true,
---     ft = 'markdown',
---     build = ':call mkdp#util#install()',
---     -- config = require('lang.markdown-preview'),
--- }
+lang['iamcco/markdown-preview.nvim'] = {
+    lazy = true,
+    ft = 'markdown',
+    build = 'cd app && npm install',
+    -- config = require('lang.markdown-preview'),
+}
 lang['mechatroner/rainbow_csv'] = {
     lazy = true,
     ft = 'csv',

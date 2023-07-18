@@ -33,7 +33,7 @@ return function()
         btn('b', '📚 Find buffer', '<Cmd>Telescope buffers<CR>'),
         btn('m', '📅 Frecency/MRU', '<Cmd>Telescope oldfiles<CR>'),
         btn('p', '📂 Open project', '<Cmd>Telescope projects<CR>'),
-        btn('w', '🔎 Grep text', '<Cmd>Telescope live_grep<CR>'),
+        btn('g', '🔎 Grep text', '<Cmd>Telescope live_grep<CR>'),
         btn('x', '🏃 Quit', '<Cmd>q<CR>'),
     }
     dashboard.section.footer.val = footer()
