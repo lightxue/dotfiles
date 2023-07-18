@@ -1,11 +1,11 @@
 local lang = {}
 
-lang['fatih/vim-go'] = {
-    lazy = true,
-    ft = 'go',
-    build = ':GoInstallBinaries',
-    config = require('lang.vim-go'),
-}
+-- lang['fatih/vim-go'] = {
+--     lazy = true,
+--     ft = 'go',
+--     build = ':GoInstallBinaries',
+--     config = require('lang.vim-go'),
+-- }
 -- TODO
 -- lang['iamcco/markdown-preview.nvim'] = {
 --     lazy = true,

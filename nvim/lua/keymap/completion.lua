@@ -5,7 +5,12 @@ local map_cmd = bind.map_cmd
 local map_callback = bind.map_callback
 
 local plug_map = {
-    ['n|<leader>ii'] = map_cmd('<Cmd>FormatToggle<CR>'):with_noremap():with_desc('Formater: Toggle format on save'),
+    ['n|<leader>ii'] = map_callback(function()
+            vim.lsp.buf.format({ timeout_ms = 2000 })
+        end)
+        :with_noremap()
+        :with_desc('Formater: Toggle format on save'),
+    -- TODO range format
 }
 bind.nvim_load_mapping(plug_map)
 

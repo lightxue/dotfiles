@@ -14,7 +14,7 @@ local core_map = {
     ['n|<leader>xx'] = map_cr('q'):with_noremap():with_silent():with_desc('edit: Quit current window'),
     ['n|<leader>xb'] = map_cr('bdelete!'):with_noremap():with_silent():with_desc('edit: Quit buffer'),
     ['n|<leader>xf'] = map_cr('q!'):with_noremap():with_silent():with_desc('edit: Quit force'),
-    ['n|<leader>xk'] = map_cr('q!'):with_noremap():with_silent():with_desc('edit: Quit force all'),
+    ['n|<leader>xk'] = map_cr('qa!'):with_noremap():with_silent():with_desc('edit: Quit force all'),
     -- 移动
     ['n|Y'] = map_cmd('y$'):with_desc('edit: Yank text to EOL'),
     ['n|D'] = map_cmd('d$'):with_desc('edit: Delete text to EOL'),
