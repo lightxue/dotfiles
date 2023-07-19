@@ -71,6 +71,11 @@ tool['lightxue/SwissCalc'] = {
     lazy = true,
     cmd = { 'Scalc' },
 }
+tool['ybian/smartim'] = {
+    lazy = true,
+    event = 'InsertEnter',
+    config = require('tool.smartim'),
+}
 
 -- TODO
 -- Plug 'NTBBloodbath/rest.nvim'
