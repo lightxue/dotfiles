@@ -16,7 +16,7 @@ local function footer()
     -- )
     local slogan = {
         'Vim is a way of life',
-        '  🄻 🄸 🄶 🄷 🅃  🅇 🅄 🄴'
+        '  🄻 🄸 🄶 🄷 🅃  🅇 🅄 🄴',
     }
     return table.concat(slogan, '\n')
 end

@@ -86,10 +86,12 @@ editor['Mr-LLLLL/interestingwords.nvim'] = {
 editor['chentoast/marks.nvim'] = {
     lazy = true,
     event = 'VeryLazy',
-    config = function ()
-        require('marks').setup({})
-    end
+    opts = {},
 }
+-- editor['folke/todo-comments.nvim'] = {
+--     dependencies = { 'nvim-lua/plenary.nvim' },
+--     opts = { },
+-- }
 -- TODO
 -- Plug 'monaqa/dial.nvim'
 -- https://github.com/LintaoAmons/scratch.nvim

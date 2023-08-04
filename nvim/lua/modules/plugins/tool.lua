@@ -71,11 +71,11 @@ tool['lightxue/SwissCalc'] = {
     lazy = true,
     cmd = { 'Scalc' },
 }
-tool['ybian/smartim'] = {
-    lazy = true,
-    event = 'InsertEnter',
-    config = require('tool.smartim'),
-}
+-- tool['ybian/smartim'] = {
+--     lazy = true,
+--     event = 'InsertEnter',
+--     config = require('tool.smartim'),
+-- }
 
 -- TODO
 -- Plug 'NTBBloodbath/rest.nvim'
@@ -105,9 +105,7 @@ tool['nvim-telescope/telescope.nvim'] = {
         },
         {
             'AckslD/nvim-neoclip.lua',
-            config = function()
-                require('neoclip').setup({})
-            end,
+            opts = {},
             dependencies = {
                 { 'kkharji/sqlite.lua' },
             },
