@@ -19,6 +19,11 @@ completion['nvimdev/lspsaga.nvim'] = {
     config = require('completion.lspsaga'),
     dependencies = { 'nvim-tree/nvim-web-devicons' },
 }
+completion['simrat39/symbols-outline.nvim'] = {
+    lazy = true,
+    event = 'LspAttach',
+    opts = {},
+}
 completion['jose-elias-alvarez/null-ls.nvim'] = {
     lazy = true,
     event = { 'CursorHold', 'CursorHoldI' },
@@ -73,9 +78,7 @@ completion['zbirenbaum/copilot.lua'] = {
     dependencies = {
         {
             'zbirenbaum/copilot-cmp',
-            config = function()
-                require('copilot_cmp').setup({})
-            end,
+            opts = {},
         },
     },
 }

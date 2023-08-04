@@ -57,7 +57,7 @@ return function()
     }
     local outline = {
         sections = mini_sections,
-        filetypes = { 'lspsagaoutline' },
+        filetypes = { 'Outline' },
     }
     local diffview = {
         sections = mini_sections,
