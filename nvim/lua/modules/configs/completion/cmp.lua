@@ -54,8 +54,8 @@ return function()
         sorting = {
             priority_weight = 2,
             comparators = {
-                require('copilot_cmp.comparators').prioritize,
-                require('copilot_cmp.comparators').score,
+                -- require('copilot_cmp.comparators').prioritize,
+                -- require('copilot_cmp.comparators').score,
                 compare.offset, -- Items closer to cursor will have lower priority
                 compare.exact,
                 -- compare.scopes,
@@ -172,8 +172,8 @@ return function()
             { name = 'tmux' },
             { name = 'orgmode' },
             { name = 'buffer' },
-            { name = 'copilot' },
-            { name = 'codeium' },
+            -- { name = 'copilot' },
+            -- { name = 'codeium' },
         },
         experimental = {
             ghost_text = {
