@@ -70,6 +70,13 @@ completion['hrsh7th/nvim-cmp'] = {
         -- },
     },
 }
+completion['gongfeng-copilot'] = {
+    -- lazy = true,
+    -- cmd = 'Copilot',
+    -- event = 'InsertEnter',
+    dir = '~/.config/nvim/gongfeng',
+}
+
 -- completion['zbirenbaum/copilot.lua'] = {
 --     lazy = true,
 --     cmd = 'Copilot',
