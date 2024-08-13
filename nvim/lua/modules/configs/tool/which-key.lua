@@ -23,12 +23,10 @@ return function()
             group = icons.misc.Add,
         },
 
-        window = {
-            border = 'none',
-            position = 'bottom',
-            margin = { 1, 0, 1, 0 },
-            padding = { 1, 1, 1, 1 },
-            winblend = 0,
+        win = {
+            border = "none",
+            padding = { 1, 2 },
+            wo = { winblend = 0 },
         },
     })
 end

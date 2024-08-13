@@ -10,8 +10,7 @@ local lang = {}
 lang['iamcco/markdown-preview.nvim'] = {
     lazy = true,
     ft = 'markdown',
-    build = 'cd app && npm install',
-    -- config = require('lang.markdown-preview'),
+    build = ':call mkdp#util#install()',
 }
 lang['mechatroner/rainbow_csv'] = {
     lazy = true,
@@ -25,5 +24,14 @@ lang['rafcamlet/nvim-luapad'] = {
     lazy = true,
     ft = 'lua',
 }
+-- lang['MeanderingProgrammer/render-markdown.nvim'] = {
+--     lazy = true,
+--     ft = 'markdown',
+--     opts = {},
+--     dependencies = {
+--         'nvim-tree/nvim-web-devicons',
+--         'nvim-treesitter/nvim-treesitter',
+--     },
+-- }
 
 return lang
