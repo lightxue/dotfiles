@@ -21,7 +21,7 @@ return vim.schedule_wrap(function()
             'markdown',
             'markdown_inline',
             'python',
-            'rust',
+            -- 'rust',
             'typescript',
             'vimdoc',
             'vue',

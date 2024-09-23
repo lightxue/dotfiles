@@ -87,7 +87,7 @@ settings['lsp_deps'] = {
     'pylsp',
     'sqlls',
     'texlab',
-    'tsserver',
+    'ts_ls',
     'vimls',
     'volar',
     'yamlls',

@@ -115,13 +115,9 @@ editor['nvim-treesitter/nvim-treesitter'] = {
             'nvim-treesitter/nvim-treesitter-context',
             config = require('editor.ts-context'),
         },
-        { 'HiPhish/nvim-ts-rainbow2' },
-        -- {
-        --     'JoosepAlviste/nvim-ts-context-commentstring',
-        --     opts = {
-        --         enable_autocmd = true
-        --     }
-        -- },
+        {
+            "hiphish/rainbow-delimiters.nvim",
+        },
         { 'mfussenegger/nvim-treehopper' },
         { 'andymass/vim-matchup' },
         {
