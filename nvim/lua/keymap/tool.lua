@@ -129,24 +129,18 @@ local plug_map = {
         :with_desc('terminal: Run current file'),
 
     -- Plugin: trouble
-    ['n|<leader>ee'] = map_cr('TroubleToggle'):with_noremap():with_silent():with_desc('lsp: Toggle trouble list'),
-    ['n|<leader>er'] = map_cr('TroubleToggle lsp_references')
+    ['n|<leader>ee'] = map_cr('Trouble diagnostics toggle')
         :with_noremap()
         :with_silent()
-        :with_desc('lsp: Show lsp references'),
-    ['n|<leader>ed'] = map_cr('TroubleToggle document_diagnostics')
+        :with_desc('lsp: Toggle trouble list'),
+    ["n|<leader>ep"] = map_cr("Trouble project_diagnostics toggle")
         :with_noremap()
         :with_silent()
-        :with_desc('lsp: Show document diagnostics'),
-    ['n|<leader>ew'] = map_cr('TroubleToggle workspace_diagnostics')
+        :with_desc("lsp: Show project diagnostics"),
+    ["n|<leader>ed"] = map_cr("Trouble diagnostics toggle filter.buf=0")
         :with_noremap()
         :with_silent()
-        :with_desc('lsp: Show workspace diagnostics'),
-    ['n|<leader>eq'] = map_cr('TroubleToggle quickfix')
-        :with_noremap()
-        :with_silent()
-        :with_desc('lsp: Show quickfix list'),
-    ['n|<leader>el'] = map_cr('TroubleToggle loclist'):with_noremap():with_silent():with_desc('lsp: Show loclist'),
+        :with_desc("lsp: Show document diagnostics"),
 
     -- Plugin: telescope
     ['n|<C-p>'] = map_callback(function()
