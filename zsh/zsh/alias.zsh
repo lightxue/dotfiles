@@ -11,6 +11,7 @@ funcion save_alias() {
 }
 
 alias vi='nvim'
+alias gvi='neovide --fork'
 #alias tmux='tmux -2'
 alias agi="sudo apt-get install -y"
 alias gbk='iconv -f gbk -t utf8'
