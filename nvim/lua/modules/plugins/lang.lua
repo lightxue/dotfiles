@@ -9,6 +9,7 @@ local lang = {}
 -- TODO
 lang['iamcco/markdown-preview.nvim'] = {
     lazy = true,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = 'markdown',
     build = ':call mkdp#util#install()',
 }
