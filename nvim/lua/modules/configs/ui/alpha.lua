@@ -29,11 +29,11 @@ return function()
     dashboard.section.header.val = fortune()
     dashboard.section.buttons.val = {
         btn('e', '📝 New file', '<Cmd>ene <CR>'),
-        btn('f', '📗 Open file', '<Cmd>Telescope find_files<CR>'),
-        btn('b', '📚 Find buffer', '<Cmd>Telescope buffers<CR>'),
-        btn('m', '📅 Frecency/MRU', '<Cmd>Telescope oldfiles<CR>'),
-        btn('p', '📂 Open project', '<Cmd>Telescope projects<CR>'),
-        btn('g', '🔎 Grep text', '<Cmd>Telescope live_grep<CR>'),
+        btn('<Leader> f', '📗 Open file', '<Cmd>Telescope find_files<CR>'),
+        btn('<Leader> b', '📚 Find buffer', '<Cmd>Telescope buffers<CR>'),
+        btn('<Leader> m', '📅 Frecency/MRU', '<Cmd>Telescope oldfiles<CR>'),
+        btn('<Leader> p', '📂 Open project', '<Cmd>Telescope projects<CR>'),
+        btn('<Leader> g', '🔎 Grep text', '<Cmd>Telescope live_grep<CR>'),
         btn('x', '🏃 Quit', '<Cmd>q<CR>'),
     }
     dashboard.section.footer.val = footer()
