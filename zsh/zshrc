@@ -15,7 +15,7 @@ export EDITOR=nvim
 # 设置PATH
 export GO111MODULE=on
 export GOPATH="$HOME/.local/go"
-export PATH="$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin"
+export PATH="$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/sbin:/opt/homebrew/bin:$PATH:/usr/sbin:/usr/local/sbin"
 # 设置终端类型
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
