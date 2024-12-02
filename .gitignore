@@ -10,3 +10,4 @@ vim/vim/sessions/
 nvim/bundle/
 .luarc.json
 nvim/lazy-lock.json
+/nvim/gongfeng
