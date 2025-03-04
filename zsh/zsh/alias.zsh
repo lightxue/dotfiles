@@ -49,3 +49,4 @@ else
     alias mk="make"
 fi
 
+alias wechat='/Applications/WeChat.app/Contents/MacOS/WeChat 2> /dev/null > /dev/null &'
