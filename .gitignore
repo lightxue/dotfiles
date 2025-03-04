@@ -11,3 +11,4 @@ nvim/bundle/
 .luarc.json
 nvim/lazy-lock.json
 /nvim/gongfeng
+.DS_Store
