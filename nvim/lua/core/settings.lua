@@ -89,7 +89,7 @@ settings['lsp_deps'] = {
     'texlab',
     'ts_ls',
     'vimls',
-    'volar',
+    -- 'volar',
     'yamlls',
 }
 

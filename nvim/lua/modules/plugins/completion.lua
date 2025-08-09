@@ -1,18 +1,44 @@
 local completion = {}
 
-completion['neovim/nvim-lspconfig'] = {
-    lazy = true,
-    event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
-    config = require('completion.lsp'),
-    dependencies = {
-        { 'williamboman/mason.nvim' },
-        { 'williamboman/mason-lspconfig.nvim' },
-        {
-            'ray-x/lsp_signature.nvim',
-            config = require('completion.lsp-signature'),
-        },
-    },
-}
+-- completion['neovim/nvim-lspconfig'] = {
+--     lazy = true,
+--     event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
+--     config = require('completion.lsp'),
+--     dependencies = {
+--         { 'williamboman/mason.nvim' },
+--         { 'williamboman/mason-lspconfig.nvim' },
+--         {
+--             'ray-x/lsp_signature.nvim',
+--             config = require('completion.lsp-signature'),
+--         },
+--     },
+-- }
+
+-- completion["neovim/nvim-lspconfig"] = {
+--     lazy = true,
+--     event = { "bufreadpre", "bufnewfile" },
+--     config = require("completion.lsp"),
+--     dependencies = {
+--         { "mason-org/mason.nvim" },
+--         { "mason-org/mason-lspconfig.nvim" },
+--         { "folke/neoconf.nvim" },
+--         {
+--             "jint-lzxy/lsp_signature.nvim",
+--             config = require("completion.lsp-signature"),
+--         },
+--     },
+-- }
+--
+-- completion['jose-elias-alvarez/null-ls.nvim'] = {
+--     lazy = true,
+--     event = { 'CursorHold', 'CursorHoldI' },
+--     config = require('completion.null-ls'),
+--     dependencies = {
+--         'nvim-lua/plenary.nvim',
+--         'jay-babu/mason-null-ls.nvim',
+--     },
+-- }
+
 completion['nvimdev/lspsaga.nvim'] = {
     lazy = true,
     event = 'LspAttach',
@@ -24,15 +50,7 @@ completion['simrat39/symbols-outline.nvim'] = {
     event = 'LspAttach',
     opts = {},
 }
-completion['jose-elias-alvarez/null-ls.nvim'] = {
-    lazy = true,
-    event = { 'CursorHold', 'CursorHoldI' },
-    config = require('completion.null-ls'),
-    dependencies = {
-        'nvim-lua/plenary.nvim',
-        'jay-babu/mason-null-ls.nvim',
-    },
-}
+
 completion['hrsh7th/nvim-cmp'] = {
     lazy = true,
     event = 'InsertEnter',
@@ -57,13 +75,13 @@ completion['hrsh7th/nvim-cmp'] = {
         { 'uga-rosa/cmp-dictionary' },
         { 'ray-x/cmp-treesitter', commit = 'c8e3a74' },
         -- {
-        -- 	"jcdickinson/codeium.nvim",
+        --  "jcdickinson/codeium.nvim",
         --     -- 鉴权报错 https://github.com/jcdickinson/codeium.nvim/issues/70
         --     -- 待修复 https://github.com/jcdickinson/codeium.nvim/pull/74
         --     commit = "b1ff0d6c993e3d87a4362d2ccd6c660f7444599f",
-        -- 	dependencies = {
-        -- 		"nvim-lua/plenary.nvim",
-        -- 	},
+        --  dependencies = {
+        --      "nvim-lua/plenary.nvim",
+        --  },
         --     config = function()
         --         require('codeium').setup({})
         --     end,
