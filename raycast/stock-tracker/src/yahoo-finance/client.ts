@@ -1,9 +1,9 @@
 import { LocalStorage } from "@raycast/api";
 import fetch from "cross-fetch";
+import pkg from "../../package.json";
 
 const HEADERS = {
-  "User-Agent":
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+  "User-Agent": `Mozilla/5.0 (compatible; ${pkg.name})`,
 } as const;
 
 export async function get<T>(path: string, params: { [key: string]: string }, signal: AbortSignal): Promise<T> {
@@ -14,8 +14,8 @@ export async function get<T>(path: string, params: { [key: string]: string }, si
     return await request<T>(path, { ...params, crumb }, cookie, signal);
   } catch (error) {
     console.log("yahoo-finance: request failed", error);
-    if (error instanceof YahooFinanceError && error.status === 401) {
-      console.log("yahoo-finance: cookie expired, fetching new cookie");
+    if (error instanceof YahooFinanceError && error.status >= 400) {
+      console.log("yahoo-finance: cookie expired or invalid crumb, fetching new cookie and crumb");
       const { cookie, crumb } = await cookieCrumb();
       return await request<T>(path, { ...params, crumb }, cookie, signal);
     }
