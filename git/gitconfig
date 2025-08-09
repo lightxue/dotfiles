@@ -9,7 +9,7 @@
 [core]
 	editor = nvim
 	quotepath = false
-	hooksPath = /Users/lightxue/.git-hooks
+	hooksPath = ~/.git-hooks
 	;pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
