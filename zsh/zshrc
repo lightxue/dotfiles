@@ -169,3 +169,12 @@ fi
 zle -N _sgpt_zsh
 bindkey ^j _sgpt_zsh
 # Shell-GPT integration ZSH v0.2
+
+
+# Added by CodeBuddy CN
+export PATH="/Users/lightxue/.codebuddy/bin:$PATH"
+if [[ "$TERM_PROGRAM" == "codebuddy" ]]; then
+  if command -v buddy &>/dev/null; then
+    . "$(buddy --locate-shell-integration-path zsh)"
+  fi
+fi
