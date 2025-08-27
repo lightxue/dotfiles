@@ -51,5 +51,6 @@ fi
 
 alias wechat='/Applications/WeChat.app/Contents/MacOS/WeChat 2> /dev/null > /dev/null &'
 alias vscode='code'
-alias cbc='codebuddy-code'
+alias c='codebuddy-code'
+alias claude='codebuddy-code'
 alias cb='codebuddy'
