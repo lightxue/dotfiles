@@ -28,7 +28,7 @@ export default function SearchCityCodeCommand() {
         });
         setResults(searchResults);
       } catch (error) {
- console.error('搜索失败:', error);
+        console.error('搜索失败:', error);
         setResults([]);
       } finally {
         setIsLoading(false);
@@ -52,35 +52,32 @@ export default function SearchCityCodeCommand() {
     }
   };
 
-  const formatDisplayText = (city: any, searchText: string) => {
-    const code = city.code;
-    const name = city.name;
-    const level = city.level;
-
-    // 格式化编码：使用固定宽度
-    const formattedCode = code;
-
-    // 构建层级显示：省份→城市→区县
+  const getAdministrativeParts = (city: any): string[] => {
     const parts = [city.province];
-    
-    // 根据编码查找对应层级的地区
-      
+
     // 城市：前4位 + 00 (仅当不是省级编码时)
-    if (!code.endsWith('0000')) {
-      const cityCode = code.substring(0, 4) + '00';
+    if (!city.code.endsWith('0000')) {
+      const cityCode = city.code.substring(0, 4) + '00';
       const cityResult = cityService.getByCode(cityCode);
       if (cityResult) {
         parts.push(cityResult.name);
       }
     }
-    
-    // 区县：完整6位 (仅当不是市级编码时)
-    if (!code.endsWith('00')) {
-      parts.push(name);
+
+    // 区县：完整6位 (仅当不是地市级编码时)
+    if (!city.code.endsWith('00')) {
+      parts.push(city.name);
     }
+
+    return parts;
+  };
+
+  const formatDisplayText = (city: any, searchText: string) => {
+    const code = city.code;
+    const parts = getAdministrativeParts(city);
     const hierarchy = parts.join(' → ');
 
-    return `${formattedCode}    ${hierarchy}`
+    return `${code}    ${hierarchy}`;
   };
 
   const getInputTypeHint = (query: string) => {
@@ -90,22 +87,7 @@ export default function SearchCityCodeCommand() {
   };
 
   const formatAdministrativePath = (city: any) => {
-    const parts = [city.province];
-    
-    // 城市：前4位 + 00 (仅当不是省级编码时)
-    if (!city.code.endsWith('0000')) {
-      const cityCode = city.code.substring(0, 4) + '00';
-      const cityResult = cityService.getByCode(cityCode);
-      if (cityResult) {
-        parts.push(cityResult.name);
-      }
-    }
-    
-    // 区县：完整6位 (仅当不是市级编码时)
-    if (!city.code.endsWith('00')) {
-      parts.push(city.name);
-    }
-    
+    const parts = getAdministrativeParts(city);
     return parts.join('');
   };
 
@@ -122,7 +104,7 @@ export default function SearchCityCodeCommand() {
             key={result.city.code}
             title={formatDisplayText(result.city, searchText)}
             subtitle=""
-            accessories={[{ 
+            accessories={[{
               text: result.city.level,
               icon: getLevelIcon(result.city.level)
             }]}

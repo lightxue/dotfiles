@@ -87,14 +87,6 @@ export class CityService {
     return [...this.cities];
   }
 
-  getStats() {
-    return {
-      totalCities: this.cities.length,
-      totalProvinces: this.getProvinces().length,
-      totalDistricts: this.cities.filter(c => c.level === '区县').length
-    };
-  }
-
   isValidCode(code: string): boolean {
     return /^\d{6}$/.test(code);
   }

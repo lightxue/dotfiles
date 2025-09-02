@@ -68,37 +68,4 @@ export class SearchService {
       return true;
     });
   }
-
-  getPopularCities(): SearchResult[] {
-    // 定义热门城市编码列表
-    const popularCityCodes = [
-      '110000', // 北京市
-      '310000', // 上海市
-      '440100', // 广州市
-      '440300', // 深圳市
-      '320100', // 南京市
-      '330100', // 杭州市
-      '420100', // 武汉市
-      '510100', // 成都市
-      '500000', // 重庆市
-      '120000', // 天津市
-      '320500', // 苏州市
-      '330200', // 宁波市
-      '370100', // 济南市
-      '370200', // 青岛市
-      '610100'  // 西安市
-    ];
-
-    return popularCityCodes
-      .map(code => {
-        const city = this.cityService.getByCode(code);
-        return city ? { city, score: 100, matchType: 'popular' as const, matchDescription: '热门城市' } : null;
-      })
-      .filter(result => result !== null)
-      .slice(0, 10) as SearchResult[];
-  }
-
-  getStats() {
-    return this.cityService.getStats();
-  }
 }
