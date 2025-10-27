@@ -6,7 +6,7 @@
 ## 代码规范
 - 不改变语义的前提下，行末不要有有空白字符
 
-## 代码风格
+## 编程哲学
 - Beautiful is better than ugly.
 - Explicit is better than implicit.
 - Simple is better than complex.
