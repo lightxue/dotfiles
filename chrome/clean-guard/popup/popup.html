@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanGuard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 标题 -->
+    <div class="header">
+      <h1>CleanGuard</h1>
+      <p class="subtitle">网页清爽守护者</p>
+    </div>
+
+    <!-- 状态显示 -->
+    <div class="status-section">
+      <div class="status-indicator">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="status-text" class="status-text">加载中...</span>
+      </div>
+    </div>
+
+    <!-- 开关按钮 -->
+    <div class="action-section">
+      <button id="toggle-btn" class="toggle-btn" disabled>
+        <span id="btn-text">切换状态</span>
+      </button>
+    </div>
+
+    <!-- 说明文字 -->
+    <div class="footer">
+      <p class="hint">点击按钮切换清爽模式</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
