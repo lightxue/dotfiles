@@ -12,3 +12,5 @@ nvim/bundle/
 nvim/lazy-lock.json
 /nvim/gongfeng
 .DS_Store
+.kuai.yaml
+.vscode/
