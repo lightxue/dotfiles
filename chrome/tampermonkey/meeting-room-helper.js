@@ -72,36 +72,44 @@
         // 创建按钮
         const button = document.createElement('button');
         button.id = 'delete-north-tower-btn';
-        button.textContent = '🗑️ 删除北塔';
+        button.textContent = '🏢 删除北塔';
         button.style.cssText = `
             padding: 6px 16px;
-            background: #e6f7ff;
-            color: #1890ff;
-            border: 1px solid #91d5ff;
+            background: #ecf5ff;
+            color: #409eff;
+            border: 1px solid #b3d8ff;
             border-radius: 4px;
             cursor: pointer;
             font-size: 13px;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: all 0.1s;
             white-space: nowrap;
+            line-height: 1;
+            box-sizing: border-box;
         `;
 
         // 鼠标悬停效果
         button.addEventListener('mouseenter', () => {
-            button.style.background = '#bae7ff';
-            button.style.borderColor = '#69c0ff';
+            button.style.background = '#409eff';
+            button.style.borderColor = '#409eff';
+            button.style.color = '#fff';
         });
         button.addEventListener('mouseleave', () => {
-            button.style.background = '#e6f7ff';
-            button.style.borderColor = '#91d5ff';
+            button.style.background = '#ecf5ff';
+            button.style.borderColor = '#b3d8ff';
+            button.style.color = '#409eff';
         });
 
         // 点击效果
         button.addEventListener('mousedown', () => {
-            button.style.background = '#91d5ff';
+            button.style.background = '#3a8ee6';
+            button.style.borderColor = '#3a8ee6';
+            button.style.color = '#fff';
         });
         button.addEventListener('mouseup', () => {
-            button.style.background = '#bae7ff';
+            button.style.background = '#409eff';
+            button.style.borderColor = '#409eff';
+            button.style.color = '#fff';
         });
 
         // 点击事件
