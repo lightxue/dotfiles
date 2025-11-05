@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         会议室助手
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  删除北塔和连廊楼层的会议室
 // @match        https://meeting.woa.com/*
 // @match        http://meeting.woa.com/*
@@ -15,7 +15,18 @@
     function deleteFloorItems() {
         let count = 0;
         document.querySelectorAll('div.floor-item').forEach(item => {
-            const text = item.textContent.trim();
+            // 克隆节点以避免修改原始DOM
+            const clonedItem = item.cloneNode(true);
+
+            // 删除所有包含 transform: translateY(-9999px) 的子节点，有时初始页面会有这种不展示但影响textContent的节点
+            clonedItem.querySelectorAll('div.vue-recycle-scroller__item-view').forEach(childNode => {
+                const style = childNode.getAttribute('style') || '';
+                if (style.includes('transform:') && style.includes('translateY(-9999px)')) {
+                    childNode.remove();
+                }
+            });
+
+            const text = clonedItem.textContent.trim();
             if (text.startsWith('N') || text.startsWith('连廊')) {
                 item.remove();
                 count++;
