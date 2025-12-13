@@ -1,0 +1,151 @@
+# {项目名称} - 架构设计文档
+
+> 关联文档：[README](README.md) | [接口文档](interfaces.md) | [实现细节](implementation.md)
+
+## 1. 整体架构
+
+### 1.1 架构图
+
+```mermaid
+graph TD
+    A[客户端] --> B[API层]
+    B --> C[Service层]
+    C --> D[Repo层]
+    D --> E[(MySQL)]
+    D --> F[(Redis)]
+    
+    C --> G[外部服务]
+```
+
+### 1.2 架构说明
+
+**分层设计**：
+- **API层**：接口暴露、参数验证、错误处理
+- **Service层**：业务逻辑、流程编排、事务管理
+- **Repo层**：数据访问、缓存策略、查询优化
+
+**设计理念**：
+- 单向依赖：上层依赖下层，下层不感知上层
+- 职责清晰：每层只处理自己的关注点
+- 便于测试：层间接口明确，易于mock
+
+## 2. 模块划分
+
+### 2.1 模块架构图
+
+```mermaid
+graph LR
+    A[认证模块] --> B[用户模块]
+    B --> C[权限模块]
+    A --> D[缓存模块]
+    B --> D
+```
+
+### 2.2 模块详细说明
+
+| 模块 | 核心职责 | 关键文件 | 依赖模块 | 被依赖模块 |
+|------|---------|---------|---------|-----------|
+| {认证模块} | 登录验证、JWT生成、防暴力破解 | `service/auth_service.go`<br>`utils/jwt_util.go` | 用户模块、缓存模块 | 所有需要认证的模块 |
+| {用户模块} | 用户CRUD、资料管理 | `api/user_api.go`<br>`service/user_service.go`<br>`repo/user_repo.go` | 缓存模块 | 认证模块、权限模块 |
+| {权限模块} | 角色管理、权限验证 | `service/permission_service.go` | 用户模块 | 业务模块 |
+| {缓存模块} | Redis缓存封装 | `pkg/cache/redis.go` | 无 | 认证、用户模块 |
+
+**模块设计原则**：
+- **单向依赖**：上层依赖下层，下层不感知上层
+- **职责清晰**：每个模块仅处理自己的业务领域
+- **便于测试**：模块间接口明确，易于Mock
+
+### 2.3 模块依赖矩阵
+
+|       | 认证 | 用户 | 权限 | 缓存 |
+|-------|------|------|------|------|
+| 认证  | -    | ✅   | ❌   | ✅   |
+| 用户  | ❌   | -    | ❌   | ✅   |
+| 权限  | ✅   | ✅   | -    | ❌   |
+| 缓存  | ❌   | ❌   | ❌   | -    |
+
+**说明**：✅ 表示行模块依赖列模块
+
+## 3. 数据模型
+
+### 3.1 数据库设计
+
+#### 核心表结构
+
+**users 表**（用户信息）
+- **核心字段**：`id`, `username`, `password_hash`, `email`, `status`
+- **索引**：`idx_username`（UNIQUE）、`idx_status`
+- **说明**：password_hash使用bcrypt加密，status: 1=正常 2=禁用
+- **DDL位置**：`migrations/001_create_users.sql`
+
+**{其他表}**（{说明}）
+- **核心字段**：{字段列表}
+- **索引**：{索引列表}
+- **说明**：{关键说明}
+- **DDL位置**：`migrations/{文件名}`
+
+### 3.2 Redis设计
+
+#### 缓存Key设计
+
+| Key模板 | 示例 | TTL | 说明 |
+|---------|------|-----|------|
+| `user:{id}` | `user:123` | 1h | 用户信息缓存 |
+| `login:failed:{username}` | `login:failed:admin` | 15min | 登录失败次数 |
+| `login:locked:{username}` | `login:locked:admin` | 15min | 账户锁定标记 |
+| `jwt:token:{user_id}` | `jwt:token:123` | 24h | JWT令牌黑名单 |
+
+**命名规范**：
+- 使用冒号分隔层级
+- 第一层为业务模块
+- 第二层为具体功能
+- 使用小写和下划线
+
+### 3.3 数据流向
+
+```mermaid
+sequenceDiagram
+    participant API as API层
+    participant Service as Service层
+    participant Repo as Repo层
+    participant Cache as Redis
+    participant DB as MySQL
+
+    API->>Service: 请求
+    Service->>Repo: 查询数据
+    Repo->>Cache: 查缓存
+    alt 缓存命中
+        Cache-->>Repo: 返回数据
+    else 缓存未命中
+        Repo->>DB: 查数据库
+        DB-->>Repo: 返回数据
+        Repo->>Cache: 写入缓存
+    end
+    Repo-->>Service: 返回数据
+    Service-->>API: 返回结果
+```
+
+## 4. 技术选型
+
+### 4.1 核心技术栈
+
+| 技术类型 | 选型 | 版本 | 说明 |
+|---------|------|------|------|
+| RPC框架 | {tRPC-Go / gRPC / Dubbo} | {v1.x} | {公司技术栈统一} |
+| Web框架 | {Gin / Spring Boot / FastAPI} | {v1.9} | {高性能，社区活跃} |
+| ORM | {GORM / MyBatis / SQLAlchemy} | {v1.25} | {开发效率高} |
+| JWT库 | {golang-jwt / jjwt / PyJWT} | {v5.0} | {文档完善} |
+| 密码加密 | bcrypt | - | {行业标准} |
+
+### 4.2 第三方依赖
+
+| 库名 | 版本 | 用途 | 许可证 |
+|------|------|------|--------|
+| github.com/gin-gonic/gin | v1.9.0 | Web框架 | MIT |
+| gorm.io/gorm | v1.25.0 | ORM | MIT |
+| github.com/golang-jwt/jwt | v5.0.0 | JWT处理 | MIT |
+| golang.org/x/crypto | latest | 密码加密 | BSD-3 |
+
+---
+
+**📖 下一步**：查看 [接口文档](interfaces.md) 了解API详情

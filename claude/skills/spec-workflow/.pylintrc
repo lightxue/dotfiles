@@ -1,0 +1,54 @@
+[MASTER]
+# Python代码检查配置
+
+[MESSAGES CONTROL]
+# 禁用的检查项（合理的例外）
+disable=
+    # 代码复杂度相关（工具脚本可接受）
+    too-many-locals,           # R0914: 局部变量过多
+    too-many-statements,       # R0915: 语句过多
+    too-many-branches,         # R0912: 分支过多
+    too-many-instance-attributes,  # R0902: 实例属性过多
+    too-many-lines,            # C0302: 模块行数过多
+    
+    # 设计模式相关
+    too-few-public-methods,    # R0903: 公共方法过少（数据类合理）
+    
+    # TODO注释相关
+    fixme,                     # W0511: TODO注释（开发中正常）
+    
+    # 重复代码检查（模板化代码可能重复）
+    duplicate-code,            # R0801: 重复代码
+    
+    # 其他合理例外
+    consider-iterating-dictionary,  # C0201: 字典迭代建议（有时显式.keys()更清晰）
+
+[FORMAT]
+# 行长度限制
+max-line-length=100
+
+# 最大模块行数（工具脚本可适当放宽）
+max-module-lines=1500
+
+[DESIGN]
+# 复杂度限制（适当放宽工具脚本要求）
+max-args=7
+max-locals=20
+max-returns=6
+max-branches=15
+max-statements=60
+max-attributes=10
+
+[BASIC]
+# 变量命名规范
+variable-rgx=[a-z_][a-z0-9_]{0,30}$
+const-rgx=(([A-Z_][A-Z0-9_]*)|(__.*__))$
+attr-rgx=[a-z_][a-z0-9_]{0,30}$
+argument-rgx=[a-z_][a-z0-9_]{0,30}$
+class-attribute-rgx=([A-Za-z_][A-Za-z0-9_]{0,30}|(__.*__))$
+
+[SIMILARITIES]
+# 重复代码检测
+min-similarity-lines=10
+ignore-comments=yes
+ignore-docstrings=yes

@@ -1,0 +1,168 @@
+# {项目名称} - 实现细节文档
+
+> 关联文档：[README](README.md) | [架构设计](architecture.md) | [接口文档](interfaces.md)
+
+## 1. 核心业务流程
+
+**说明**：本章节仅为2-3个核心业务流程绘制流程图，避免文档膨胀。
+
+### 1.1 用户认证流程
+
+**场景**：完整的登录认证流程（防暴力破解 + 密码验证 + JWT生成）
+
+#### 流程图
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant API
+    participant Service
+    participant Cache as Redis
+    participant DB as MySQL
+
+    Client->>API: POST /api/v1/login
+    Note over API: 参数验证 (api/login_api.go:15)
+    
+    API->>Service: Login(username, password)
+    Service->>Cache: 检查锁定状态
+    Note over Cache: GET login:locked:{username}
+    
+    alt 账户已锁定
+        Cache-->>Client: 403 账户已锁定
+    else 未锁定
+        Service->>DB: 查询用户
+        Note over DB: repo/user_repo.go:15-25
+        
+        alt 用户不存在
+            Service->>Cache: INCR失败计数
+            Service-->>Client: 401 密码错误
+        else 用户存在
+            Service->>Service: bcrypt验证密码
+            Note over Service: auth_service.go:50-60
+            
+            alt 密码错误
+                Service->>Cache: INCR失败计数
+                alt 失败≥5次
+                    Service->>Cache: SET锁定标记(15min)
+                    Service-->>Client: 403 账户锁定
+                else 失败<5次
+                    Service-->>Client: 401 密码错误
+                end
+            else 密码正确
+                Service->>Cache: DEL失败计数
+                Service->>Service: 生成JWT
+                Note over Service: jwt_util.go:20-40
+                Service-->>Client: 200 返回token
+            end
+        end
+    end
+```
+
+#### 核心步骤
+
+| 步骤 | 代码位置 | 关键逻辑 | 说明 |
+|------|---------|---------|------|
+| 1. 锁定检查 | `service/auth_service.go:30-40` | Redis GET `login:locked:{username}` | Redis故障时降级跳过 |
+| 2. 查询用户 | `repo/user_repo.go:15-25` | SQL: `SELECT ... WHERE username=?` | 使用`idx_username`索引 |
+| 3. 验证密码 | `service/auth_service.go:50-60` | bcrypt.CompareHashAndPassword | 耗时50-100ms |
+| 4. 失败管理 | `service/auth_service.go:70-90` | Redis INCR + 条件锁定 | 5次失败锁15分钟 |
+| 5. 生成JWT | `utils/jwt_util.go:20-40` | HS256签名，24h过期 | 密钥来自环境变量 |
+
+---
+
+### 1.2 缓存更新流程（Cache-Aside模式）
+
+**场景**：读缓存未命中时查DB并回写，写操作时删除缓存。
+
+#### 流程图
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Service
+    participant Cache as Redis
+    participant DB as MySQL
+
+    Note over Client,DB: 读操作
+    Client->>Service: GetUserByID(123)
+    Service->>Cache: GET user:123
+    
+    alt 缓存命中
+        Cache-->>Service: 返回数据
+        Service-->>Client: 200 OK
+    else 缓存未命中
+        Service->>DB: SELECT * WHERE id=123
+        Note over DB: repo/user_repo.go:65-70
+        DB-->>Service: 返回数据
+        Service->>Cache: SETEX user:123 3600 <data>
+        Service-->>Client: 200 OK
+    end
+    
+    Note over Client,DB: 写操作
+    Client->>Service: UpdateUser(user)
+    Service->>DB: UPDATE users SET ...
+    Note over DB: repo/user_repo.go:95-98
+    Service->>Cache: DEL user:123
+    Note over Cache: repo/user_repo.go:102
+    Service-->>Client: 200 OK
+```
+
+#### 核心实现
+
+| 操作 | 代码位置 | 关键逻辑 |
+|------|---------|---------|
+| 读取 | `repo/user_repo.go:50-80` | 查缓存 → 未命中查DB → 写缓存(TTL=1h) |
+| 更新 | `repo/user_repo.go:90-110` | 更新DB → 删除缓存 |
+| 删除 | `repo/user_repo.go:120-135` | 软删除DB → 删除缓存 |
+
+**缓存穿透防护**：空结果缓存5分钟，可选布隆过滤器
+
+---
+
+## 2. 关键实现点
+
+### 2.1 JWT令牌管理
+
+| 操作 | 代码位置 | 说明 |
+|------|---------|------|
+| 生成令牌 | `utils/jwt_util.go:20-40` | HS256签名，24h过期，密钥来自环境变量`JWT_SECRET` |
+| 验证令牌 | `middleware/auth.go:15-40` | 提取token → 验证签名 → 解析claims → 注入上下文 |
+| Payload结构 | `utils/jwt_util.go:10` | `{user_id, username, exp, iat}` |
+
+---
+
+### 2.2 密码加密
+
+| 场景 | 代码位置 | 算法 | 耗时 |
+|------|---------|------|------|
+| 注册时加密 | `utils/password_util.go:10-20` | bcrypt (cost=10) | 100-150ms |
+| 登录时验证 | `utils/password_util.go:25-35` | bcrypt.Compare | 50-100ms |
+
+---
+
+### 2.3 数据库优化
+
+**关键索引**：
+- `users.idx_username` (UNIQUE) - 登录查询优化
+- `users.idx_status` - 状态筛选
+
+**批量查询**：
+- **位置**：`repo/user_repo.go:120-140`
+- **优化**：使用IN查询避免N+1问题
+
+**事务处理**：
+- **位置**：`service/user_service.go:100-130`
+- **特性**：自动回滚、嵌套事务支持
+
+---
+
+### 2.4 错误处理
+
+| 组件 | 代码位置 | 功能 |
+|------|---------|------|
+| 错误定义 | `pkg/errors/errors.go:10-30` | 40001-40099客户端错误，50001-50099服务端错误 |
+| 错误中间件 | `middleware/error_handler.go:10-40` | 自动捕获、统一响应格式、HTTP状态码映射 |
+
+---
+
+**📖 完整文档**：查看 [README](README.md) 了解项目概览
