@@ -25,7 +25,7 @@ for item in $items; do
         rm -rf "$target_item"
     fi
     echo "  - 创建软链接: $target_item -> $item"
-    ln -sf "$(realpath "$item")" "$target_item"
+    ln -sfn "$(realpath "$item")" "$target_item"
 
     # 处理 ~/.codebuddy 目录
     # 如果是 CLAUDE.md，则重命名为 CODEBUDDY.md
@@ -41,7 +41,7 @@ for item in $items; do
         rm -rf "$target_item"
     fi
     echo "  - 创建软链接: $target_item -> $item"
-    ln -sf "$(realpath "$item")" "$target_item"
+    ln -sfn "$(realpath "$item")" "$target_item"
 done
 
 echo "软链接设置完成！"
