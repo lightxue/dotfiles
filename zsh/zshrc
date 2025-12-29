@@ -174,3 +174,6 @@ bindkey ^j _sgpt_zsh
 # Added by CodeBuddy CN
 export PATH="/Users/lightxue/.codebuddy/bin:$PATH"
 
+# 初始化补全（用于AI编程）
+autoload -Uz compinit
+compinit -u
