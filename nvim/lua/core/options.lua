@@ -15,7 +15,7 @@ local function load_options()
         fileformats = 'unix,mac,dos',
         backup = false, -- 关闭自动备份文件
         backupskip = '/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim',
-        wildignore = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**',
+        wildignore = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,/tmp/*,*.DS_Store,**/node_modules/**,**/bower_modules/**',
         wildignorecase = true, -- 自动补全文件名忽略大小写
         hidden = true,
 
